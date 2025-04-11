@@ -1,9 +1,9 @@
 let currentQuestion = 0;
-const questions = document.querySelectorAll('.question');
+const questions = document.querySelectorAll('.question-e');
 
 function showQuestion(index) {
   questions.forEach((q, i) => {
-    q.style.display = i === index ? 'block' : 'none';
+    q.style.display = i === index ? 'block' : 'none'; // Ensure only the current question is visible
   });
 
   // Disable Prev button on first question
@@ -19,6 +19,9 @@ function showQuestion(index) {
     nextBtn.onclick = showNext;
   }
 }
+
+// Initialize first question
+showQuestion(currentQuestion);
 
 function showNext() {
   if (currentQuestion < questions.length - 1) {
