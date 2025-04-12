@@ -24,7 +24,7 @@
     </div>
   </header>
 
-  <main>
+  <main id = "main-content">
     <section class="hero">
       <div class="container">
         <h1>Discover Your Personality</h1>
@@ -44,8 +44,7 @@
       <div class="container">
         <form id="personality-test">
           <!-- Question Template -->
-           <div class = "e-value">
-          <div class="question">
+          <div class="question" data-category="e-value">
             <p class="question-text">Bạn cảm thấy tràn đầy năng lượng khi ở cùng nhiều người.</p>
             <div class="options">
               <label><input type="radio" name="q1" value="1" class = "bigYes">Rất đồng ý</label>
@@ -57,7 +56,7 @@
               <label><input type="radio" name="q1" value="7" class = "bigNo">Rất không đồng ý</label>
             </div>
           </div>
-          <div class="question">
+          <div class="question" data-category="e-value">
             <p class="question-text">Bạn thích chia sẻ suy nghĩ của mình với người khác thay vì giữ trong lòng.</p>
             <div class="options">
               <label><input type="radio" name="q2" value="1" class = "bigYes">Rất đồng ý</label>
@@ -69,7 +68,7 @@
               <label><input type="radio" name="q2" value="7" class = "bigNo">Rất không đồng ý</label>
             </div>
           </div>
-          <div class="question">
+          <div class="question" data-category="e-value">
             <p class="question-text">Bạn thường chủ động bắt chuyện với người lạ trong một sự kiện.</p>
             <div class="options">
               <label><input type="radio" name="q3" value="1" class = "bigYes">Rất đồng ý</label>
@@ -81,7 +80,7 @@
               <label><input type="radio" name="q3" value="7" class = "bigNo">Rất không đồng ý</label>
             </div>
           </div>
-          <div class="question">
+          <div class="question" data-category="e-value">
             <p class="question-text">Bạn thích làm việc nhóm hơn là làm việc một mình.</p>
             <div class="options">
               <label><input type="radio" name="q4" value="1" class = "bigYes">Rất đồng ý</label>
@@ -93,7 +92,7 @@
               <label><input type="radio" name="q4" value="7" class = "bigNo">Rất không đồng ý</label>
             </div>
           </div>
-          <div class="question">
+          <div class="question" data-category="e-value">
             <p class="question-text">Bạn cảm thấy thoải mái khi nói trước đám đông.</p>
             <div class="options">
               <label><input type="radio" name="q5" value="1" class = "bigYes">Rất đồng ý</label>
@@ -105,7 +104,7 @@
               <label><input type="radio" name="q5" value="7" class = "bigNo">Rất không đồng ý</label>
             </div>
           </div>
-          <div class="question">
+          <div class="question" data-category="e-value">
             <p class="question-text">Bạn thích tham gia các hoạt động xã hội thay vì ở nhà một mình.</p>
             <div class="options">
               <label><input type="radio" name="q6" value="1" class = "bigYes">Rất đồng ý</label>
@@ -117,8 +116,8 @@
               <label><input type="radio" name="q6" value="7" class = "bigNo">Rất không đồng ý</label>
             </div>
           </div>
-          <div class="question">
-            <p class="question-text">Sau một ngày bận rộn, Bạn cảm thấy thư giãn hơn khi trò chuyện với bạn bè.</p>
+          <div class="question" data-category="e-value">
+            <p class="question-text" >Sau một ngày bận rộn, Bạn cảm thấy thư giãn hơn khi trò chuyện với bạn bè.</p>
             <div class="options">
               <label><input type="radio" name="q7" value="1" class = "bigYes">Rất đồng ý</label>
               <label><input type="radio" name="q7" value="2" class = "yes">Đồng ý</label>
@@ -129,7 +128,7 @@
               <label><input type="radio" name="q7" value="7" class = "bigNo">Rất không đồng ý</label>
             </div>
           </div>
-          <div class="question">
+          <div class="question" data-category="e-value">
             <p class="question-text">Bạn dễ dàng kết bạn với những người mới gặp.</p>
             <div class="options">
               <label><input type="radio" name="q8" value="1" class = "bigYes">Rất đồng ý</label>
@@ -141,7 +140,7 @@
               <label><input type="radio" name="q8" value="7" class = "bigNo">Rất không đồng ý</label>
             </div>
           </div>
-          <div class="question">
+          <div class="question" data-category="e-value">
             <p class="question-text">Bạn thường nói nhiều hơn nghe trong các cuộc trò chuyện.</p>
             <div class="options">
               <label><input type="radio" name="q9" value="1" class = "bigYes">Rất đồng ý</label>
@@ -153,7 +152,7 @@
               <label><input type="radio" name="q9" value="7" class = "bigNo">Rất không đồng ý</label>
             </div>
           </div>
-          <div class="question">
+          <div class="question" data-category="e-value">
             <p class="question-text">Khi gặp vấn đề, Bạn thích thảo luận với người khác thay vì tự suy nghĩ.</p>
             <div class="options">
               <label><input type="radio" name="q10" value="1" class = "bigYes">Rất đồng ý</label>
@@ -165,9 +164,7 @@
               <label><input type="radio" name="q10" value="7" class = "bigNo">Rất không đồng ý</label>
             </div>
           </div>
-          </div>
-          <div class = "s-value">
-          <div class="question">
+          <div class="question" data-category="s-value">
             <p class="question-text">Bạn thích tập trung vào các chi tiết cụ thể hơn là nhìn vào bức tranh toàn cảnh.</p>
             <div class="options">
               <label><input type="radio" name="q11" value="1" class = "bigYes">Rất đồng ý</label>
@@ -179,7 +176,7 @@
               <label><input type="radio" name="q11" value="7" class = "bigNo">Rất không đồng ý</label>
             </div>
           </div>
-          <div class="question">
+          <div class="question" data-category="s-value">
             <p class="question-text">Bạn thường tin vào những gì có thể thấy và chạm vào hơn là những ý tưởng trừu tượng.</p>
             <div class="options">
               <label><input type="radio" name="q12" value="1" class = "bigYes">Rất đồng ý</label>
@@ -191,7 +188,7 @@
               <label><input type="radio" name="q12" value="7" class = "bigNo">Rất không đồng ý</label>
             </div>
           </div>
-          <div class="question">
+          <div class="question" data-category="s-value">
             <p class="question-text">Bạn cảm thấy thoải mái hơn khi làm theo quy trình đã có sẵn thay vì sáng tạo cách mới.</p>
             <div class="options">
               <label><input type="radio" name="q13" value="1" class = "bigYes">Rất đồng ý</label>
@@ -203,7 +200,19 @@
               <label><input type="radio" name="q13" value="7" class = "bigNo">Rất không đồng ý</label>
             </div>
           </div>
-          <div class="question">
+          <div class="question" data-category="s-value">
+            <p class="question-text">Bạn có xu hướng ghi nhớ những sự kiện thực tế thay vì tưởng tượng hoặc suy diễn.</p>
+            <div class="options">
+              <label><input type="radio" name="q40" value="1" class = "bigYes">Rất đồng ý</label>
+              <label><input type="radio" name="q40" value="2" class = "yes">Đồng ý</label>
+              <label><input type="radio" name="q40" value="3" class = "smallYes">Hơi đồng ý</label>
+              <label><input type="radio" name="q40" value="4" class = "mid">Bình thường</label>
+              <label><input type="radio" name="q40" value="5" class = "smallNo">Hơi không đồng ý</label>
+              <label><input type="radio" name="q40" value="6" class = "no">Không đồng ý</label>
+              <label><input type="radio" name="q40" value="7" class = "bigNo">Rất không đồng ý</label>
+            </div>
+          </div>
+          <div class="question" data-category="s-value">
             <p class="question-text">Bạn thích những công việc có hướng dẫn rõ ràng hơn là những công việc mang tính sáng tạo.</p>
             <div class="options">
               <label><input type="radio" name="q14" value="1" class = "bigYes">Rất đồng ý</label>
@@ -215,7 +224,7 @@
               <label><input type="radio" name="q14" value="7" class = "bigNo">Rất không đồng ý</label>
             </div>
           </div>
-          <div class="question">
+          <div class="question" data-category="s-value">
             <p class="question-text">Bạn tin rằng kinh nghiệm thực tế quan trọng hơn lý thuyết hoặc trực giác.</p>
             <div class="options">
               <label><input type="radio" name="q15" value="1" class = "bigYes">Rất đồng ý</label>
@@ -227,7 +236,7 @@
               <label><input type="radio" name="q15" value="7" class = "bigNo">Rất không đồng ý</label>
             </div>
           </div>
-          <div class="question">
+          <div class="question" data-category="s-value">
             <p class="question-text">Bạn thích làm việc với dữ liệu cụ thể hơn là các khái niệm trừu tượng.</p>
             <div class="options">
               <label><input type="radio" name="q16" value="1" class = "bigYes">Rất đồng ý</label>
@@ -239,7 +248,7 @@
               <label><input type="radio" name="q16" value="7" class = "bigNo">Rất không đồng ý</label>
             </div>
           </div>
-          <div class="question">
+          <div class="question" data-category="s-value">
             <p class="question-text">Bạn thường để ý đến những chi tiết nhỏ mà người khác có thể bỏ qua.</p>
             <div class="options">
               <label><input type="radio" name="q17" value="1" class = "bigYes">Rất đồng ý</label>
@@ -251,7 +260,7 @@
               <label><input type="radio" name="q17" value="7" class = "bigNo">Rất không đồng ý</label>
             </div>
           </div>
-          <div class="question">
+          <div class="question" data-category="s-value">
             <p class="question-text">Bạn cảm thấy thoải mái khi thực hiện những nhiệm vụ quen thuộc hơn là thử thách mới.</p>
             <div class="options">
               <label><input type="radio" name="q18" value="1" class = "bigYes">Rất đồng ý</label>
@@ -263,7 +272,7 @@
               <label><input type="radio" name="q18" value="7" class = "bigNo">Rất không đồng ý</label>
             </div>
           </div>
-          <div class="question">
+          <div class="question" data-category="s-value">
             <p class="question-text">Bạn đánh giá cao sự thực tế hơn là những ý tưởng mang tính viễn tưởng.</p>
             <div class="options">
               <label><input type="radio" name="q19" value="1" class = "bigYes">Rất đồng ý</label>
@@ -275,9 +284,7 @@
               <label><input type="radio" name="q19" value="7" class = "bigNo">Rất không đồng ý</label>
             </div>
           </div>
-          </div>
-          <div class = "t-value">
-          <div class="question">
+          <div class="question" data-category="t-value">
             <p class="question-text">Khi đưa ra quyết định, Bạn thường dựa vào lý trí hơn là cảm xúc.</p>
             <div class="options">
               <label><input type="radio" name="q20" value="1" class = "bigYes">Rất đồng ý</label>
@@ -289,7 +296,7 @@
               <label><input type="radio" name="q20" value="7" class = "bigNo">Rất không đồng ý</label>
             </div>
           </div>
-          <div class="question">
+          <div class="question" data-category="t-value">
             <p class="question-text">Bạn tin rằng sự thật quan trọng hơn cảm xúc của mọi người.</p>
             <div class="options">
               <label><input type="radio" name="q21" value="1" class = "bigYes">Rất đồng ý</label>
@@ -301,7 +308,7 @@
               <label><input type="radio" name="q21" value="7" class = "bigNo">Rất không đồng ý</label>
             </div>
           </div>
-          <div class="question">
+          <div class="question" data-category="t-value">
             <p class="question-text">Bạn thích tranh luận để tìm ra ai đúng hơn là giữ hòa khí.</p>
             <div class="options">
               <label><input type="radio" name="q22" value="1" class = "bigYes">Rất đồng ý</label>
@@ -313,7 +320,7 @@
               <label><input type="radio" name="q22" value="7" class = "bigNo">Rất không đồng ý</label>
             </div>
           </div>
-          <div class="question">
+          <div class="question" data-category="t-value">
             <p class="question-text">Bạn đánh giá cao tính logic và hiệu quả hơn là sự đồng cảm.</p>
             <div class="options">
               <label><input type="radio" name="q23" value="1" class = "bigYes">Rất đồng ý</label>
@@ -325,7 +332,7 @@
               <label><input type="radio" name="q23" value="7" class = "bigNo">Rất không đồng ý</label>
             </div>
           </div>
-          <div class="question">
+          <div class="question" data-category="t-value">
             <p class="question-text">Bạn thường suy nghĩ khách quan thay vì đặt mình vào vị trí của người khác.</p>
             <div class="options">
               <label><input type="radio" name="q24" value="1" class = "bigYes">Rất đồng ý</label>
@@ -337,7 +344,7 @@
               <label><input type="radio" name="q24" value="7" class = "bigNo">Rất không đồng ý</label>
             </div>
           </div>
-          <div class="question">
+          <div class="question" data-category="t-value">
             <p class="question-text">Bạn cảm thấy thoải mái hơn khi giải quyết vấn đề bằng phân tích hơn là dựa vào cảm xúc.</p>
             <div class="options">
               <label><input type="radio" name="q25" value="1" class = "bigYes">Rất đồng ý</label>
@@ -349,7 +356,7 @@
               <label><input type="radio" name="q25" value="7" class = "bigNo">Rất không đồng ý</label>
             </div>
           </div>
-          <div class="question">
+          <div class="question" data-category="t-value">
             <p class="question-text">Bạn ít khi bị cảm xúc cá nhân ảnh hưởng đến quyết định của mình.</p>
             <div class="options">
               <label><input type="radio" name="q26" value="1" class = "bigYes">Rất đồng ý</label>
@@ -361,7 +368,7 @@
               <label><input type="radio" name="q26" value="7" class = "bigNo">Rất không đồng ý</label>
             </div>
           </div>
-          <div class="question">
+          <div class="question" data-category="t-value">
             <p class="question-text">Bạn tin rằng công bằng quan trọng hơn lòng tốt trong nhiều tình huống.</p>
             <div class="options">
               <label><input type="radio" name="q27" value="1" class = "bigYes">Rất đồng ý</label>
@@ -373,7 +380,7 @@
               <label><input type="radio" name="q27" value="7" class = "bigNo">Rất không đồng ý</label>
             </div>
           </div>
-          <div class="question">
+          <div class="question" data-category="t-value">
             <p class="question-text">Bạn thường đưa ra lời khuyên thực tế thay vì chỉ an ủi người khác.</p>
             <div class="options">
               <label><input type="radio" name="q28" value="1" class = "bigYes">Rất đồng ý</label>
@@ -385,7 +392,7 @@
               <label><input type="radio" name="q28" value="7" class = "bigNo">Rất không đồng ý</label>
             </div>
           </div>
-          <div class="question">
+          <div class="question" data-category="t-value">
             <p class="question-text">Bạn tin rằng kết quả cuối cùng quan trọng hơn quá trình đạt được nó.</p>
             <div class="options">
               <label><input type="radio" name="q29" value="1" class = "bigYes">Rất đồng ý</label>
@@ -397,9 +404,7 @@
               <label><input type="radio" name="q29" value="7" class = "bigNo">Rất không đồng ý</label>
             </div>
           </div>
-          </div>
-          <div class = "j-value">
-          <div class="question">
+          <div class="question" data-category="j-value">
             <p class="question-text">Bạn thích lập kế hoạch chi tiết trước khi bắt đầu một công việc.</p>
             <div class="options">
               <label><input type="radio" name="q30" value="1" class = "bigYes">Rất đồng ý</label>
@@ -411,7 +416,7 @@
               <label><input type="radio" name="q30" value="7" class = "bigNo">Rất không đồng ý</label>
             </div>
           </div>
-          <div class="question">
+          <div class="question" data-category="j-value">
             <p class="question-text">Bạn cảm thấy thoải mái hơn khi mọi thứ có tổ chức và theo quy tắc rõ ràng.</p>
             <div class="options">
               <label><input type="radio" name="q31" value="1" class = "bigYes">Rất đồng ý</label>
@@ -423,7 +428,7 @@
               <label><input type="radio" name="q31" value="7" class = "bigNo">Rất không đồng ý</label>
             </div>
           </div>
-          <div class="question">
+          <div class="question" data-category="j-value">
             <p class="question-text">Bạn không thích thay đổi kế hoạch vào phút chót.</p>
             <div class="options">
               <label><input type="radio" name="q32" value="1" class = "bigYes">Rất đồng ý</label>
@@ -435,7 +440,7 @@
               <label><input type="radio" name="q32" value="7" class = "bigNo">Rất không đồng ý</label>
             </div>
           </div>
-          <div class="question">
+          <div class="question" data-category="j-value">
             <p class="question-text">Bạn thường hoàn thành công việc sớm thay vì để đến phút cuối.</p>
             <div class="options">
               <label><input type="radio" name="q33" value="1" class = "bigYes">Rất đồng ý</label>
@@ -447,7 +452,7 @@
               <label><input type="radio" name="q33" value="7" class = "bigNo">Rất không đồng ý</label>
             </div>
           </div>
-          <div class="question">
+          <div class="question" data-category="j-value">
             <p class="question-text">Bạn thích làm việc theo danh sách việc cần làm hơn là tùy hứng.</p>
             <div class="options">
               <label><input type="radio" name="q34" value="1" class = "bigYes">Rất đồng ý</label>
@@ -459,7 +464,7 @@
               <label><input type="radio" name="q34" value="7" class = "bigNo">Rất không đồng ý</label>
             </div>
           </div>
-          <div class="question">
+          <div class="question" data-category="j-value">
             <p class="question-text">Bạn cảm thấy không thoải mái khi mọi thứ diễn ra một cách ngẫu nhiên và không có kế hoạch.</p>
             <div class="options">
               <label><input type="radio" name="q35" value="1" class = "bigYes">Rất đồng ý</label>
@@ -471,7 +476,7 @@
               <label><input type="radio" name="q35" value="7" class = "bigNo">Rất không đồng ý</label>
             </div>
           </div>
-          <div class="question">
+          <div class="question" data-category="j-value">
             <p class="question-text">Bạn có xu hướng theo sát kế hoạch ban đầu hơn là linh hoạt thay đổi theo tình huống.</p>
             <div class="options">
               <label><input type="radio" name="q36" value="1" class = "bigYes">Rất đồng ý</label>
@@ -483,7 +488,7 @@
               <label><input type="radio" name="q36" value="7" class = "bigNo">Rất không đồng ý</label>
             </div>
           </div>
-          <div class="question">
+          <div class="question" data-category="j-value">
             <p class="question-text">Bạn thích biết rõ lịch trình của mình trước thay vì để mọi thứ xảy ra tự nhiên.</p>
             <div class="options">
               <label><input type="radio" name="q37" value="1" class = "bigYes">Rất đồng ý</label>
@@ -495,7 +500,7 @@
               <label><input type="radio" name="q37" value="7" class = "bigNo">Rất không đồng ý</label>
             </div>
           </div>
-          <div class="question">
+          <div class="question" data-category="j-value">
             <p class="question-text">Bạn cảm thấy khó chịu khi người khác làm việc thiếu tổ chức.</p>
             <div class="options">
               <label><input type="radio" name="q38" value="1" class = "bigYes">Rất đồng ý</label>
@@ -507,7 +512,7 @@
               <label><input type="radio" name="q38" value="7" class = "bigNo">Rất không đồng ý</label>
             </div>
           </div>
-          <div class="question">
+          <div class="question" data-category="j-value">
             <p class="question-text">Bạn cảm thấy yên tâm hơn khi công việc được hoàn thành theo kế hoạch, ngay cả khi nó chưa hoàn hảo.</p>
             <div class="options">
               <label><input type="radio" name="q39" value="1" class = "bigYes">Rất đồng ý</label>
@@ -519,129 +524,6 @@
               <label><input type="radio" name="q39" value="7" class = "bigNo">Rất không đồng ý</label>
             </div>
           </div>
-          </div>
-          <div class = "i-value">
-          <div class="question">
-            <p class="question-text">Bạn thường cảm thấy tự tin vào các quyết định của mình, ngay cả khi có rủi ro.</p>
-            <div class="options">
-              <label><input type="radio" name="q40" value="1" class = "bigYes">Rất đồng ý</label>
-              <label><input type="radio" name="q40" value="2" class = "yes">Đồng ý</label>
-              <label><input type="radio" name="q40" value="3" class = "smallYes">Hơi đồng ý</label>
-              <label><input type="radio" name="q40" value="4" class = "mid">Bình thường</label>
-              <label><input type="radio" name="q40" value="5" class = "smallNo">Hơi không đồng ý</label>
-              <label><input type="radio" name="q40" value="6" class = "no">Không đồng ý</label>
-              <label><input type="radio" name="q40" value="7" class = "bigNo">Rất không đồng ý</label>
-            </div>
-          </div>
-          <div class="question">
-            <p class="question-text">Bạn dễ bị ảnh hưởng bởi những lời chỉ trích của người khác.</p>
-            <div class="options">
-              <label><input type="radio" name="q41" value="1" class = "bigYes">Rất đồng ý</label>
-              <label><input type="radio" name="q41" value="2" class = "yes">Đồng ý</label>
-              <label><input type="radio" name="q41" value="3" class = "smallYes">Hơi đồng ý</label>
-              <label><input type="radio" name="q41" value="4" class = "mid">Bình thường</label>
-              <label><input type="radio" name="q41" value="5" class = "smallNo">Hơi không đồng ý</label>
-              <label><input type="radio" name="q41" value="6" class = "no">Không đồng ý</label>
-              <label><input type="radio" name="q41" value="7" class = "bigNo">Rất không đồng ý</label>
-            </div>
-          </div>
-          <div class="question">
-            <p class="question-text">Khi thất bại, Bạn thường suy nghĩ lại nhiều lần về những gì đã xảy ra.</p>
-            <div class="options">
-              <label><input type="radio" name="q42" value="1" class = "bigYes">Rất đồng ý</label>
-              <label><input type="radio" name="q42" value="2" class = "yes">Đồng ý</label>
-              <label><input type="radio" name="q42" value="3" class = "smallYes">Hơi đồng ý</label>
-              <label><input type="radio" name="q42" value="4" class = "mid">Bình thường</label>
-              <label><input type="radio" name="q42" value="5" class = "smallNo">Hơi không đồng ý</label>
-              <label><input type="radio" name="q42" value="6" class = "no">Không đồng ý</label>
-              <label><input type="radio" name="q42" value="7" class = "bigNo">Rất không đồng ý</label>
-            </div>
-          </div>
-          <div class="question">
-            <p class="question-text">Bạn thường tin rằng mình có thể kiểm soát được hầu hết mọi tình huống.</p>
-            <div class="options">
-              <label><input type="radio" name="q43" value="1" class = "bigYes">Rất đồng ý</label>
-              <label><input type="radio" name="q43" value="2" class = "yes">Đồng ý</label>
-              <label><input type="radio" name="q43" value="3" class = "smallYes">Hơi đồng ý</label>
-              <label><input type="radio" name="q43" value="4" class = "mid">Bình thường</label>
-              <label><input type="radio" name="q43" value="5" class = "smallNo">Hơi không đồng ý</label>
-              <label><input type="radio" name="q43" value="6" class = "no">Không đồng ý</label>
-              <label><input type="radio" name="q43" value="7" class = "bigNo">Rất không đồng ý</label>
-            </div>
-          </div>
-          <div class="question">
-            <p class="question-text">Bạn hay cảm thấy căng thẳng hoặc lo lắng trước các bài kiểm tra hoặc áp lực.</p>
-            <div class="options">
-              <label><input type="radio" name="q44" value="1" class = "bigYes">Rất đồng ý</label>
-              <label><input type="radio" name="q44" value="2" class = "yes">Đồng ý</label>
-              <label><input type="radio" name="q44" value="3" class = "smallYes">Hơi đồng ý</label>
-              <label><input type="radio" name="q44" value="4" class = "mid">Bình thường</label>
-              <label><input type="radio" name="q44" value="5" class = "smallNo">Hơi không đồng ý</label>
-              <label><input type="radio" name="q44" value="6" class = "no">Không đồng ý</label>
-              <label><input type="radio" name="q44" value="7" class = "bigNo">Rất không đồng ý</label>
-            </div>
-          </div>
-          <div class="question">
-            <p class="question-text">Bạn thường không nghi ngờ bản thân khi đưa ra lựa chọn.</p>
-            <div class="options">
-              <label><input type="radio" name="q45" value="1" class = "bigYes">Rất đồng ý</label>
-              <label><input type="radio" name="q45" value="2" class = "yes">Đồng ý</label>
-              <label><input type="radio" name="q45" value="3" class = "smallYes">Hơi đồng ý</label>
-              <label><input type="radio" name="q45" value="4" class = "mid">Bình thường</label>
-              <label><input type="radio" name="q45" value="5" class = "smallNo">Hơi không đồng ý</label>
-              <label><input type="radio" name="q45" value="6" class = "no">Không đồng ý</label>
-              <label><input type="radio" name="q45" value="7" class = "bigNo">Rất không đồng ý</label>
-            </div>
-          </div>
-          <div class="question">
-            <p class="question-text">Bạn cảm thấy cần phải chứng minh bản thân nhiều hơn những người khác.</p>
-            <div class="options">
-              <label><input type="radio" name="q46" value="1" class = "bigYes">Rất đồng ý</label>
-              <label><input type="radio" name="q46" value="2" class = "yes">Đồng ý</label>
-              <label><input type="radio" name="q46" value="3" class = "smallYes">Hơi đồng ý</label>
-              <label><input type="radio" name="q46" value="4" class = "mid">Bình thường</label>
-              <label><input type="radio" name="q46" value="5" class = "smallNo">Hơi không đồng ý</label>
-              <label><input type="radio" name="q46" value="6" class = "no">Không đồng ý</label>
-              <label><input type="radio" name="q46" value="7" class = "bigNo">Rất không đồng ý</label>
-            </div>
-          </div>
-          <div class="question">
-            <p class="question-text">Bạn thường suy nghĩ về các lỗi lầm trong quá khứ và cảm thấy hối tiếc.</p>
-            <div class="options">
-              <label><input type="radio" name="q47" value="1" class = "bigYes">Rất đồng ý</label>
-              <label><input type="radio" name="q47" value="2" class = "yes">Đồng ý</label>
-              <label><input type="radio" name="q47" value="3" class = "smallYes">Hơi đồng ý</label>
-              <label><input type="radio" name="q47" value="4" class = "mid">Bình thường</label>
-              <label><input type="radio" name="q47" value="5" class = "smallNo">Hơi không đồng ý</label>
-              <label><input type="radio" name="q47" value="6" class = "no">Không đồng ý</label>
-              <label><input type="radio" name="q47" value="7" class = "bigNo">Rất không đồng ý</label>
-            </div>
-          </div>
-          <div class="question">
-            <p class="question-text">Bạn có thể giữ bình tĩnh trong các tình huống căng thẳng hoặc khẩn cấp.</p>
-            <div class="options">
-              <label><input type="radio" name="q48" value="1" class = "bigYes">Rất đồng ý</label>
-              <label><input type="radio" name="q48" value="2" class = "yes">Đồng ý</label>
-              <label><input type="radio" name="q48" value="3" class = "smallYes">Hơi đồng ý</label>
-              <label><input type="radio" name="q48" value="4" class = "mid">Bình thường</label>
-              <label><input type="radio" name="q48" value="5" class = "smallNo">Hơi không đồng ý</label>
-              <label><input type="radio" name="q48" value="6" class = "no">Không đồng ý</label>
-              <label><input type="radio" name="q48" value="7" class = "bigNo">Rất không đồng ý</label>
-            </div>
-          </div>
-          <div class="question">
-            <p class="question-text">Bạn dễ cảm thấy bất an về khả năng của mình, ngay cả khi đã thành công.</p>
-            <div class="options">
-              <label><input type="radio" name="q49" value="1" class = "bigYes">Rất đồng ý</label>
-              <label><input type="radio" name="q49" value="2" class = "yes">Đồng ý</label>
-              <label><input type="radio" name="q49" value="3" class = "smallYes">Hơi đồng ý</label>
-              <label><input type="radio" name="q49" value="4" class = "mid">Bình thường</label>
-              <label><input type="radio" name="q49" value="5" class = "smallNo">Hơi không đồng ý</label>
-              <label><input type="radio" name="q49" value="6" class = "no">Không đồng ý</label>
-              <label><input type="radio" name="q49" value="7" class = "bigNo">Rất không đồng ý</label>
-            </div>
-          </div>
-          </div>
           <!-- Repeat questions... -->
         </form>
         <div class="navigation-buttons">
@@ -650,17 +532,15 @@
         </div>
       </div>
     </section>
-
-    <section class="results-hidden">
-      <div class="container">
-        <h2>Your Personality Type</h2>
-        <p id="personality-type">Result goes here...</p>
-        <p id="personality-description">Description goes here...</p>
-        <a href="/profiles" class="btn btn-secondary">Explore Profiles</a>
-      </div>
-    </section>
   </main>
-
+  <section id="results" class="hidden">
+    <div class="container">
+      <h2>Your Personality Type</h2>
+      <p id="personality-type">Result goes here...</p>
+      <p id="personality-description">Description goes here...</p>
+      <a href="/profiles" class="btn btn-secondary">Explore Profiles</a>
+    </div>
+  </section>
   <footer>
     <div class="container">
       <ul class="footer-nav">

@@ -1,156 +1,145 @@
-let currentQuestion = 0;
-const questions = document.querySelectorAll('.question');
-const selectedAnswers = {}; // Object to store selected answers
+document.addEventListener('DOMContentLoaded', function () {
+  let currentQuestion = 0;
+  const questions = Array.from(document.querySelectorAll('.question'));
+  const selectedAnswers = {};
 
-function showQuestion(index) {
-  questions.forEach((q, i) => {
-    q.style.display = i === index ? 'block' : 'none'; // Ensure only the current question is visible
-  });
+  function showQuestion(index) {
+    questions.forEach((q, i) => {
+      q.style.display = i === index ? 'block' : 'none';
+    });
 
-  // Disable Prev button on the first question
-  document.getElementById('prev').disabled = index === 0;
+    document.getElementById('prev').disabled = index === 0;
 
-  // Change Next button to "Submit" on the last question
-  const nextBtn = document.getElementById('next');
-  if (index === questions.length - 1) {
-    nextBtn.textContent = 'Submit';
-    nextBtn.onclick = submitAnswers;
-  } else {
-    nextBtn.textContent = 'Next';
-    nextBtn.onclick = showNext;
+    const nextBtn = document.getElementById('next');
+    if (index === questions.length - 1) {
+      nextBtn.textContent = 'Submit';
+      nextBtn.onclick = submitAnswers;
+    } else {
+      nextBtn.textContent = 'Next';
+      nextBtn.onclick = showNext;
+    }
+
+    restoreSelectedAnswer(index);
+    toggleNextButton();
   }
 
-  // Restore the previously selected answer for the current question
-  restoreSelectedAnswer(index);
+  function showNext() {
+    const currentOptions = questions[currentQuestion].querySelectorAll('input[type="radio"]');
+    const selectedOption = Array.from(currentOptions).find(opt => opt.checked);
 
-  // Check if the current question has an option selected
-  toggleNextButton();
-}
+    if (!selectedOption) {
+      alert('Vui lòng chọn một đáp án trước khi tiếp tục.');
+      return;
+    }
 
-function showNext() {
-  const currentOptions = questions[currentQuestion].querySelectorAll('input[type="radio"]');
-  const selectedOption = Array.from(currentOptions).find(option => option.checked);
-
-  if (!selectedOption) {
-    alert('Please select an option before proceeding to the next question.');
-    return; // Prevent moving to the next question if no option is selected
-  }
-
-  saveSelectedAnswer(currentQuestion); // Save the selected answer before moving to the next question
-  if (currentQuestion < questions.length - 1) {
-    currentQuestion = currentQuestion + 1;
-    showQuestion(currentQuestion);
-  }
-}
-
-function showPrev() {
-  saveSelectedAnswer(currentQuestion); // Save the selected answer for the current question
-  if (currentQuestion > 0) {
-    currentQuestion--;
-    showQuestion(currentQuestion);
-  }
-}
-
-function submitAnswers() {
-  saveSelectedAnswer(currentQuestion); // Save the last question's answer
-  const scores = calculateScores();
-  alert(`Scores: ${JSON.stringify(scores)}`);
-  // Add form submission logic here
-}
-
-function toggleNextButton() {
-  const currentOptions = questions[currentQuestion].querySelectorAll('input[type="radio"]');
-  const nextBtn = document.getElementById('next');
-  const isOptionSelected = Array.from(currentOptions).some(option => option.checked);
-
-  nextBtn.disabled = !isOptionSelected; // Disable Next button if no option is selected
-}
-
-function saveSelectedAnswer(index) {
-  const currentOptions = questions[index].querySelectorAll('input[type="radio"]');
-  const selectedOption = Array.from(currentOptions).find(option => option.checked);
-  if (selectedOption) {
-    selectedAnswers[index] = selectedOption.value; // Save the selected value
-  } else {
-    delete selectedAnswers[index]; // Remove the entry if no option is selected
-  }
-  console.log('Saved answers:', selectedAnswers); // Debugging log
-}
-
-function restoreSelectedAnswer(index) {
-  const currentOptions = questions[index].querySelectorAll('input[type="radio"]');
-  if (selectedAnswers[index]) {
-    const optionToSelect = Array.from(currentOptions).find(option => option.value === selectedAnswers[index]);
-    if (optionToSelect) {
-      optionToSelect.checked = true; // Restore the previously selected value
+    saveSelectedAnswer(currentQuestion);
+    if (currentQuestion < questions.length - 1) {
+      currentQuestion++;
+      showQuestion(currentQuestion);
     }
   }
-  console.log('Restored answers for question', index, selectedAnswers[index]); // Debugging log
-}
 
-function calculateScores() {
-  const categories = ['e-value', 's-value', 't-value', 'j-value'];
-  const scores = {};
+  function showPrev() {
+    saveSelectedAnswer(currentQuestion);
+    if (currentQuestion > 0) {
+      currentQuestion--;
+      showQuestion(currentQuestion);
+    }
+  }
 
-  categories.forEach(category => {
-    scores[category] = 0; // Initialize score for each category
-    const questions = document.querySelectorAll(`.${category} .question`);
+  function toggleNextButton() {
+    const options = questions[currentQuestion].querySelectorAll('input[type="radio"]');
+    const nextBtn = document.getElementById('next');
+    const isSelected = Array.from(options).some(opt => opt.checked);
+    nextBtn.disabled = !isSelected;
+  }
 
-    questions.forEach(question => {
-      const selectedOption = question.querySelector('input[type="radio"]:checked');
-      if (selectedOption) {
-        switch (selectedOption.className) {
-          case 'bigYes':
-            scores[category] += 3;
-            break;
-          case 'yes':
-            scores[category] += 2;
-            break;
-          case 'smallYes':
-            scores[category] += 1;
-            break;
-          case 'mid':
-            scores[category] += 0;
-            break;
-          case 'smallNo':
-            scores[category] -= 1;
-            break;
-          case 'no':
-            scores[category] -= 2;
-            break;
-          case 'bigNo':
-            scores[category] -= 3;
-            break;
+  function saveSelectedAnswer(index) {
+    const options = questions[index].querySelectorAll('input[type="radio"]');
+    const selected = Array.from(options).find(opt => opt.checked);
+    if (selected) {
+      selectedAnswers[index] = selected.value;
+    } else {
+      delete selectedAnswers[index];
+    }
+  }
+
+  function restoreSelectedAnswer(index) {
+    const options = questions[index].querySelectorAll('input[type="radio"]');
+    if (selectedAnswers[index]) {
+      const toSelect = Array.from(options).find(opt => opt.value === selectedAnswers[index]);
+      if (toSelect) toSelect.checked = true;
+    }
+  }
+
+  function submitAnswers() {
+    saveSelectedAnswer(currentQuestion);
+    const scores = calculateScores();
+    const type = getPersonalityType(scores);
+  
+    document.getElementById('personality-type').textContent = `Bạn là: ${type}`;
+    document.getElementById('personality-description').textContent = getDescription(type);
+  
+    // 🔥 Hide everything (except header) and show only results
+    document.getElementById('main-content').style.display = 'none'; // hide all content
+    document.getElementById('results').classList.remove('hidden');
+    document.getElementById('results').style.display = 'block'; // ensure results is visible
+  }
+  
+
+  function calculateScores() {
+    const scores = { 'e-value': 0, 's-value': 0, 't-value': 0, 'j-value': 0 };
+
+    questions.forEach(q => {
+      const category = q.dataset.category;
+      const selected = q.querySelector('input[type="radio"]:checked');
+      if (selected && category) {
+        switch (selected.className) {
+          case 'bigYes': scores[category] += 3; break;
+          case 'yes': scores[category] += 2; break;
+          case 'smallYes': scores[category] += 1; break;
+          case 'mid': break;
+          case 'smallNo': scores[category] -= 1; break;
+          case 'no': scores[category] -= 2; break;
+          case 'bigNo': scores[category] -= 3; break;
         }
       }
     });
-  });
 
-  console.log(scores); // Debugging log
-  return scores;
-}
+    return scores;
+  }
 
-// Add event listeners to all radio buttons to enable the Next button when an option is selected
-questions.forEach((question, index) => {
-  const options = question.querySelectorAll('input[type="radio"]');
-  options.forEach(option => {
-    option.addEventListener('change', () => {
-      if (index === currentQuestion) {
-        toggleNextButton();
-      }
+  function getPersonalityType(scores) {
+    let type = '';
+    type += scores['e-value'] >= 0 ? 'E' : 'I';
+    type += scores['s-value'] >= 0 ? 'S' : 'N';
+    type += scores['t-value'] >= 0 ? 'T' : 'F';
+    type += scores['j-value'] >= 0 ? 'J' : 'P';
+    return type;
+  }
+
+  function getDescription(type) {
+    const descriptions = {
+      'INTJ': 'Chiến lược gia – sáng tạo, quyết đoán, có tầm nhìn.',
+      'INFP': 'Người lý tưởng – nhạy cảm, trung thành, và đầy mộng mơ.',
+      'ESFP': 'Người trình diễn – vui vẻ, ấm áp và sống hết mình.',
+      'ENTP': 'Người tranh luận – thông minh, nhanh nhạy, sáng tạo.',
+      // Add all 16 MBTI descriptions here...
+    };
+    return descriptions[type] || 'Bạn sở hữu một sự kết hợp đặc biệt giữa các đặc điểm tính cách!';
+  }
+
+  // Enable Next when answer is selected
+  questions.forEach((q, i) => {
+    const options = q.querySelectorAll('input[type="radio"]');
+    options.forEach(opt => {
+      opt.addEventListener('change', () => {
+        if (i === currentQuestion) toggleNextButton();
+      });
     });
   });
-});
 
-// Initialize first question
-showQuestion(currentQuestion);
-
-// Add event listeners for navigation buttons
-document.getElementById('prev').addEventListener('click', showPrev);
-document.getElementById('next').addEventListener('click', () => {
-  if (document.getElementById('next').textContent === 'Submit') {
-    submitAnswers();
-  } else {
-    showNext();
-  }
+  // Init
+  showQuestion(currentQuestion);
+  document.getElementById('prev').addEventListener('click', showPrev);
 });

@@ -195,5 +195,7 @@
     background-color: #ccc;
     cursor: not-allowed;
   }
-  
-  
+
+  .hidden {
+    display: none !important;
+  }
