@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Đức Anh Test - Test uy tín số 1 Bắc Ninh</title>
+  <title>Đức Anh Test - Test uy tín số 1 Hải Dương</title>
   <link rel="stylesheet" href="styles.css">
   <!-- Add any fonts or icons here -->
 </head>
@@ -12,13 +12,13 @@
   <header>
     <div class="container">
       <div class="logo">      
-        <img src="/Nhom-8---TKWeb/content/ducanhtest.jpg" alt="Logo" class="logo-img">
-        <a href="/" class="logo">Đức Anh Test</a>
+        <img src="/content/ducanhtest.jpg" alt="Logo" class="logo-img">
+        <a href="/index.html" class="logo">Đức Anh Test</a>
       </div>
       <nav>
         <ul>
           <li><a href="/">Kiểm tra tính cách</a></li>
-          <li><a href="/">Kiểm tra LGBTQ+</a></li>
+          <li><a href="/">Các loại tính cách khác nhau</a></li>
         </ul>
       </nav>
     </div>
@@ -27,16 +27,8 @@
   <main id = "main-content">
     <section class="hero">
       <div class="container">
-        <h1>Discover Your Personality</h1>
-        <p>Take our free personality test and get insights into your strengths and weaknesses.</p>
-        <a href="#test" class="btn btn-primary">Start Test</a>
-      </div>
-    </section>
-
-    <section id="test" class="test-intro">
-      <div class="container">
-        <h2>Cách làm bài kiểm tra</h2>
-        <p>Trả lời những câu hỏi dưới đây dựa vào suy nghĩ và ý kiến của bản thân (trả lời thật đấy nhé).</p>
+        <h1>Tìm ra tính cách của riêng bạn</h1>
+        <a href="#test" class="btn btn-primary">Bắt đầu bài kiểm tra</a>
       </div>
     </section>
 
@@ -524,7 +516,6 @@
               <label><input type="radio" name="q39" value="7" class = "bigNo">Rất không đồng ý</label>
             </div>
           </div>
-          <!-- Repeat questions... -->
         </form>
         <div class="navigation-buttons">
           <button type="button" id="prev">Quay lại</button>
@@ -535,22 +526,147 @@
   </main>
   <section id="results" class="hidden">
     <div class="container">
-      <h2>Your Personality Type</h2>
-      <p id="personality-type">Result goes here...</p>
-      <p id="personality-description">Description goes here...</p>
-      <a href="/profiles" class="btn btn-secondary">Explore Profiles</a>
+      <h2>Tính cách của bạn là:</h2>
+      <p id="personality-type"></p>
+  
+      <!-- hide -->
+      <div id="type-descriptions">
+        <p data-type="INTJ" class="type-description hidden">
+          <strong>Bạn thuộc Nhóm Nhà phân tích</strong><br>
+          Bạn là kiểu người sống nội tâm, suy nghĩ sâu sắc và luôn tìm cách hiểu thật rõ bản chất của mọi vấn đề. Trong mắt người khác, bạn có thể trông khá lạnh lùng và kín đáo, nhưng thực ra bên trong là một bộ óc đầy chiến lược, logic và luôn hoạt động không ngừng nghỉ. Bạn không dễ bị cuốn theo số đông, không tin vào những gì “người ta nói” chỉ vì đó là điều quen thuộc. Bạn thích đặt câu hỏi, thích đào sâu và tự mình kiểm chứng mọi thứ – vì với bạn, một ý tưởng chỉ thật sự có giá trị khi nó hiệu quả trong thực tế.
+Bạn có xu hướng độc lập cao, thường không thích phụ thuộc vào người khác và cũng không thích chờ đợi ai. Khi đã xác định mục tiêu, bạn dốc toàn lực để đạt được nó một cách bài bản và có chiến lược. Với bạn, cuộc sống giống như một ván cờ lớn – mỗi hành động đều cần được tính toán kỹ lưỡng để đi đúng hướng. Bạn không hành động bốc đồng mà luôn suy nghĩ trước sau, cân nhắc rủi ro và tìm cách tối ưu mọi thứ.
+Bạn là người yêu thích tri thức, không ngừng học hỏi – không phải để khoe khoang hay thể hiện, mà vì bạn thực sự tò mò và đam mê việc hiểu rõ thế giới xung quanh. Khi quan tâm đến điều gì đó, bạn có thể tập trung cao độ, đào sâu tới tận gốc rễ và trở thành chuyên gia trong lĩnh vực đó. Có thể trong quá khứ bạn từng bị gọi là "mọt sách", nhưng với bạn, đó chưa bao giờ là điều tiêu cực – ngược lại, bạn tự hào về khả năng của mình.
+Trong các mối quan hệ, bạn là người chọn lọc, không dễ mở lòng, nhưng một khi đã tin tưởng ai đó, bạn sẽ rất chân thành và sâu sắc. Bạn không ưa những cuộc trò chuyện nông cạn hay những xã giao xã hội sáo rỗng. Với bạn, một cuộc trò chuyện có ý nghĩa cần phải chân thật, sâu sắc và thông minh. Dù có thể không thể hiện cảm xúc rõ ràng, bạn vẫn là người biết quan tâm, chỉ là theo một cách rất riêng.
+Bạn có một cái nhìn khá khắt khe về xã hội, thường dễ nhận ra sự giả tạo, hời hợt hoặc thiếu tư duy xung quanh mình. Điều này đôi khi khiến bạn cảm thấy lạc lõng hoặc khó tìm thấy người đồng điệu. Nhưng cũng chính vì thế mà bạn lại có tiềm năng trở thành người dẫn đầu, người đi trước với tầm nhìn xa và khả năng thực thi xuất sắc.
+Tóm lại, bạn là người có trí tuệ, bản lĩnh và định hướng rõ ràng. Bạn sống vì mục tiêu, không thích sự tầm thường và luôn cố gắng để trở thành phiên bản tốt nhất của chính mình. Bạn không chỉ mơ lớn – bạn còn có khả năng biến ước mơ đó thành hiện thực.
+.
+        </p>
+        <p data-type="INTP" class="type-description hidden">
+          <strong>Bạn thuộc Nhóm Nhà phân tích</strong><br>
+          Bạn là kiểu người sống nội tâm, suy nghĩ sâu sắc và luôn tìm cách hiểu thật rõ bản chất của mọi vấn đề. Trong mắt người khác, bạn có thể trông khá lạnh lùng và kín đáo, nhưng thực ra bên trong là một bộ óc đầy chiến lược, logic và luôn hoạt động không ngừng nghỉ. Bạn không dễ bị cuốn theo số đông, không tin vào những gì “người ta nói” chỉ vì đó là điều quen thuộc. Bạn thích đặt câu hỏi, thích đào sâu và tự mình kiểm chứng mọi thứ – vì với bạn, một ý tưởng chỉ thật sự có giá trị khi nó hiệu quả trong thực tế.
+Bạn có xu hướng độc lập cao, thường không thích phụ thuộc vào người khác và cũng không thích chờ đợi ai. Khi đã xác định mục tiêu, bạn dốc toàn lực để đạt được nó một cách bài bản và có chiến lược. Với bạn, cuộc sống giống như một ván cờ lớn – mỗi hành động đều cần được tính toán kỹ lưỡng để đi đúng hướng. Bạn không hành động bốc đồng mà luôn suy nghĩ trước sau, cân nhắc rủi ro và tìm cách tối ưu mọi thứ.
+Bạn là người yêu thích tri thức, không ngừng học hỏi – không phải để khoe khoang hay thể hiện, mà vì bạn thực sự tò mò và đam mê việc hiểu rõ thế giới xung quanh. Khi quan tâm đến điều gì đó, bạn có thể tập trung cao độ, đào sâu tới tận gốc rễ và trở thành chuyên gia trong lĩnh vực đó. Có thể trong quá khứ bạn từng bị gọi là "mọt sách", nhưng với bạn, đó chưa bao giờ là điều tiêu cực – ngược lại, bạn tự hào về khả năng của mình.
+Trong các mối quan hệ, bạn là người chọn lọc, không dễ mở lòng, nhưng một khi đã tin tưởng ai đó, bạn sẽ rất chân thành và sâu sắc. Bạn không ưa những cuộc trò chuyện nông cạn hay những xã giao xã hội sáo rỗng. Với bạn, một cuộc trò chuyện có ý nghĩa cần phải chân thật, sâu sắc và thông minh. Dù có thể không thể hiện cảm xúc rõ ràng, bạn vẫn là người biết quan tâm, chỉ là theo một cách rất riêng.
+Bạn có một cái nhìn khá khắt khe về xã hội, thường dễ nhận ra sự giả tạo, hời hợt hoặc thiếu tư duy xung quanh mình. Điều này đôi khi khiến bạn cảm thấy lạc lõng hoặc khó tìm thấy người đồng điệu. Nhưng cũng chính vì thế mà bạn lại có tiềm năng trở thành người dẫn đầu, người đi trước với tầm nhìn xa và khả năng thực thi xuất sắc.
+Tóm lại, bạn là người có trí tuệ, bản lĩnh và định hướng rõ ràng. Bạn sống vì mục tiêu, không thích sự tầm thường và luôn cố gắng để trở thành phiên bản tốt nhất của chính mình. Bạn không chỉ mơ lớn – bạn còn có khả năng biến ước mơ đó thành hiện thực.
+        </p>
+        <p data-type="ENTJ" class="type-description hidden">
+          <strong>Bạn thuộc Nhóm Nhà phân tích</strong><br>
+          Bạn là người có tầm nhìn xa và khả năng lãnh đạo bẩm sinh. Trong mắt người khác, bạn là hình mẫu của sự tự tin, quyết đoán và mạnh mẽ. Bạn thu hút sự chú ý của mọi người xung quanh bởi khả năng tập trung vào mục tiêu chung và dẫn dắt họ đến thành công. Với bạn, không có thử thách nào là quá lớn – bạn tin rằng nếu có đủ thời gian và tài nguyên, bạn sẽ đạt được bất kỳ mục tiêu nào. Chính vì thế, bạn thường trở thành người đứng đầu trong các doanh nghiệp hoặc tổ chức, người dẫn dắt đội nhóm đi đến những đỉnh cao mới.
+Với tính cách mạnh mẽ và sự quyết tâm không mệt mỏi, bạn là người đặt ra những tiêu chuẩn cao cho bản thân và những người xung quanh. Bạn luôn sẵn sàng đương đầu với thử thách và không bao giờ bỏ cuộc, ngay cả khi con đường phía trước đầy khó khăn. Bạn có một khả năng đặc biệt trong việc nhận ra tài năng của người khác và xây dựng những đội ngũ mạnh mẽ, vì bạn hiểu rằng chỉ có sự hợp tác và sự hỗ trợ từ đội nhóm mới giúp bạn đạt được mục tiêu lớn.
+Dù có thể bạn không phải là người dễ dàng thể hiện cảm xúc, nhưng bạn vẫn có sự lôi cuốn mạnh mẽ và có thể khiến người khác cảm nhận được sự quyết liệt trong từng hành động của mình. Bạn có thể khá khắt khe và không khoan nhượng khi đối diện với những người không đủ nỗ lực hoặc không đáp ứng được kỳ vọng của bạn. Tuy nhiên, chính vì khả năng làm việc độc lập và mạnh mẽ này mà bạn đôi khi có thể thiếu sự nhạy cảm trong giao tiếp, và điều này đôi khi dẫn đến việc làm tổn thương những người xung quanh.
+Khi đứng trên bàn đàm phán, bạn luôn chiếm ưu thế và ít khi nhượng bộ, bởi bạn tin rằng chiến thắng phải đến từ sự tính toán kỹ lưỡng và khả năng chiến lược tuyệt vời. Tuy nhiên, để trở thành một nhà lãnh đạo thực thụ, bạn cần nhớ rằng sự vĩ đại không chỉ đến từ những hành động của riêng bạn mà còn từ sự hỗ trợ và đóng góp của cả nhóm. Việc công nhận và trân trọng sự hỗ trợ của những người xung quanh, đặc biệt là về mặt cảm xúc, sẽ giúp bạn xây dựng những mối quan hệ sâu sắc và bền vững, đồng thời đạt được những chiến thắng đáng nhớ trong sự nghiệp.
+Tóm lại, bạn là người có tầm nhìn, trí tuệ và quyết tâm không ngừng nghỉ. Bạn sống với mục tiêu rõ ràng và luôn tìm cách để dẫn dắt những người xung quanh đạt được những thành tựu vĩ đại. Dù đôi khi bạn có thể tỏ ra lạnh lùng và cứng rắn, nhưng chính sự mạnh mẽ và tầm nhìn của bạn đã giúp thay đổi thế giới xung quanh.
+        </p>
+        <p data-type="ENTP" class="type-description hidden">
+          <strong>Bạn thuộc Nhóm Nhà phân tích</strong><br>
+          Bạn là người nhanh trí, bạo dạn và luôn sẵn sàng thử thách mọi quan điểm và chuẩn mực hiện có. Không có gì khiến bạn phấn khích hơn một cuộc tranh luận thú vị – và nếu cuộc trò chuyện chuyển sang đối kháng, bạn càng cảm thấy hào hứng hơn. Bạn không ngại đi ngược lại những niềm tin phổ biến và thích đặt câu hỏi về mọi thứ, tìm kiếm góc nhìn mới mẻ và độc đáo. Đối với bạn, không có quy tắc nào là bất di bất dịch, và việc phá vỡ chúng đôi khi là cách để bạn khám phá thêm những điều thú vị.
+Mặc dù đôi khi bạn có thể khiến người khác cảm thấy bối rối bởi sự hay hoài nghi và tính cách nổi loạn của mình, nhưng thực sự bạn là người cực kỳ thông minh và hiếu kỳ. Bạn có khiếu hài hước tinh nghịch và khả năng suy nghĩ đột phá mà hiếm ai có thể sánh kịp. Cuộc sống đối với bạn là một chuỗi những cơ hội để học hỏi, tranh luận và tìm ra sự thật từ những góc nhìn không ai nghĩ tới.
+Tuy nhiên, đôi khi việc quá tập trung vào tranh cãi có thể khiến bạn bỏ qua những khía cạnh cảm xúc trong các mối quan hệ. Những cuộc tranh luận mà bạn tham gia, dù là để khám phá sự thật hay chỉ đơn giản là tìm kiếm sự thú vị, có thể khiến bạn vô tình làm tổn thương người khác nếu thiếu sự tinh tế và đồng cảm. Đó là điều bạn cần phải học để duy trì sự cân bằng trong các mối quan hệ của mình.
+Bạn có thể là một người đầy sáng tạo và thích nghĩ lớn, nhưng đôi khi việc biến những ý tưởng táo bạo của mình thành hiện thực lại là một thử thách lớn. Bạn thường có quá nhiều suy nghĩ và kế hoạch mà khó có thể tập trung vào việc hiện thực hóa chúng. Tuy nhiên, nếu bạn học cách ưu tiên và kiên định với những mục tiêu của mình, bạn sẽ khai thác được hết tiềm năng của bản thân.
+Dù vậy, bạn sẽ nhận ra rằng sự đồng cảm và khả năng thỏa hiệp đôi khi quan trọng hơn nhiều so với chiến thắng trong một cuộc tranh cãi. Khi biết cách lắng nghe và hiểu quan điểm của người khác, bạn sẽ không chỉ xây dựng được những mối quan hệ sâu sắc mà còn tạo ra những cơ hội hợp tác tuyệt vời để đạt được thành công lớn hơn.
+Tóm lại, bạn là người thông minh, tự tin và đầy nhiệt huyết với những ý tưởng mới. Bạn không sợ thử thách và luôn sẵn sàng thay đổi những quan điểm đã được mặc định. Tuy nhiên, để trở thành người thành công toàn diện, bạn cần học cách cân bằng giữa lý trí và cảm xúc, giữa việc theo đuổi sự thật và sự đồng cảm với người xung quanh.
+        </p>
+        <p data-type="INFJ" class="type-description hidden">
+          <strong>Bạn thuộc Nhóm Nhà Ngoại giao</strong><br>
+          Bạn là một người có trái tim rộng mở, luôn khao khát làm cho thế giới trở nên tốt đẹp hơn. Bạn không phải là người chạy theo tiền bạc hay địa vị, mà là người tìm kiếm sự thỏa mãn trong việc giúp đỡ người khác và lan tỏa lòng trắc ẩn. Bạn có một niềm tin vững chắc rằng cuộc sống không chỉ là về bản thân mà còn về việc làm cho người khác phát triển và hoàn thiện. Chính vì vậy, bạn luôn hành động với sự tận tâm, kiên định và mong muốn thay đổi những điều chưa hoàn thiện trong xã hội.
+Với bản chất sống nội tâm và lý tưởng hóa cuộc sống, bạn thường cảm thấy mình khác biệt với những người xung quanh, mặc dù bạn cũng có thể có những mối quan hệ thân thiết. Tuy nhiên, đôi khi bạn cảm thấy bị hiểu lầm hoặc khó hòa nhập với thế giới, nhưng điều đó không làm giảm đi sự tận tụy của bạn trong việc theo đuổi những mục tiêu cao cả. Bạn luôn đấu tranh chống lại sự bất công và đặt giá trị về lòng vị tha lên trên lợi ích cá nhân.
+Với một trí óc sáng tạo và trí tưởng tượng phong phú, bạn luôn tìm cách giúp đỡ và nâng đỡ những người xung quanh. Bạn cảm thấy mình có một sứ mệnh lớn lao trong việc làm cho cuộc sống của người khác trở nên tốt đẹp hơn, và việc đó là điều khiến bạn cảm thấy có ý nghĩa. Tuy nhiên, trong hành trình theo đuổi lý tưởng của mình, bạn cũng dễ quên mất việc chăm sóc cho bản thân, điều này đôi khi dẫn đến sự căng thẳng và kiệt sức.
+Dù là người hướng nội, bạn rất coi trọng những mối quan hệ sâu sắc và chân thành. Bạn tìm thấy niềm vui trong việc hiểu người khác và được hiểu. Các cuộc trò chuyện ý nghĩa, chia sẻ cảm xúc thật sự là điều bạn mong muốn và tìm kiếm. Bạn sẵn sàng mở lòng và dành trọn tình cảm cho những mối quan hệ này, nhưng đôi khi bạn cảm thấy thất vọng khi những nỗ lực của mình không được ghi nhận như mong muốn. Sự trung thực và thấu hiểu của bạn có thể tạo ấn tượng mạnh mẽ với những người xung quanh.
+Tuy nhiên, bạn cũng cần nhớ rằng, khi bạn dành quá nhiều năng lượng chăm sóc người khác, bạn cũng cần dành chút thời gian để chăm sóc cho chính mình. Những người có tính cách này thường có một mục đích sống rõ ràng, và bạn không ngừng nỗ lực để thực hiện sứ mệnh đó. Khi gặp phải sự bất công hay bất bình đẳng, bạn không bao giờ bỏ cuộc. Với trực giác sắc bén và lòng trắc ẩn, bạn luôn tìm cách giải quyết vấn đề, dù khó khăn đến đâu.
+Tóm lại, bạn là người đầy lý tưởng, với trái tim rộng mở và sứ mệnh thay đổi thế giới. Tuy nhiên, để có thể tiếp tục sứ mệnh của mình, bạn cần học cách giữ gìn sự cân bằng giữa việc chăm sóc người khác và chăm sóc bản thân. Bạn chính là một người cố vấn – một người có tầm nhìn sâu sắc và khả năng mang lại sự thay đổi tích cực cho cuộc sống của những người xung quanh.
+        </p>
+        <p data-type="INFP" class="type-description hidden">
+          <strong>Bạn thuộc Nhóm Nhà Ngoại giao</strong><br>
+          Là một người hoà giải, bạn là người có đời sống nội tâm phong phú và đầy đam mê. Dù bề ngoài có vẻ trầm tính và khiêm tốn, nhưng trong sâu thẳm, bạn luôn tràn ngập những ý tưởng sáng tạo và những giấc mơ phong phú. Bạn có một tâm hồn nhạy cảm, dễ rung động trước âm nhạc, nghệ thuật và thiên nhiên. Bạn khao khát những mối quan hệ sâu sắc và thật lòng, nơi mà cả hai có thể chia sẻ không chỉ niềm vui, hy vọng mà còn cả nỗi sợ hãi và tổn thương thầm kín.
+Với lòng trắc ẩn và khả năng đồng cảm tuyệt vời, bạn luôn sẵn lòng lắng nghe và giúp đỡ những người xung quanh. Đối với bạn, không gì đáng quý hơn việc có thể giúp đỡ người khác, chia sẻ nỗi niềm và những câu chuyện sâu kín của họ. Bạn là người luôn tìm kiếm sự kết nối và mong muốn xây dựng những mối quan hệ chân thành, đầy ý nghĩa.
+Tuy nhiên, khả năng đồng cảm của bạn đôi khi cũng có thể là một gánh nặng. Những rắc rối, những nỗi đau của thế giới có thể dễ dàng đè nặng lên bạn, và nếu không biết cách thiết lập những ranh giới rõ ràng, bạn có thể cảm thấy quá tải. Bạn dễ bị ảnh hưởng bởi tâm trạng và suy nghĩ của người khác, điều này có thể làm cho bạn cảm thấy kiệt sức nếu không biết cách chăm sóc bản thân mình.
+Bạn là người sống thật với chính mình và không thể giả vờ trở thành ai đó khác. Sự chân thành là một trong những giá trị bạn trân trọng nhất. Chính vì vậy, bạn thường tìm kiếm cơ hội để thể hiện bản thân một cách sáng tạo. Nhiều người có tính cách giống bạn nổi bật trong các lĩnh vực nghệ thuật như thơ, văn, diễn xuất, bởi bạn có khả năng truyền đạt những suy nghĩ, cảm xúc sâu kín của mình qua những hình ảnh ẩn dụ và câu chuyện hư cấu.
+Mặc dù bạn rất giỏi mơ mộng và tưởng tượng, bạn cũng cần phải thực tế hơn để tránh cảm giác thất vọng. Bạn có thể dễ dàng bị cuốn vào những giấc mơ viển vông mà quên đi việc hiện thực hóa chúng. Để tránh điều này, bạn cần tạo ra những bước đi nhỏ nhưng vững chắc để biến ước mơ thành hiện thực, thay vì chỉ để chúng ở trong tâm trí.
+Bạn luôn tìm kiếm mục đích sống của mình, và đối với nhiều người có tính cách này, mục đích đó liên quan đến việc giúp đỡ những người khác. Bạn không chỉ muốn giúp đỡ mà còn muốn hiểu và cảm nhận nỗi đau của họ như nỗi đau của chính mình. Tuy nhiên, bạn cũng cần học cách tập trung năng lượng vào những mối quan hệ và việc làm có ý nghĩa, thay vì quá sức giúp đỡ người khác mà quên đi sự chăm sóc bản thân.
+Cuối cùng, giống như những bông hoa Xuân nở sau mùa đông, sự sáng tạo và lý tưởng của bạn có thể thăng hoa sau những giai đoạn khó khăn. Dù thế giới không hoàn hảo, bạn luôn tin rằng mình có thể đóng góp vào việc làm cho nó trở nên tốt đẹp hơn. Chính niềm tin này đã giúp bạn truyền cảm hứng và lan tỏa vẻ đẹp, lòng trắc ẩn và sự tốt đẹp tới mọi người xung quanh.
+Tóm lại, bạn là người đầy lý tưởng, với một trái tim rộng mở và sứ mệnh làm cho thế giới trở nên tốt đẹp hơn. Bạn sống với mục đích giúp đỡ và kết nối với những người xung quanh, nhưng cũng cần nhớ rằng, bạn không thể giúp đỡ người khác nếu không chăm sóc bản thân mình trước tiên.
+        </p>
+        <p data-type="ENFJ" class="type-description hidden">
+          <strong>Bạn thuộc Nhóm Nhà Ngoại giao</strong><br>
+          Bạn là một người đầy nhiệt huyết và luôn khao khát tạo ra sự thay đổi tích cực cho thế giới xung quanh. Bạn không tìm kiếm sự thành công cá nhân hay tiền bạc, mà là mong muốn giúp đỡ người khác phát triển và hoàn thiện bản thân. Bạn cảm thấy rằng cuộc sống của bạn có một mục đích lớn lao, và bạn luôn hành động với niềm tin rằng sự thay đổi tích cực là điều quan trọng nhất mà bạn có thể đóng góp.
+Với khả năng lãnh đạo bẩm sinh và tầm nhìn sâu sắc, bạn có thể dễ dàng nhận ra những cơ hội để giúp đỡ và truyền cảm hứng cho những người xung quanh. Bạn không ngại đứng lên vì lẽ phải và luôn tìm cách bảo vệ các giá trị bạn tin tưởng. Bạn sẽ lên tiếng khi cảm thấy điều gì đó không công bằng, và bạn làm điều đó bằng sự nhạy bén, thông minh và lòng trắc ẩn – không phải để tìm kiếm sự chú ý mà là để tạo ra sự thay đổi thực sự.
+Trong các mối quan hệ, bạn là người rất chân thành và luôn sẵn sàng giúp đỡ những người thân yêu. Bạn cảm thấy niềm vui lớn nhất là khi có thể hỗ trợ ai đó trở thành phiên bản tốt hơn của chính mình. Tuy nhiên, đôi khi bạn có thể quá chú tâm vào việc giúp đỡ người khác mà quên mất việc chăm sóc chính mình. Điều này có thể khiến bạn cảm thấy kiệt sức, vì vậy bạn cần nhớ rằng, để có thể tiếp tục sứ mệnh của mình, bạn cũng phải tìm thời gian để nghỉ ngơi và nạp lại năng lượng.
+Bạn luôn coi trọng những mối quan hệ sâu sắc và đầy ý nghĩa. Bạn không thích những cuộc trò chuyện hời hợt, mà mong muốn được kết nối với người khác ở một mức độ sâu sắc hơn. Bạn tìm thấy niềm hạnh phúc trong việc hiểu người khác và cảm thấy rằng mỗi mối quan hệ thực sự là một cơ hội để tạo ra sự thay đổi và phát triển. Tuy nhiên, đôi khi bạn có thể cảm thấy thất vọng nếu những nỗ lực của mình không được đánh giá cao hoặc không được đáp lại như bạn kỳ vọng.
+Với tầm nhìn và trái tim rộng mở, bạn là người có khả năng dẫn dắt người khác đến những quyết định đúng đắn và tạo ra sự thay đổi. Bạn có thể thuyết phục người khác về những lý tưởng của mình và dẫn dắt họ theo con đường mà bạn tin tưởng. Tuy nhiên, bạn cũng cần hiểu rằng không phải ai cũng sẵn sàng chấp nhận sự thay đổi ngay lập tức. Vì vậy, bạn cần kiên nhẫn và tôn trọng không gian của người khác để họ có thể tự mình trưởng thành.
+Tóm lại, bạn là một người lãnh đạo đầy nhiệt huyết, luôn hướng tới sự thay đổi và cải thiện thế giới xung quanh. Tuy nhiên, để tiếp tục sứ mệnh cao cả của mình, bạn cần học cách duy trì sự cân bằng giữa việc chăm sóc người khác và chăm sóc chính bản thân. Bạn chính là một người hướng dẫn, một người truyền cảm hứng, luôn sẵn sàng giúp đỡ và dẫn dắt những người xung quanh trở thành phiên bản tốt nhất của chính họ.
+        </p>
+        <p data-type="ENFP" class="type-description hidden">
+          <strong>Bạn thuộc Nhóm Nhà Ngoại giao</strong><br>
+          Bạn là một tâm hồn tự do, luôn khao khát kết nối sâu sắc và khám phá những điều kỳ diệu trong cuộc sống. Bạn luôn mang trong mình một năng lượng sôi nổi và sự nhiệt tình không thể chối từ, và bạn tỏa sáng nhất khi được là chính mình – không bị ràng buộc bởi những quy tắc hay giới hạn. Sự cởi mở và tinh thần sáng tạo của bạn khiến bạn dễ dàng thu hút mọi ánh nhìn và làm cho mọi người cảm thấy thoải mái, dễ gần.
+Dù luôn có một tinh thần vui vẻ, bạn không chỉ dừng lại ở những cuộc vui đơn giản, mà luôn tìm kiếm những kết nối ý nghĩa và sâu sắc với những người xung quanh. Bạn là người yêu thích khám phá cảm xúc của chính mình và người khác, và điều đó giúp bạn luôn nhìn thấy vẻ đẹp và ý nghĩa trong mọi mối quan hệ và tình huống. Bạn tin rằng tất cả mọi thứ và mọi người đều liên kết với nhau, và bạn tìm thấy niềm vui trong việc hiểu và cảm nhận những kết nối đó.
+Với trí tưởng tượng phong phú và khả năng sáng tạo mạnh mẽ, bạn là người luôn khao khát khám phá và học hỏi. Những điều nhỏ nhặt trong cuộc sống đều có thể kích thích sự tò mò và đam mê của bạn. Khi một ý tưởng hay điều gì đó mới mẻ xuất hiện, bạn lập tức chìm đắm vào trong đó, tận hưởng sự phấn khích và hứng khởi. Tuy nhiên, bạn cũng dễ dàng mất đi sự kiên nhẫn và hứng thú nếu như không thấy được sự tiến bộ nhanh chóng, điều này có thể khiến bạn bỏ cuộc giữa chừng với những dự án mà bạn đã bắt đầu.
+Trong cuộc sống, bạn là người không bao giờ ngừng tìm kiếm niềm vui và sự kết nối cảm xúc. Bạn tin rằng những cuộc trò chuyện sâu sắc, sự đồng cảm và những khoảnh khắc chân thành với người khác là những điều quan trọng nhất. Mặc dù luôn dễ dàng tìm thấy niềm vui trong những khoảnh khắc vui vẻ, bạn cũng không bao giờ quên kết nối sâu sắc với người khác. Chính nhờ vào sự ấm áp và sự cởi mở của mình, bạn tạo ra một không gian mà ngay cả những người nhút nhát nhất cũng có thể mở lòng chia sẻ cảm xúc.
+Tuy nhiên, đôi khi trực giác mạnh mẽ của bạn có thể khiến bạn rơi vào trạng thái lo lắng và căng thẳng. Bạn dễ dàng quan tâm quá mức đến hành động và suy nghĩ của người khác, và đôi khi điều này khiến bạn tạo ra những giả định không cần thiết. Việc này có thể khiến bạn cảm thấy căng thẳng trong các mối quan hệ, đặc biệt là khi bạn cố gắng duy trì sự hòa hợp giữa mọi người.
+Cuối cùng, bạn là người luôn sẵn sàng khám phá bản thân và thế giới xung quanh để tìm ra con đường đúng đắn cho cuộc đời mình. Khi bạn tìm được nơi mình thuộc về, trí tưởng tượng phong phú, sự cảm thông sâu sắc và lòng dũng cảm của bạn có thể thắp sáng cuộc sống không chỉ của riêng bạn mà còn của mọi người xung quanh. Bạn là một nguồn cảm hứng sống động cho những ai có cơ hội gặp gỡ và kết nối với bạn.
+        </p>
+        <p data-type="ISTJ" class="type-description hidden">
+          <strong>Bạn thuộc Nhóm Người quan tâm</strong><br>
+          Bạn là một người luôn tuân thủ nguyên tắc, với một lòng tự trọng sâu sắc và niềm tin vững chắc vào sự chính trực. Bạn không thích sự giả dối và luôn tìm cách làm mọi việc đúng đắn, cho dù điều đó có khó khăn đến đâu. Với bạn, sự trung thực và trách nhiệm là những yếu tố quan trọng nhất, và bạn không ngần ngại đối mặt với sự thật, thậm chí khi điều đó có thể làm bạn mất lòng người khác.
+Tinh thần trách nhiệm là bản chất của bạn, và bạn luôn thực hiện nghĩa vụ của mình một cách nghiêm túc và kiên định. Bạn biết rằng chỉ khi hành động đúng đắn và duy trì trật tự, cuộc sống mới có thể ổn định và phát triển. Vì thế, bạn tôn trọng các truyền thống và các quy tắc đã được thiết lập, đồng thời bạn cũng đánh giá cao các môi trường có cấp bậc rõ ràng và sự kỳ vọng cụ thể.
+Dù không thích phô trương, bạn luôn làm việc chăm chỉ và duy trì một phong cách sống nghiêm túc. Bạn có thể là một người kín đáo trong cảm xúc, nhưng điều đó không có nghĩa là bạn thiếu sự quan tâm hay không cảm thấy thất vọng khi mọi thứ không diễn ra như bạn mong muốn. Bạn luôn kỳ vọng những người xung quanh cũng chia sẻ tiêu chuẩn giống như bạn, điều này đôi khi khiến bạn gặp khó khăn trong việc hiểu và thông cảm với những người có cách làm việc khác.
+Với trách nhiệm cao, bạn đôi khi gánh vác cả phần việc của người khác, một cách âm thầm mà không hề kêu ca. Tuy nhiên, sự tận tâm và đạo đức nghề nghiệp này cũng khiến bạn dễ bị lợi dụng. Bạn có thể thấy mệt mỏi và kiệt sức nếu liên tục gánh vác những trách nhiệm không phải của mình mà không nhận được sự công nhận xứng đáng. Những người khác có thể không nhận ra sự nỗ lực của bạn, nhưng bạn vẫn tiếp tục vì bạn tin rằng làm đúng là điều quan trọng nhất.
+Tuy nhiên, bạn cũng cần biết rằng không phải lúc nào mọi thứ cũng có thể hoàn hảo, và bạn không phải lúc nào cũng phải làm tất cả một mình. Bạn cần học cách đặt ranh giới và lên tiếng khi cảm thấy mọi thứ đi quá xa. Khi bạn biết cách cân bằng giữa công việc và các mối quan hệ, bạn sẽ có thể giữ được sự ổn định cần thiết trong cuộc sống và phát huy những phẩm chất tốt đẹp của mình, như sự trung thành, minh bạch và đáng tin cậy.
+        </p>
+        <p data-type="ISFJ" class="type-description hidden">
+          <strong>Bạn thuộc Nhóm Người quan tâm</strong><br>
+          Bạn là người chăm chỉ, tận tụy và luôn cảm thấy mình có trách nhiệm sâu sắc đối với những người xung quanh. Mặc dù không phải là người thích tìm kiếm sự chú ý, nhưng bạn lại luôn dành hết tâm huyết để giúp đỡ người khác mà không mong cầu sự công nhận. Bạn tin rằng tình yêu chỉ có thể phát triển thông qua sự sẻ chia, và bạn sẵn sàng trao đi những điều tốt đẹp để nhận lại tình cảm và sự trân trọng. Với bạn, việc giữ gìn các truyền thống và quan tâm đến những dịp đặc biệt như sinh nhật hay ngày lễ là cách thể hiện sự quan tâm sâu sắc nhất.
+Sự trung thành là điểm mạnh vượt trội của bạn. Bạn không bao giờ để sự thiếu nỗ lực làm ảnh hưởng đến mối quan hệ của mình. Bạn sẵn sàng hi sinh để hỗ trợ bạn bè, gia đình và những người thân yêu, đặc biệt là khi họ gặp khó khăn. Với bạn, cảm giác hữu ích và có thể giúp đỡ người khác là điều mang lại sự an lạc và thỏa mãn.
+Tuy nhiên, lòng tận tụy của bạn đôi khi khiến bạn dễ bị lợi dụng. Bạn luôn hết lòng vì người khác, nhưng đôi khi lại quên đi bản thân mình. Nếu không cẩn thận, bạn có thể rơi vào trạng thái kiệt sức và cảm thấy căng thẳng khi không nhận được sự công nhận xứng đáng cho những gì mình đã làm. Chính vì vậy, việc học cách đặt ra giới hạn và tự bảo vệ bản thân là điều rất quan trọng với bạn.
+Với tiêu chuẩn rất cao đối với bản thân và người khác, bạn luôn cố gắng làm mọi việc tốt hơn mức yêu cầu. Sự cầu toàn trong bạn khiến bạn khó lòng hài lòng với những gì được coi là “đủ tốt”, và bạn luôn mong muốn làm hài lòng mọi người bằng cách hoàn thành công việc một cách xuất sắc. Tuy nhiên, nếu những nỗ lực này không được đánh giá cao, bạn có thể cảm thấy bị thất vọng, và nếu không có sự ghi nhận, bạn dễ dàng mất đi động lực và nhiệt huyết ban đầu.
+Mặc dù là người hướng nội, nhưng bạn lại có khả năng giao tiếp và kết nối với mọi người rất tốt. Bạn không chỉ ghi nhớ những chi tiết quan trọng trong cuộc sống của người khác mà còn biết cách làm cho họ cảm thấy đặc biệt và được quan tâm. Đặc biệt, bạn có tài chọn lựa những món quà thật sự ý nghĩa cho mỗi dịp, điều mà ít người có thể làm được như bạn.
+Cuối cùng, việc đối xử tốt với chính bản thân mình chính là chìa khóa giúp bạn có thêm sức mạnh và động lực để tiếp tục làm điều đúng đắn. Mặc dù đôi khi bạn có thể quên đi bản thân trong khi chăm lo cho người khác, nhưng khi học cách yêu thương bản thân như cách bạn yêu thương người khác, bạn sẽ tìm lại được năng lượng để tiếp tục sẻ chia và giúp đỡ mọi người xung quanh.
+        </p>
+        <p data-type="ESTJ" class="type-description hidden">
+          <strong>Bạn thuộc Nhóm Người quan tâm</strong><br>
+          Bạn là người đề cao trật tự và những giá trị truyền thống, tin rằng sự trung thực, cống hiến và lòng tự trọng là nền tảng để xây dựng một xã hội vững mạnh. Bạn luôn sống và làm việc theo nguyên tắc, và không bao giờ thỏa hiệp với sự lười biếng hay gian dối. Bạn là hình mẫu của sự lãnh đạo qua hành động, tin rằng chỉ khi bạn làm gương thì người khác mới có thể noi theo và học hỏi được những giá trị tốt đẹp.
+Là người có trách nhiệm cao, bạn không chỉ là người tổ chức tốt mà còn luôn sẵn sàng dẫn đầu trong mọi tình huống khó khăn. Bạn không ngại vùi mình vào công việc khó khăn để phân tích và tìm ra giải pháp cho những vấn đề phức tạp. Dù có thể là người nghiêm khắc và cứng rắn, bạn luôn làm việc với tinh thần tận tâm, sẵn sàng làm việc chăm chỉ để đạt được mục tiêu và giúp đỡ những người xung quanh.
+Bạn lãnh đạo bằng cách làm gương, luôn thể hiện sự đáng tin cậy và đạo đức nghề nghiệp của mình. Bạn không chỉ tuân thủ các nguyên tắc mà còn mong muốn sự trung thực và cam kết từ những người xung quanh. Tuy nhiên, nếu ai đó làm việc không nghiêm túc hoặc không hoàn thành nhiệm vụ, bạn sẽ không ngần ngại bày tỏ sự thất vọng và yêu cầu họ chịu trách nhiệm. Điều này có thể khiến bạn bị hiểu nhầm là cứng nhắc, nhưng thực tế, bạn chỉ đang làm điều đúng đắn vì bạn tin rằng những giá trị này sẽ giúp xã hội trở nên tốt đẹp hơn.
+Là một người có trách nhiệm cao, bạn thường giúp đỡ cộng đồng và tham gia vào những hoạt động mang tính tổ chức hoặc cộng đồng. Bạn rất tôn trọng những quy định và làm gương cho những người khác. Bạn muốn tất cả mọi người tuân thủ và đóng góp vào sự phát triển chung. Tuy nhiên, một trong những thách thức lớn nhất mà bạn gặp phải là nhận thức rằng không phải ai cũng hành động giống bạn. Bạn học được rằng, một nhà lãnh đạo thực thụ là người biết nhìn nhận sức mạnh của mỗi cá nhân, biết lắng nghe và kết hợp các ý tưởng khác nhau để tìm ra giải pháp tốt nhất cho tập thể.
+Bạn không ngừng nỗ lực để tạo ra một môi trường làm việc và cộng đồng nơi mọi người có thể phát triển và đóng góp theo cách riêng của mình. Điều này không chỉ giúp bạn đạt được thành công mà còn tạo nên một cộng đồng gắn kết và vững mạnh. Bạn hiểu rằng, chỉ khi mọi người cùng chia sẻ và đóng góp, xã hội mới có thể phát triển và trở nên tốt đẹp hơn.
+        </p>
+        <p data-type="ESFJ" class="type-description hidden">
+          <strong>Bạn thuộc Nhóm Người quan tâm</strong><br>
+          Cuộc sống có ý nghĩa nhất khi bạn được sẻ chia và gắn kết với người khác. Bạn tin rằng sự chân thành, lòng tử tế và sự hiếu khách có thể tạo ra một môi trường tích cực, giúp mọi người cảm thấy được yêu thương và quan tâm. Bạn là người xây dựng mối quan hệ vững chắc trong gia đình và cộng đồng, luôn nỗ lực tạo ra sự kết nối và đoàn kết. Dù không phải lúc nào cũng dễ dàng chấp nhận những người không đồng tình với mình, bạn vẫn luôn khát khao xây dựng những mối quan hệ lâu dài và tin tưởng vào giá trị của việc làm điều đúng đắn.
+Với bạn, trách nhiệm là một phần quan trọng trong cuộc sống. Bạn luôn hoàn thành trách nhiệm của mình và sẵn sàng giúp đỡ người khác mà không đòi hỏi gì ở họ. Bạn không chỉ là người lắng nghe mà còn là một người bạn, người thân đáng tin cậy mà ai cũng có thể tìm đến khi gặp khó khăn. Bạn luôn nhớ những dịp đặc biệt trong cuộc sống của người khác, và cố gắng tạo ra những khoảnh khắc vui vẻ, ý nghĩa, dù là trong những bữa tiệc hay những sự kiện nhỏ.
+Bạn có một quan điểm đúng – sai rất rõ ràng. Điều này khiến bạn đôi khi gặp khó khăn khi đối diện với những hành động trái ngược với giá trị của mình. Mặc dù vậy, bạn không phải là người dễ dàng thay đổi quan điểm, vì bạn luôn hành động với lòng tôn trọng đối với truyền thống và các giá trị mà bạn tin tưởng. Bạn hiểu rằng mỗi hành động của mình đều có ảnh hưởng đến những người xung quanh, và bạn làm mọi thứ với mục tiêu tốt nhất là giúp đỡ và chăm sóc họ.
+Là người dễ gần và luôn quan tâm đến người khác, bạn cũng rất chú trọng đến những chi tiết nhỏ trong các mối quan hệ của mình. Bạn không chỉ là người tổ chức, mà còn là người làm cho mọi thứ trở nên hoàn hảo bằng sự tận tâm và chu đáo. Bạn luôn cố gắng đảm bảo rằng tất cả mọi người trong sự kiện đều cảm thấy vui vẻ và được chú ý. Tuy nhiên, bạn sẽ cảm thấy thất vọng khi nỗ lực của mình không được đánh giá cao hoặc khi không thể kiểm soát được mọi việc như mong muốn.
+Một trong những thách thức lớn nhất đối với bạn là chấp nhận rằng không phải ai cũng sẽ hành động giống như bạn, và bạn không thể thay đổi được suy nghĩ hay hành vi của người khác. Tuy nhiên, bạn tìm thấy sự bình yên và thỏa mãn khi tập trung vào việc làm tốt nhất những điều bạn có thể: trở thành tấm gương về sự quan tâm, trách nhiệm và lòng tử tế. Bạn hiểu rằng điều quan trọng là tạo ra sự kết nối và chia sẻ, không phải là kiểm soát mọi thứ.
+        </p>
+        <p data-type="ISTP" class="type-description hidden">
+          <strong>Bạn thuộc Nhóm Người khám phá</strong><br>
+          Sự khám phá và trải nghiệm cuộc sống theo cách riêng biệt. Bạn không thích sự đơn điệu, mà luôn tìm kiếm những thử thách mới mẻ và độc đáo để khám phá thế giới xung quanh. Việc "sờ bằng tay và nhìn tận mắt" mọi thứ không chỉ là sự tò mò mà là một phần không thể thiếu trong bản chất của bạn. Bạn là một nhà sáng tạo bẩm sinh, luôn tìm ra những cách làm mới mẻ, từ việc tháo rời mọi thứ để hiểu rõ cách chúng hoạt động, cho đến việc thử nghiệm và sửa chữa để cải tiến mọi thứ bạn đụng đến.
+Bạn yêu thích sự tự do và sự thử nghiệm. Virtuoso luôn bị cuốn hút bởi việc làm mới những điều cũ, đôi khi chỉ để vui, đôi khi để tạo ra những điều hữu ích. Bạn không ngại thử nghiệm và chấp nhận rủi ro để tìm ra sự thật hoặc giải pháp cho những câu hỏi mà bạn đặt ra. Không có gì khiến bạn thích thú hơn là nhìn thấy công trình của mình dần hoàn thiện qua từng bước cải tiến nhỏ. Tuy nhiên, bạn lại rất ghét sự can thiệp vào quy tắc và sự tự do của bản thân, chỉ cần mọi người tôn trọng điều đó, bạn sẽ sẵn lòng chia sẻ kinh nghiệm và giúp đỡ những người bạn quan tâm.
+Thật khó để đoán được bạn. Dù có vẻ ngoài khá điềm tĩnh, bạn lại luôn ẩn chứa những bất ngờ. Bạn có thể rất ổn định trong một khoảng thời gian, nhưng cũng có thể đột ngột thay đổi mọi thứ khi tìm ra một ý tưởng mới mẻ. Bạn không tuân theo những khuôn mẫu sẵn có mà luôn tìm kiếm sự tự do trong hành động. Điều này khiến bạn có thể rất khó đoán, nhưng chính sự khó đoán này lại là sức hút của bạn, đặc biệt trong mắt những người thân thiết.
+Chủ nghĩa hiện thực là kim chỉ nam trong cuộc sống của bạn. Tuy nhiên, điều này không có nghĩa là bạn thiếu sự công bằng hay không cảm thông với người khác. Mặc dù bạn có xu hướng hành động mà không quá cẩn thận, bạn vẫn luôn theo đuổi nguyên tắc "đối xử với người khác như cách mình muốn được đối xử". Điều này giải thích cho những mâu thuẫn đôi khi xuất hiện trong tính cách của bạn: một mặt bạn rất thực tế, mặt khác bạn luôn cởi mở với những trải nghiệm mới mẻ, bất chấp mọi hậu quả.
+Một trong những thách thức lớn nhất của bạn là hành động quá hấp tấp. Vì bạn yêu thích sự tự do và sự sáng tạo, bạn có thể dễ dàng bỏ qua những chi tiết quan trọng hoặc làm điều gì đó mà không suy nghĩ kỹ. Bạn có thể làm người khác cảm thấy khó chịu khi bạn đùa cợt quá mức, hay thay đổi ý định quá đột ngột mà không giải thích rõ lý do.
+Sự bất chấp quy tắc là bản chất của bạn. Bạn không thích các quy tắc xã hội gò bó, và đôi khi bạn cũng không thể hiểu tại sao người khác lại coi trọng chúng đến thế. Với bạn, tự do hành động và sáng tạo mới là điều quan trọng nhất. Tuy nhiên, bạn cũng nhận ra rằng sự tự do này không phải lúc nào cũng phù hợp với mọi người, đặc biệt là trong các tình huống nhạy cảm, khi mà những trò đùa hay hành động của bạn có thể khiến người khác cảm thấy khó chịu.
+Kết nối với những người có thể hiểu bạn là điều quan trọng. Dù bạn có thể rất khó gần và ít bộc lộ cảm xúc, bạn vẫn cần tìm một nhóm bạn thân, những người có thể hiểu được sự sáng tạo, cá tính độc đáo và cách làm việc của bạn. Những người này sẽ giúp bạn phát triển và thỏa mãn những ý tưởng điên rồ của mình, đồng thời mang lại cho bạn sự hỗ trợ trong những hành động của mình.
+        </p>
+        <p data-type="ISFP" class="type-description hidden">
+          <strong>Bạn thuộc Nhóm Người khám phá</strong><br>
+          Tự do và khám phá thế giới theo cách riêng của bạn. Bạn là người sống theo cảm hứng, luôn tìm kiếm những trải nghiệm mới và những cơ hội để khám phá thế giới. Cuộc sống đối với bạn không phải là những quy tắc cứng nhắc mà là những hành trình đầy bất ngờ và sự sáng tạo. Bạn có một khả năng đặc biệt trong việc nhìn thấy vẻ đẹp trong những điều nhỏ nhặt xung quanh và biến những khoảnh khắc bình dị thành những trải nghiệm ý nghĩa.
+Bạn sống một cách tự nhiên và cởi mở. Bạn không thích theo khuôn mẫu hay những lịch trình khô khan. Mỗi ngày với bạn là một cơ hội để tìm kiếm niềm vui trong những điều giản đơn, từ một cuộc trò chuyện thân mật đến những chuyến đi ngẫu hứng. Bạn sẵn sàng thử nghiệm những ý tưởng mới và luôn hào hứng khám phá những điều thú vị mà thế giới mang lại.
+Sống trong khoảnh khắc và không sợ thay đổi. Bạn không mấy khi lo lắng về quá khứ hay tương lai, mà thay vào đó bạn tận hưởng hiện tại với tất cả những gì nó mang lại. Bạn biết cách sống trọn vẹn với những gì mình đang làm và luôn tìm kiếm sự hài hòa trong cuộc sống. Những quyết định của bạn thường đến từ trái tim và trực giác, và bạn không ngại thay đổi khi cần thiết.
+Nhạy cảm và chu đáo trong các mối quan hệ. Bạn là người rất quan tâm đến cảm xúc của những người xung quanh. Bạn thích những cuộc gặp gỡ thân mật, nơi mọi người có thể chia sẻ, cười đùa và cảm thấy thoải mái. Dù bạn trân trọng sự tự do, nhưng khi ở bên những người thân yêu, bạn luôn thể hiện sự ấm áp, chu đáo và sự quan tâm chân thành. Tuy nhiên, bạn cũng cần không gian riêng để tĩnh lặng và kết nối lại với chính mình.
+Khám phá và sáng tạo là những yếu tố quan trọng trong cuộc sống của bạn. Bạn có thể không phải lúc nào cũng có kế hoạch rõ ràng hay theo đuổi những mục tiêu lớn, nhưng bạn luôn sống với sự sáng tạo không giới hạn. Mỗi ngày bạn luôn tìm cách thể hiện bản thân qua âm nhạc, nghệ thuật, hoặc bất kỳ hình thức sáng tạo nào khác mà bạn yêu thích. Bạn tìm thấy niềm vui trong việc tạo ra cái đẹp từ những điều đơn giản nhất.
+Có thể bạn đôi khi cảm thấy mâu thuẫn giữa sự tự do và mong muốn được công nhận. Bạn không thích phải làm theo yêu cầu của người khác hay sống theo những kỳ vọng xã hội. Tuy nhiên, bạn cũng có những lúc cảm thấy cần được công nhận và thấu hiểu. Bạn rất quan tâm đến cảm xúc của mình và của người khác, và khi đối mặt với sự chỉ trích hoặc thiếu sự trân trọng, bạn có thể cảm thấy tổn thương.
+Nhìn nhận cuộc sống qua lăng kính của cái đẹp và sự tận hưởng. Bạn có khả năng nhìn nhận thế giới xung quanh một cách rất tinh tế. Những điều mà nhiều người khác có thể bỏ qua, bạn lại tìm thấy vẻ đẹp và giá trị trong chúng. Dù là một cánh hoa nở trong vườn hay một giai điệu nhẹ nhàng, bạn đều có thể cảm nhận được vẻ đẹp và sự hạnh phúc từ những điều giản dị ấy.
+        </p>
+        <p data-type="ENTP" class="type-description hidden">
+          <strong>Bạn thuộc Nhóm Người khám phá</strong><br>
+        </p>
+        <p data-type="ENTP" class="type-description hidden">
+          <strong>Bạn thuộc Nhóm Người khám phá</strong><br>
+        </p>
+      </div>
     </div>
-  </section>
-  <footer>
-    <div class="container">
-      <ul class="footer-nav">
-        <li><a href="/privacy">Privacy Policy</a></li>
-        <li><a href="/terms">Terms of Service</a></li>
-        <li><a href="/contact">Contact</a></li>
-      </ul>
-      <p>&copy; 2025 MySite. All rights reserved.</p>
-    </div>
-  </footer>
+  </section>  
 
   <script src="/webpage/scripts.js"></script>
 </body>

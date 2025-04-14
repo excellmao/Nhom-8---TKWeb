@@ -12,10 +12,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const nextBtn = document.getElementById('next');
     if (index === questions.length - 1) {
-      nextBtn.textContent = 'Submit';
+      nextBtn.textContent = 'Gửi kết quả 👌';
       nextBtn.onclick = submitAnswers;
     } else {
-      nextBtn.textContent = 'Next';
+      nextBtn.textContent = 'Tiếp theo →';
       nextBtn.onclick = showNext;
     }
 
@@ -77,37 +77,61 @@ document.addEventListener('DOMContentLoaded', function () {
     const scores = calculateScores();
     const type = getPersonalityType(scores);
   
+    // Show the type
     document.getElementById('personality-type').textContent = `Bạn là: ${type}`;
-    document.getElementById('personality-description').textContent = getDescription(type);
   
-    // 🔥 Hide everything (except header) and show only results
-    document.getElementById('main-content').style.display = 'none'; // hide all content
-    document.getElementById('results').classList.remove('hidden');
-    document.getElementById('results').style.display = 'block'; // ensure results is visible
+    // Hide the quiz, show results container
+    document.getElementById('main-content').style.display = 'none';
+    const results = document.getElementById('results');
+    results.classList.remove('hidden');
+  
+    // Hide all descriptions, then un-hide the one matching `type`
+    document
+      .querySelectorAll('#type-descriptions .type-description')
+      .forEach(el => el.classList.add('hidden'));
+  
+    const match = document.querySelector(
+      `#type-descriptions .type-description[data-type="${type}"]`
+    );
+    if (match) match.classList.remove('hidden');
   }
+  
   
 
   function calculateScores() {
     const scores = { 'e-value': 0, 's-value': 0, 't-value': 0, 'j-value': 0 };
-
-    questions.forEach(q => {
+  
+    questions.forEach((q, i) => {
       const category = q.dataset.category;
       const selected = q.querySelector('input[type="radio"]:checked');
+  
       if (selected && category) {
+        let value = 0;
+  
         switch (selected.className) {
-          case 'bigYes': scores[category] += 3; break;
-          case 'yes': scores[category] += 2; break;
-          case 'smallYes': scores[category] += 1; break;
-          case 'mid': break;
-          case 'smallNo': scores[category] -= 1; break;
-          case 'no': scores[category] -= 2; break;
-          case 'bigNo': scores[category] -= 3; break;
+          case 'bigYes': value = 3; break;
+          case 'yes': value = 2; break;
+          case 'smallYes': value = 1; break;
+          case 'mid': value = 0; break;
+          case 'smallNo': value = -1; break;
+          case 'no': value = -2; break;
+          case 'bigNo': value = -3; break;
         }
+  
+        scores[category] += value;
+  
+        console.log(
+          `Q${i + 1} (${category}): ${selected.value} [${selected.className}] → +${value} → total ${scores[category]}`
+        );
+      } else {
+        console.log(`Q${i + 1} (${category}): no answer`);
       }
     });
-
+  
+    console.log('Final scores:', scores);
     return scores;
   }
+  
 
   function getPersonalityType(scores) {
     let type = '';
@@ -116,17 +140,6 @@ document.addEventListener('DOMContentLoaded', function () {
     type += scores['t-value'] >= 0 ? 'T' : 'F';
     type += scores['j-value'] >= 0 ? 'J' : 'P';
     return type;
-  }
-
-  function getDescription(type) {
-    const descriptions = {
-      'INTJ': 'Chiến lược gia – sáng tạo, quyết đoán, có tầm nhìn.',
-      'INFP': 'Người lý tưởng – nhạy cảm, trung thành, và đầy mộng mơ.',
-      'ESFP': 'Người trình diễn – vui vẻ, ấm áp và sống hết mình.',
-      'ENTP': 'Người tranh luận – thông minh, nhanh nhạy, sáng tạo.',
-      // Add all 16 MBTI descriptions here...
-    };
-    return descriptions[type] || 'Bạn sở hữu một sự kết hợp đặc biệt giữa các đặc điểm tính cách!';
   }
 
   // Enable Next when answer is selected

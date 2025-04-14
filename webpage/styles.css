@@ -1,9 +1,7 @@
-/* Basic CSS for MySite Personality Test */
-
 :root {
-    --primary-color: #6C63FF;
+    --primary-color: #6CBBF0;
     --secondary-color: #f4f4f9;
-    --text-color: #333333;
+    --text-color: #000000;
     --bg-color: #ffffff;
     --btn-text-color: #ffffff;
   }
@@ -183,19 +181,23 @@
   
   .navigation-buttons button {
     padding: 0.75rem 1.5rem;
+    background-color: var(--background-color);
     font-size: 1rem;
+    font-weight: bold;
     border: none;
     border-radius: 0.375rem;
     cursor: pointer;
-    background-color: var(--primary-color);
-    color: var(--btn-text-color);
+    color: #6CBBF0;
   }
   
   .navigation-buttons button:disabled {
-    background-color: #ccc;
     cursor: not-allowed;
+    color: gray;
   }
 
   .hidden {
     display: none !important;
+  }
+  .type-description { 
+    margin: 1rem 0; 
   }
