@@ -1,158 +1,154 @@
-document.addEventListener('DOMContentLoaded', function () {
-  let currentQuestion = 0;
-  const questions = Array.from(document.querySelectorAll('.question'));
-  const selectedAnswers = {};
+let currentCategoryIndex = 0; // Start with the first category
+const categories = ['e-value', 's-value', 't-value', 'j-value']; // Define categories
+const questions = document.querySelectorAll('.question-container'); // Get all questions
+const scores = { 'e-value': 0, 's-value': 0, 't-value': 0, 'j-value': 0 }; // Initialize scores for each category
+const selectedAnswers = {}; // Store selected answers for each question
 
-  function showQuestion(index) {
-    questions.forEach((q, i) => {
-      q.style.display = i === index ? 'block' : 'none';
-    });
-
-    document.getElementById('prev').disabled = index === 0;
-
-    const nextBtn = document.getElementById('next');
-    if (index === questions.length - 1) {
-      nextBtn.textContent = 'Gửi kết quả 👌';
-      nextBtn.onclick = submitAnswers;
-    } else {
-      nextBtn.textContent = 'Tiếp theo →';
-      nextBtn.onclick = showNext;
-    }
-
-    restoreSelectedAnswer(index);
-    toggleNextButton();
-  }
-
-  function showNext() {
-    const currentOptions = questions[currentQuestion].querySelectorAll('input[type="radio"]');
-    const selectedOption = Array.from(currentOptions).find(opt => opt.checked);
-
-    if (!selectedOption) {
-      alert('Vui lòng chọn một đáp án trước khi tiếp tục.');
-      return;
-    }
-
-    saveSelectedAnswer(currentQuestion);
-    if (currentQuestion < questions.length - 1) {
-      currentQuestion++;
-      showQuestion(currentQuestion);
-    }
-  }
-
-  function showPrev() {
-    saveSelectedAnswer(currentQuestion);
-    if (currentQuestion > 0) {
-      currentQuestion--;
-      showQuestion(currentQuestion);
-    }
-  }
-
-  function toggleNextButton() {
-    const options = questions[currentQuestion].querySelectorAll('input[type="radio"]');
-    const nextBtn = document.getElementById('next');
-    const isSelected = Array.from(options).some(opt => opt.checked);
-    nextBtn.disabled = !isSelected;
-  }
-
-  function saveSelectedAnswer(index) {
-    const options = questions[index].querySelectorAll('input[type="radio"]');
-    const selected = Array.from(options).find(opt => opt.checked);
-    if (selected) {
-      selectedAnswers[index] = selected.value;
-    } else {
-      delete selectedAnswers[index];
-    }
-  }
-
-  function restoreSelectedAnswer(index) {
-    const options = questions[index].querySelectorAll('input[type="radio"]');
-    if (selectedAnswers[index]) {
-      const toSelect = Array.from(options).find(opt => opt.value === selectedAnswers[index]);
-      if (toSelect) toSelect.checked = true;
-    }
-  }
-
-  function submitAnswers() {
-    saveSelectedAnswer(currentQuestion);
-    const scores = calculateScores();
-    const type = getPersonalityType(scores);
-  
-    // Show the type
-    document.getElementById('personality-type').textContent = `Bạn là: ${type}`;
-  
-    // Hide the quiz, show results container
-    document.getElementById('main-content').style.display = 'none';
-    const results = document.getElementById('results');
-    results.classList.remove('hidden');
-  
-    // Hide all descriptions, then un-hide the one matching `type`
-    document
-      .querySelectorAll('#type-descriptions .type-description')
-      .forEach(el => el.classList.add('hidden'));
-  
-    const match = document.querySelector(
-      `#type-descriptions .type-description[data-type="${type}"]`
-    );
-    if (match) match.classList.remove('hidden');
-  }
-  
-  
-
-  function calculateScores() {
-    const scores = { 'e-value': 0, 's-value': 0, 't-value': 0, 'j-value': 0 };
-  
-    questions.forEach((q, i) => {
-      const category = q.dataset.category;
-      const selected = q.querySelector('input[type="radio"]:checked');
-  
-      if (selected && category) {
-        let value = 0;
-  
-        switch (selected.className) {
-          case 'bigYes': value = 3; break;
-          case 'yes': value = 2; break;
-          case 'smallYes': value = 1; break;
-          case 'mid': value = 0; break;
-          case 'smallNo': value = -1; break;
-          case 'no': value = -2; break;
-          case 'bigNo': value = -3; break;
-        }
-  
-        scores[category] += value;
-  
-        console.log(
-          `Q${i + 1} (${category}): ${selected.value} [${selected.className}] → +${value} → total ${scores[category]}`
-        );
-      } else {
-        console.log(`Q${i + 1} (${category}): no answer`);
-      }
-    });
-  
-    console.log('Final scores:', scores);
-    return scores;
-  }
-  
-
-  function getPersonalityType(scores) {
-    let type = '';
-    type += scores['e-value'] >= 0 ? 'E' : 'I';
-    type += scores['s-value'] >= 0 ? 'S' : 'N';
-    type += scores['t-value'] >= 0 ? 'T' : 'F';
-    type += scores['j-value'] >= 0 ? 'J' : 'P';
-    return type;
-  }
-
-  // Enable Next when answer is selected
-  questions.forEach((q, i) => {
-    const options = q.querySelectorAll('input[type="radio"]');
-    options.forEach(opt => {
-      opt.addEventListener('change', () => {
-        if (i === currentQuestion) toggleNextButton();
-      });
-    });
+function showCategory(category) {
+  // Hide all questions
+  questions.forEach(question => {
+    question.style.display = 'none';
   });
 
-  // Init
-  showQuestion(currentQuestion);
-  document.getElementById('prev').addEventListener('click', showPrev);
-});
+  // Show questions for the current category
+  questions.forEach(question => {
+    if (question.dataset.category === category) {
+      question.style.display = 'block';
+
+      // Restore previously selected answers
+      const questionId = question.querySelector('input[type="radio"]').name;
+      const selectedValue = selectedAnswers[questionId];
+      if (selectedValue !== undefined) {
+        const optionToSelect = question.querySelector(`input[type="radio"][value="${selectedValue}"]`);
+        if (optionToSelect) {
+          optionToSelect.checked = true;
+        }
+      }
+    }
+  });
+
+  // Update the button text
+  const nextButton = document.getElementById('next');
+  if (currentCategoryIndex === categories.length - 1) {
+    nextButton.textContent = 'Submit'; // Change "Next" to "Submit" on the last category
+    nextButton.dataset.action = 'submit'; // Add a custom data attribute to indicate submission
+  } else {
+    nextButton.textContent = 'Next';
+    nextButton.dataset.action = 'next'; // Add a custom data attribute to indicate navigation
+  }
+}
+
+function calculatePoints() {
+  // Calculate points for the current category
+  const currentCategory = categories[currentCategoryIndex];
+  const currentQuestions = document.querySelectorAll(
+    `.question-container[data-category="${currentCategory}"]`
+  );
+
+  // Reset the score for the current category
+  scores[currentCategory] = 0;
+
+  currentQuestions.forEach((question, index) => {
+    const selectedOption = question.querySelector('input[type="radio"]:checked');
+    const questionId = question.querySelector('input[type="radio"]').name;
+
+    if (selectedOption) {
+      const value = parseInt(selectedOption.value, 10);
+
+      // Update the selected answer for this question
+      selectedAnswers[questionId] = value; // Save the new answer
+
+      // Add the value to the score
+      scores[currentCategory] += value;
+
+      // Log the result for each question
+      console.log(`Category: ${currentCategory}, Question ${index + 1}, Selected Value: ${value}`);
+    } else {
+      console.log(`Category: ${currentCategory}, Question ${index + 1}, No option selected`);
+    }
+  });
+}
+
+function determineMBTI() {
+  // Determine each letter in the MBTI type
+  const eOrI = scores['e-value'] >= 0 ? 'E' : 'I';
+  const sOrN = scores['s-value'] >= 0 ? 'S' : 'N';
+  const tOrF = scores['t-value'] >= 0 ? 'T' : 'F';
+  const jOrP = scores['j-value'] >= 0 ? 'J' : 'P';
+
+  // Combine the letters to form the MBTI type
+  return `${eOrI}${sOrN}${tOrF}${jOrP}`;
+}
+
+function submitTest() {
+  calculatePoints(); // Calculate points for the last category
+
+  // Determine the MBTI type
+  const mbtiType = determineMBTI();
+
+  // Log the final scores for each category
+  console.log('Final Scores:', scores);
+  console.log('Your MBTI Type:', mbtiType);
+
+  // Update the personality type in the results section
+  const personalityTypeElement = document.getElementById('personality-type');
+  personalityTypeElement.textContent = mbtiType;
+
+  // Hide all type descriptions
+  const allDescriptions = document.querySelectorAll('.type-description');
+  allDescriptions.forEach(description => {
+    description.classList.add('hidden');
+  });
+
+  // Show the description for the determined MBTI type
+  const matchingDescription = document.querySelector(`.type-description[data-type="${mbtiType}"]`);
+  if (matchingDescription) {
+    matchingDescription.classList.remove('hidden');
+  } else {
+    personalityTypeElement.textContent += ' (No description available)';
+  }
+
+  // Hide the questionnaire and navigation buttons
+  document.querySelector('.questionnaire').style.display = 'none';
+  document.querySelector('.navigation').style.display = 'none';
+
+  // Show the results section
+  document.getElementById('results').classList.remove('hidden');
+}
+
+function handleNextButtonClick(event) {
+  event.preventDefault(); // Prevent default button behavior
+
+  const nextButton = document.getElementById('next');
+  const action = nextButton.dataset.action;
+
+  if (action === 'next') {
+    calculatePoints(); // Calculate points for the current category
+
+    if (currentCategoryIndex < categories.length - 1) {
+      currentCategoryIndex++;
+      showCategory(categories[currentCategoryIndex]);
+    }
+  } else if (action === 'submit') {
+    submitTest(); // Submit the test and show results
+  }
+}
+
+function showPrevCategory(event) {
+  event.preventDefault(); // Prevent default button behavior
+
+  // Save the current selections before navigating back
+  calculatePoints();
+
+  if (currentCategoryIndex > 0) {
+    currentCategoryIndex--;
+    showCategory(categories[currentCategoryIndex]);
+  }
+}
+
+// Initialize the first category
+showCategory(categories[currentCategoryIndex]);
+
+// Add event listeners for navigation buttons
+document.getElementById('prev').addEventListener('click', showPrevCategory);
+document.getElementById('next').addEventListener('click', handleNextButtonClick);
