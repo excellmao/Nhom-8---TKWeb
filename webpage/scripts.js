@@ -11,21 +11,20 @@ function showCategory(category) {
   });
 
   // Show questions for the current category
+  let firstQuestion = null;
   questions.forEach(question => {
     if (question.dataset.category === category) {
       question.style.display = 'block';
-
-      // Restore previously selected answers
-      const questionId = question.querySelector('input[type="radio"]').name;
-      const selectedValue = selectedAnswers[questionId];
-      if (selectedValue !== undefined) {
-        const optionToSelect = question.querySelector(`input[type="radio"][value="${selectedValue}"]`);
-        if (optionToSelect) {
-          optionToSelect.checked = true;
-        }
+      if (!firstQuestion) {
+        firstQuestion = question; // Save the first question in the category
       }
     }
   });
+
+  // Scroll to the first question smoothly
+  if (firstQuestion) {
+    firstQuestion.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 
   // Update the button text
   const nextButton = document.getElementById('next');
@@ -36,6 +35,9 @@ function showCategory(category) {
     nextButton.textContent = 'Next';
     nextButton.dataset.action = 'next'; // Add a custom data attribute to indicate navigation
   }
+
+  // Validate the category to enable/disable the button
+  validateCategory();
 }
 
 function calculatePoints() {
@@ -116,6 +118,26 @@ function submitTest() {
   document.getElementById('results').classList.remove('hidden');
 }
 
+function validateCategory() {
+  // Validate that all questions in the current category are answered
+  const currentCategory = categories[currentCategoryIndex];
+  const currentQuestions = document.querySelectorAll(
+    `.question-container[data-category="${currentCategory}"]`
+  );
+
+  let allAnswered = true; // Flag to track if all questions are answered
+  currentQuestions.forEach(question => {
+    const selectedOption = question.querySelector('input[type="radio"]:checked');
+    if (!selectedOption) {
+      allAnswered = false; // If any question is unanswered, set the flag to false
+    }
+  });
+
+  // Enable or disable the "Next" or "Submit" button
+  const nextButton = document.getElementById('next');
+  nextButton.disabled = !allAnswered; // Disable if not all questions are answered
+}
+
 function handleNextButtonClick(event) {
   event.preventDefault(); // Prevent default button behavior
 
@@ -145,6 +167,11 @@ function showPrevCategory(event) {
     showCategory(categories[currentCategoryIndex]);
   }
 }
+
+// Add event listeners to validate the category whenever an option is selected
+document.querySelectorAll('input[type="radio"]').forEach(radio => {
+  radio.addEventListener('change', validateCategory);
+});
 
 // Initialize the first category
 showCategory(categories[currentCategoryIndex]);
