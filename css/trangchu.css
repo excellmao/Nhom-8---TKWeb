@@ -2,10 +2,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-
-  body {
-    font-family: Arial, sans-serif;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
   }
 
   a {
@@ -123,18 +123,234 @@
     font-size: 1.5rem;
     font-style: italic;
     margin-bottom: 20px;
+    font-weight: bold;
   }
   
   .test-section .test-button {
     background-color: #e8cace;
-    color: #fff;
-    padding: 10px 20px;
+    color: #000000;
+    padding: 15px 30px;
     font-size: 1.2rem;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 20px;
     transition: background-color 0.3s ease;
   }
   
   .test-section .test-button:hover {
     background-color: #c7aeb1;
   }
+
+/* Personalities Section */
+.personalities-section {
+  background: url('/content/background-personalities.webp') no-repeat center center;
+  background-size: cover;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Carousel Container */
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 20px 0; /* Add padding to create space around the grid */
+}
+
+
+/* Carousel */
+.carousel {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
+  grid-template-rows: repeat(2, auto); /* 2 rows */
+  gap: 100px; /* Add spacing between cards */
+  justify-content: center; /* Center the grid horizontally */
+  align-items: center; /* Center the grid vertically */
+  width: auto; /* Adjust width to fit the content */
+  margin: 0 auto; /* Center the grid within the container */
+}
+
+
+/* Personality Card */
+.personality-card-a {
+  position: relative;
+  width: 220px; /* Slightly larger card width */
+  height: 280px; /* Slightly larger card height */
+  background-color: #fbb0fd;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.personality-card-b {
+  position: relative;
+  width: 220px; /* Slightly larger card width */
+  height: 280px; /* Slightly larger card height */
+  background-color: #97ebf1;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.personality-card-c {
+  position: relative;
+  width: 220px; /* Slightly larger card width */
+  height: 280px; /* Slightly larger card height */
+  background-color: #9ff397;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.personality-card-d {
+  position: relative;
+  width: 220px; /* Slightly larger card width */
+  height: 280px; /* Slightly larger card height */
+  background-color: #f8b697;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.personality-card-a:hover {
+  transform: scale(1.05);
+}
+.personality-card-b:hover {
+  transform: scale(1.05);
+}
+.personality-card-c:hover {
+  transform: scale(1.05);
+}
+.personality-card-d:hover {
+  transform: scale(1.05);
+}
+
+/* Personality Image */
+.personality-image {
+  width: 100%;
+  height: 160px; /* Adjust image height */
+  object-fit: cover;
+  transition: opacity 0.3s ease, filter 0.3s ease; /* Smooth transition for blur and opacity */
+}
+
+.personality-card-a:hover .personality-image {
+  opacity: 0.3; /* Make the image semi-transparent */
+  filter: blur(3px); /* Apply a blur effect */
+}
+.personality-card-b:hover .personality-image {
+  opacity: 0.3; /* Make the image semi-transparent */
+  filter: blur(3px); /* Apply a blur effect */
+}
+.personality-card-c:hover .personality-image {
+  opacity: 0.3; /* Make the image semi-transparent */
+  filter: blur(3px); /* Apply a blur effect */
+}
+.personality-card-d:hover .personality-image {
+  opacity: 0.3; /* Make the image semi-transparent */
+  filter: blur(3px); /* Apply a blur effect */
+}
+
+/* Personality Name */
+.personality-name {
+  font-size: 20px;
+  color: #333;
+  margin-top: 10px;
+  transition: opacity 0.3s ease;
+}
+
+/* Hover Effect for Description */
+.personality-card-a:hover .personality-name {
+  opacity: 0;
+}
+.personality-card-b:hover .personality-name {
+  opacity: 0;
+}
+.personality-card-c:hover .personality-name {
+  opacity: 0;
+}
+.personality-card-d:hover .personality-name {
+  opacity: 0;
+}
+
+.personality-card-a::after {
+  content: attr(data-description);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.personality-card-b::after {
+  content: attr(data-description);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.personality-card-c::after {
+  content: attr(data-description);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.personality-card-d::after {
+  content: attr(data-description);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.personality-card-a:hover::after {
+  opacity: 1;
+}
+.personality-card-b:hover::after {
+  opacity: 1;
+}
+.personality-card-c:hover::after {
+  opacity: 1;
+}
+.personality-card-d:hover::after {
+  opacity: 1;
+}

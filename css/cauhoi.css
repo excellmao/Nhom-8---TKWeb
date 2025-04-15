@@ -2,8 +2,15 @@
   display: none;
 }
 
+* {
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
   padding: 20px;
   display: flex;
