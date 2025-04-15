@@ -112,7 +112,7 @@ body {
 }
 
 .radio-label.color--red {
-  background-color: #f44336;
+  background-color: #ef0404;
 }
 
 .caption {
@@ -125,5 +125,5 @@ body {
 }
 
 .caption.text--red {
-  color: #f44336;
+  color: #ef0404;
 }
