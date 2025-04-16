@@ -9,7 +9,7 @@
   }
 
   main {
-    background-color: #fdedde;
+    background-color: #fcf4f4;
   }
 
   a {
@@ -65,7 +65,7 @@
   }
 
   .tab:hover {
-    color: #06c646;
+    color: #de9dee;
   }
 
   /* Underline Effect */
@@ -76,7 +76,7 @@
     left: 0;
     width: 0;
     height: 2px;
-    background-color: #06c646;
+    background-color: #de9dee;
     transition: width 0.3s ease-in-out;
   }
 
@@ -86,7 +86,7 @@
 
   /* Active Tab */
   .tab.active {
-    color: #06c646;
+    color: #de9dee;
   }
 
   .tab.active::after {
@@ -381,46 +381,4 @@
   font-size: 1rem;
   line-height: 1.6; /* Improve readability */
   color: #333; /* Adjust text color */
-}
-
-/* Compare */
-.compare.container {
-  background-color: #f5f5f5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 20px;
-}
-
-.box {
-  width: 400px;
-  border-radius: 15px;
-  background-color: #eaf0ea;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-.box img {
-  width: 100%;
-  height: auto;
-}
-
-.content {
-  padding: 20px;
-}
-
-.content .number {
-  font-weight: bold;
-  font-size: 20px;
-  color: #3b873e;
-  margin-bottom: 10px;
-}
-
-.content .description {
-  font-size: 16px;
-  color: #333;
 }
