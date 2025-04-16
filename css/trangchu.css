@@ -8,6 +8,10 @@
     font-variation-settings: "wdth" 100;
   }
 
+  main {
+    background-color: #fdedde;
+  }
+
   a {
     text-decoration: none;
     color: inherit;
@@ -142,7 +146,7 @@
 
 /* Personalities Section */
 .personalities-section {
-  background: url('/content/background-personalities.webp') no-repeat center center;
+  background: url('/content/background-personalities.png') no-repeat center center;
   background-size: cover;
   padding: 40px 20px;
   background-color: #f9f9f9;
@@ -353,4 +357,70 @@
 }
 .personality-card-d:hover::after {
   opacity: 1;
+}
+
+.about-section {
+  display: flex; /* Use Flexbox to align items horizontally */
+  align-items: center; /* Vertically align the image and text */
+  gap: 20px; /* Add spacing between the image and text */
+  padding: 90px; /* Add padding around the section */
+}
+
+.about-image-container {
+  flex: 1; /* Allow the image container to take up equal space */
+}
+
+.about-image {
+  width: 100%; /* Make the image responsive */
+  max-width: 400px; /* Set a maximum width for the image */
+  border-radius: 10px; /* Optional: Add rounded corners */
+}
+
+.about-content {
+  flex: 2; /* Allow the text container to take up more space */
+  font-size: 1rem;
+  line-height: 1.6; /* Improve readability */
+  color: #333; /* Adjust text color */
+}
+
+/* Compare */
+.compare.container {
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.box {
+  width: 400px;
+  border-radius: 15px;
+  background-color: #eaf0ea;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.box img {
+  width: 100%;
+  height: auto;
+}
+
+.content {
+  padding: 20px;
+}
+
+.content .number {
+  font-weight: bold;
+  font-size: 20px;
+  color: #3b873e;
+  margin-bottom: 10px;
+}
+
+.content .description {
+  font-size: 16px;
+  color: #333;
 }

@@ -92,23 +92,8 @@ function submitTest() {
   console.log('Final Scores:', scores);
   console.log('Your MBTI Type:', mbtiType);
 
-  // Update the personality type in the results section
-  const personalityTypeElement = document.getElementById('personality-type');
-  personalityTypeElement.textContent = mbtiType;
-
-  // Hide all type descriptions
-  const allDescriptions = document.querySelectorAll('.type-description');
-  allDescriptions.forEach(description => {
-    description.classList.add('hidden');
-  });
-
-  // Show the description for the determined MBTI type
-  const matchingDescription = document.querySelector(`.type-description[data-type="${mbtiType}"]`);
-  if (matchingDescription) {
-    matchingDescription.classList.remove('hidden');
-  } else {
-    personalityTypeElement.textContent += ' (No description available)';
-  }
+  // Load and display the MBTI description
+  loadMBTIDescription(mbtiType); // Call the function to load the description
 
   // Hide the questionnaire and navigation buttons
   document.querySelector('.questionnaire').style.display = 'none';
@@ -179,3 +164,26 @@ showCategory(categories[currentCategoryIndex]);
 // Add event listeners for navigation buttons
 document.getElementById('prev').addEventListener('click', showPrevCategory);
 document.getElementById('next').addEventListener('click', handleNextButtonClick);
+
+// Function to load MBTI descriptions
+async function loadMBTIDescription(type) {
+  try {
+    // Fetch the JSON file
+    const response = await fetch('/json/MBTI.json');
+    const data = await response.json();
+
+    // Get the description for the selected type
+    const mbti = data[type];
+
+    // Update the HTML content
+    if (mbti) {
+      document.getElementById('personality-title').textContent = `${type} - ${mbti.title}`; // Include the MBTI type
+      document.getElementById('personality-description').textContent = mbti.description;
+    } else {
+      document.getElementById('personality-title').textContent = "Không tìm thấy kết quả";
+      document.getElementById('personality-description').textContent = "";
+    }
+  } catch (error) {
+    console.error('Error loading MBTI descriptions:', error);
+  }
+}

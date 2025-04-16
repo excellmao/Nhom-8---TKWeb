@@ -1,0 +1,66 @@
+{
+"ISTJ": {
+    "title": "Bạn thuộc Nhóm Người quan tâm",
+    "description": "Bạn là một người luôn tuân thủ nguyên tắc, với một lòng tự trọng sâu sắc và niềm tin vững chắc vào sự chính trực..."
+  },
+  "ISFJ": {
+    "title": "Bạn thuộc Nhóm Người quan tâm",
+    "description": "Bạn là người chăm chỉ, tận tụy và luôn cảm thấy mình có trách nhiệm sâu sắc đối với những người xung quanh..."
+  },
+  "ESTJ": {
+    "title": "Bạn thuộc Nhóm Người quan tâm",
+    "description": "Bạn là người đề cao trật tự và những giá trị truyền thống, tin rằng sự trung thực, cống hiến và lòng tự trọng..."
+  },
+  "ESFJ": {
+    "title": "Bạn thuộc Nhóm Người quan tâm",
+    "description": "Cuộc sống có ý nghĩa nhất khi bạn được sẻ chia và gắn kết với người khác. Bạn tin rằng sự chân thành, lòng tử tế..."
+  },
+  "ISTP": {
+    "title": "Bạn thuộc Nhóm Người quan tâm",
+    "description": "Bạn là người thực tế, thích khám phá và tìm hiểu những điều mới mẻ. Bạn có khả năng phân tích và giải quyết vấn đề..."
+  },
+  "ISFP": {
+    "title": "Bạn thuộc Nhóm Người quan tâm",
+    "description": "Bạn là người nhạy cảm, sáng tạo và có khả năng cảm nhận sâu sắc về thế giới xung quanh. Bạn thường tìm kiếm sự hài hòa..."
+  },
+  "ESTP": {
+    "title": "Bạn thuộc Nhóm Người quan tâm",
+    "description": "Bạn là người năng động, thích khám phá và trải nghiệm những điều mới mẻ. Bạn thường tìm kiếm sự kích thích và hành động..."
+  },
+  "ESFP": {
+    "title": "Bạn thuộc Nhóm Người quan tâm",
+    "description": "Bạn là người vui vẻ, thân thiện và thích giao tiếp với mọi người. Bạn thường tìm kiếm sự vui vẻ và trải nghiệm..."
+  },
+  "INTJ": {
+    "title": "Bạn thuộc Nhóm Người quan tâm",
+    "description": "Bạn là người độc lập, sáng tạo và có tầm nhìn xa. Bạn thường tìm kiếm sự hiểu biết sâu sắc về thế giới xung quanh..."
+  },
+  "INFJ": {
+    "title": "Bạn thuộc Nhóm Người quan tâm",
+    "description": "Bạn là người nhạy cảm, sâu sắc và có khả năng cảm nhận được những điều mà người khác không thấy được..."
+  },
+  "ENTJ": {
+    "title": "Bạn thuộc Nhóm Người quan tâm",
+    "description": "Bạn là người quyết đoán, tự tin và có khả năng lãnh đạo tốt. Bạn thường tìm kiếm sự hiệu quả và thành công trong công việc..."
+  },
+    "ENFJ": {
+        "title": "Bạn thuộc Nhóm Người quan tâm",
+        "description": "Bạn là người nhiệt tình, thân thiện và có khả năng giao tiếp tốt. Bạn thường tìm kiếm sự kết nối và hỗ trợ người khác..."
+    },
+  "INTP": {
+    "title": "Bạn thuộc Nhóm Người quan tâm",
+    "description": "Bạn là người sáng tạo, độc lập và có khả năng phân tích tốt. Bạn thường tìm kiếm sự hiểu biết sâu sắc về thế giới xung quanh..."
+  },
+  "INFP": {
+    "title": "Bạn thuộc Nhóm Người quan tâm",
+    "description": "Bạn là người nhạy cảm, sáng tạo và có khả năng cảm nhận sâu sắc về thế giới xung quanh. Bạn thường tìm kiếm sự hài hòa..."
+  },
+    "ENTP": {
+        "title": "Bạn thuộc Nhóm Người quan tâm",
+        "description": "Bạn là người sáng tạo, thích khám phá và tìm hiểu những điều mới mẻ. Bạn thường tìm kiếm sự kích thích và thách thức..."
+    },
+    "ENFP": {
+        "title": "Bạn thuộc Nhóm Người quan tâm",
+        "description": "Bạn là người vui vẻ, thân thiện và thích giao tiếp với mọi người. Bạn thường tìm kiếm sự vui vẻ và trải nghiệm..."
+    }
+}
