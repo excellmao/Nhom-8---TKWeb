@@ -3,6 +3,7 @@ const categories = ['e-value', 's-value', 't-value', 'j-value']; // Define categ
 const questions = document.querySelectorAll('.question-container'); // Get all questions
 const scores = { 'e-value': 0, 's-value': 0, 't-value': 0, 'j-value': 0 }; // Initialize scores for each category
 const selectedAnswers = {}; // Store selected answers for each question
+let initialLoad = true;
 
 function showCategory(category) {
   // Hide all questions
@@ -22,8 +23,10 @@ function showCategory(category) {
   });
 
   // Scroll to the first question smoothly
-  if (firstQuestion) {
-    firstQuestion.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  if (firstQuestion && !initialLoad) {
+    const yOffset = -80;
+    const y = firstQuestion.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    window.scrollTo({ top: y, behavior: 'smooth' });
   }
 
   // Update the button text
@@ -38,6 +41,10 @@ function showCategory(category) {
 
   // Validate the category to enable/disable the button
   validateCategory();
+  if (firstQuestion && !initialLoad) {
+    firstQuestion.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  initialLoad = false; // Set initialLoad to false after the first category is shown
 }
 
 function calculatePoints() {
@@ -121,37 +128,48 @@ function validateCategory() {
   // Enable or disable the "Next" or "Submit" button
   const nextButton = document.getElementById('next');
   nextButton.disabled = !allAnswered; // Disable if not all questions are answered
+
+  // Enable or disable the "Previous" button
+  const prevButton = document.getElementById('prev');
+  prevButton.disabled = currentCategoryIndex === 0; // Disable if on the first category
+}
+
+function scrollToFirstVisibleQuestion() {
+  const currentCategory = categories[currentCategoryIndex];
+  const firstQuestion = document.querySelector(
+    `.question-container[data-category="${currentCategory}"]`
+  );
+
+  if (firstQuestion) {
+    const yOffset = -90; // Adjust based on your header height
+    const y = firstQuestion.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  }
 }
 
 function handleNextButtonClick(event) {
-  event.preventDefault(); // Prevent default button behavior
-
-  const nextButton = document.getElementById('next');
-  const action = nextButton.dataset.action;
-
-  if (action === 'next') {
-    calculatePoints(); // Calculate points for the current category
-
-    if (currentCategoryIndex < categories.length - 1) {
-      currentCategoryIndex++;
-      showCategory(categories[currentCategoryIndex]);
-    }
-  } else if (action === 'submit') {
-    submitTest(); // Submit the test and show results
+  event.preventDefault();
+  calculatePoints();
+  if (currentCategoryIndex < categories.length - 1) {
+    currentCategoryIndex++;
+    showCategory(categories[currentCategoryIndex]);
+    scrollToFirstVisibleQuestion();
+  } else {
+    submitTest();
   }
 }
 
 function showPrevCategory(event) {
-  event.preventDefault(); // Prevent default button behavior
-
-  // Save the current selections before navigating back
+  event.preventDefault();
   calculatePoints();
-
   if (currentCategoryIndex > 0) {
     currentCategoryIndex--;
     showCategory(categories[currentCategoryIndex]);
+    scrollToFirstVisibleQuestion();
   }
 }
+
 
 // Add event listeners to validate the category whenever an option is selected
 document.querySelectorAll('input[type="radio"]').forEach(radio => {
@@ -164,6 +182,9 @@ showCategory(categories[currentCategoryIndex]);
 // Add event listeners for navigation buttons
 document.getElementById('prev').addEventListener('click', showPrevCategory);
 document.getElementById('next').addEventListener('click', handleNextButtonClick);
+
+// Run initial validation after DOM setup
+validateCategory();
 
 // Function to load MBTI descriptions
 async function loadMBTIDescription(type) {
@@ -187,3 +208,5 @@ async function loadMBTIDescription(type) {
     console.error('Error loading MBTI descriptions:', error);
   }
 }
+
+window.history.pushState({}, document.title, window.location.pathname);
