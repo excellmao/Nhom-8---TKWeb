@@ -1,66 +1,98 @@
 {
 "ISTJ": {
     "title": "Bạn thuộc Nhóm Người quan tâm",
-    "description": "Bạn là một người luôn tuân thủ nguyên tắc, với một lòng tự trọng sâu sắc và niềm tin vững chắc vào sự chính trực..."
+    "description": "ISTJ là những người thực tế, có trách nhiệm và tuân thủ nguyên tắc. Họ luôn hoàn thành công việc đúng hạn, tỉ mỉ trong chi tiết và trung thành với tổ chức. Thói quen lập kế hoạch cẩn thận giúp họ giữ vững ổn định trong mọi tình huống. Tuy nhiên, ISTJ có thể khó thích nghi với thay đổi và đôi khi quá cứng nhắc trong cách nhìn nhận. Họ cũng có xu hướng giấu cảm xúc, khiến người khác khó hiểu sâu bên trong. Sự kiên định là điểm mạnh nhưng cũng có thể biến thành điểm hạn chế khi môi trường đòi hỏi sự linh hoạt.",
+    "link": "/lepersonalities/ISTJ/ISTJ.html",
+    "image": "/content/ISTJ.webp"
   },
   "ISFJ": {
     "title": "Bạn thuộc Nhóm Người quan tâm",
-    "description": "Bạn là người chăm chỉ, tận tụy và luôn cảm thấy mình có trách nhiệm sâu sắc đối với những người xung quanh..."
+    "description": "ISFJ rất chu đáo, quan tâm và thích chăm sóc người khác. Họ luôn lắng nghe, ghi nhớ chi tiết về nhu cầu của cá nhân xung quanh và sẵn sàng hy sinh vì lợi ích chung. Tính cách dịu dàng giúp ISFJ xây dựng mối quan hệ bền chặt, tạo cảm giác an toàn cho người khác. Song, họ dễ cảm thấy quá tải khi nhận quá nhiều trách nhiệm và thường khó từ chối yêu cầu. ISFJ cũng có khuynh hướng e ngại xung đột, có thể ôm nặng trong lòng. Khi được khích lệ, họ sẽ tỏa sáng với khả năng tổ chức và chăm sóc tận tâm.",
+    "link": "/lepersonalities/ISFJ/ISFJ.html",
+    "image": "/content/ISFJ.jpg"
   },
   "ESTJ": {
     "title": "Bạn thuộc Nhóm Người quan tâm",
-    "description": "Bạn là người đề cao trật tự và những giá trị truyền thống, tin rằng sự trung thực, cống hiến và lòng tự trọng..."
+    "description": "ESTJ là nhà lãnh đạo thực tế, tổ chức tốt và tuân thủ quy tắc. Họ làm việc chăm chỉ, quyết đoán và luôn duy trì trật tự trong nhóm. Tinh thần trách nhiệm cao giúp ESTJ hoàn thành mục tiêu đúng thời hạn. Tuy nhiên, họ có thể quá cứng nhắc, ít linh hoạt khi cần thích nghi. ESTJ đôi khi bỏ qua cảm xúc của người khác để bảo đảm hiệu quả. Khi kết hợp cùng khả năng lắng nghe, họ sẽ trở thành lãnh đạo cân bằng và hiệu quả.",
+    "link": "/lepersonalities/ESTJ/ESTJ.html",
+    "image": "/content/ESTJ.webp"
   },
   "ESFJ": {
     "title": "Bạn thuộc Nhóm Người quan tâm",
-    "description": "Cuộc sống có ý nghĩa nhất khi bạn được sẻ chia và gắn kết với người khác. Bạn tin rằng sự chân thành, lòng tử tế..."
+    "description": "ESFJ rất ấm áp, quan tâm và sẵn sàng hỗ trợ người khác. Họ chú ý đến nhu cầu tập thể, luôn cố gắng duy trì hòa hợp trong nhóm. Tổ chức tốt và chu đáo, ESFJ tạo cảm giác an toàn cho mọi người xung quanh. Song, họ dễ phụ thuộc vào sự công nhận và có thể tránh né xung đột quá mức. ESFJ cũng ít khi thích ứng với thay đổi đột ngột hoặc ý tưởng quá trừu tượng. Khi được khích lệ phát triển bản thân, họ sẽ tỏa sáng trong các vai trò chăm sóc và kết nối cộng đồng.",
+    "link": "/lepersonalities/ESFJ/ESFJ.html",
+    "image": "/content/ESFJ.jpg"
   },
   "ISTP": {
-    "title": "Bạn thuộc Nhóm Người quan tâm",
-    "description": "Bạn là người thực tế, thích khám phá và tìm hiểu những điều mới mẻ. Bạn có khả năng phân tích và giải quyết vấn đề..."
+    "title": "Bạn thuộc Nhóm Người khám phá",
+    "description": "ISTP thích hành động, linh hoạt và giỏi giải quyết vấn đề thực tế. Họ hiếm khi bị bó buộc bởi lý thuyết, thường học qua kinh nghiệm và thử nghiệm. Tính cách dễ gần, thích mạo hiểm khiến ISTP luôn tìm kiếm hoạt động mới lạ. Tuy nhiên, họ có thể thiếu kiên nhẫn với công việc lặp đi lặp lại và tránh lập kế hoạch dài hạn. ISTP cũng ít khi bộc lộ cảm xúc, tạo ấn tượng khá lạnh lùng. Khi được tự do, họ sẽ phát huy tối đa khả năng sáng tạo và kỹ năng thủ công.",
+    "link": "/lepersonalities/ISTP/ISTP.html",
+    "image": "/content/ISTP.webp"
   },
   "ISFP": {
-    "title": "Bạn thuộc Nhóm Người quan tâm",
-    "description": "Bạn là người nhạy cảm, sáng tạo và có khả năng cảm nhận sâu sắc về thế giới xung quanh. Bạn thường tìm kiếm sự hài hòa..."
+    "title": "Bạn thuộc Nhóm Người khám phá",
+    "description": "ISFP là người nhạy cảm, sống thiên về cảm xúc và rất trân trọng vẻ đẹp xung quanh. Họ yêu thích nghệ thuật, sáng tạo và thường tìm niềm vui trong những trải nghiệm đơn giản. Tính cách ôn hòa giúp ISFP dễ kết nối với người khác nhưng cũng khiến họ tránh xung đột. Họ thường tập trung vào hiện tại, ít khi phán đoán tương lai hoặc quá lo lắng chuyện hôm sau. Đôi khi, ISFP thiếu quyết đoán và trì hoãn khi phải đưa ra lựa chọn quan trọng. Nhưng khi tìm thấy đam mê, họ rất tận tụy và truyền cảm hứng.",
+    "link": "/lepersonalities/ISFP/ISFP.html",
+    "image": "/content/ISFP.webp"
   },
   "ESTP": {
-    "title": "Bạn thuộc Nhóm Người quan tâm",
-    "description": "Bạn là người năng động, thích khám phá và trải nghiệm những điều mới mẻ. Bạn thường tìm kiếm sự kích thích và hành động..."
+    "title": "Bạn thuộc Nhóm Người khám phá",
+    "description": "ESTP là người năng động, hướng ngoại và khao khát trải nghiệm ngay lập tức. Họ không ngại mạo hiểm, thích thử thách bản thân qua những hoạt động kích thích. Khả năng ứng phó nhanh giúp ESTP giải quyết vấn đề thực tế một cách tài tình. Tuy nhiên, họ dễ chán nản với công việc lặp lại và thiếu kiên nhẫn với lý thuyết. ESTP đôi lúc phớt lờ quy tắc để đạt mục tiêu tức thì. Khi được tự do, họ sẽ là trung tâm của mọi cuộc chơi và truyền cảm hứng cho người xung quanh.",
+    "link": "/lepersonalities/ESTP/ESTP.html",
+    "image": "/content/ESTP.webp"
   },
   "ESFP": {
-    "title": "Bạn thuộc Nhóm Người quan tâm",
-    "description": "Bạn là người vui vẻ, thân thiện và thích giao tiếp với mọi người. Bạn thường tìm kiếm sự vui vẻ và trải nghiệm..."
+    "title": "Bạn thuộc Nhóm Người khám phá ",
+    "description": "ESFP là những người thân thiện, thích giao tiếp và sống hết mình với hiện tại. Họ quan tâm đến niềm vui chung, luôn tạo bầu không khí hào hứng nơi nào xuất hiện. Sự linh hoạt giúp ESFP dễ dàng thích nghi với thay đổi, nhưng cũng khiến họ thiếu kế hoạch dài hạn. Họ tránh đối đầu, đôi khi trì hoãn quyết định để giữ hòa khí. ESFP nhạy cảm với cách người khác đánh giá, có thể tìm kiếm sự xác nhận từ nhóm. Khi được khuyến khích theo đuổi đam mê, họ tỏa sáng với tài năng biểu diễn hoặc sáng tạo.",
+    "link": "/lepersonalities/ESFP/ESFP.html",
+    "image": "/content/ESFP.jpg"
   },
   "INTJ": {
-    "title": "Bạn thuộc Nhóm Người quan tâm",
-    "description": "Bạn là người độc lập, sáng tạo và có tầm nhìn xa. Bạn thường tìm kiếm sự hiểu biết sâu sắc về thế giới xung quanh..."
+    "title": "Bạn thuộc Nhóm Nhà phân tích",
+    "description": "INTJ có suy nghĩ chiến lược, độc lập và rất tự tin vào khả năng phân tích. Họ định hình tầm nhìn dài hạn, lập kế hoạch chi tiết và luôn tìm cách tối ưu hóa quy trình. Sự kiên định giúp INTJ vượt qua thách thức, nhưng họ cũng dễ khắt khe với người khác khi không đạt chuẩn. INTJ thường không mấy chú trọng biểu đạt cảm xúc, khiến họ đôi lúc bị gắn mác “lạnh lùng”. Họ khao khát phát triển bản thân nên luôn học hỏi và trau dồi kiến thức. Khi cần, INTJ có thể trở thành nhà lãnh đạo quyết đoán và chiến lược.",
+    "link": "/lepersonalities/Architect/index.html",
+    "image": "/content/INTJ.jpg"
   },
   "INFJ": {
-    "title": "Bạn thuộc Nhóm Người quan tâm",
-    "description": "Bạn là người nhạy cảm, sâu sắc và có khả năng cảm nhận được những điều mà người khác không thấy được..."
+    "title": "Bạn thuộc Nhóm Nhà Ngoại giao",
+    "description": "INFJ là những người sâu sắc, giàu trực giác và lý tưởng hóa tương lai. Họ thường nhìn thấy tiềm năng của người khác và cố gắng truyền cảm hứng, tạo động lực. Tâm hồn họ nhạy cảm nhưng thầm kín; INFJ thích nghiên cứu ý nghĩa của cuộc sống và quan tâm đến mục đích lớn lao. Tuy nhiên, họ dễ bị căng thẳng khi không gian cá nhân bị xâm phạm hoặc giá trị không được tôn trọng. INFJ thường đòi hỏi cao ở bản thân và có thể quá lý tưởng, dẫn đến thất vọng. Khi cân bằng được cảm xúc, họ trở thành nhà lãnh đạo sáng suốt và chu đáo.",
+    "link": "/lepersonalities/INFJ/INFJ.html",
+    "image": "/content/INFJ.jpg"
   },
   "ENTJ": {
-    "title": "Bạn thuộc Nhóm Người quan tâm",
-    "description": "Bạn là người quyết đoán, tự tin và có khả năng lãnh đạo tốt. Bạn thường tìm kiếm sự hiệu quả và thành công trong công việc..."
+    "title": "Bạn thuộc Nhóm Nhà phân tích",
+    "description": "ENTJ mạnh mẽ, chiến lược và luôn hướng tới mục tiêu dài hạn. Họ quyết đoán, thích điều hành và tối ưu hóa hiệu suất nhóm. Khả năng nhìn xa và phân tích nhanh giúp ENTJ dẫn đầu trong dự án. Tuy nhiên, họ có thể tỏ ra áp đảo hoặc thiếu kiên nhẫn với những người chậm hơn. ENTJ ít khi để cảm xúc chi phối quyết định, đôi khi bỏ qua khía cạnh con người. Khi kết hợp kỹ năng lãnh đạo với lắng nghe, họ sẽ là người định hướng thành công cho cả tập thể.",
+    "link": "/lepersonalities/Commander/commander.html",
+    "image": "/content/ENTJ.webp"
   },
-    "ENFJ": {
-        "title": "Bạn thuộc Nhóm Người quan tâm",
-        "description": "Bạn là người nhiệt tình, thân thiện và có khả năng giao tiếp tốt. Bạn thường tìm kiếm sự kết nối và hỗ trợ người khác..."
+  "ENFJ": {
+    "title": "Bạn thuộc Nhóm Nhà Ngoại giao",
+    "description": "ENFJ là nhà truyền cảm hứng, có khả năng thấu cảm và lãnh đạo tự nhiên. Họ luôn chú trọng đến phát triển con người, giúp người khác nhận ra điểm mạnh. Khả năng giao tiếp khéo léo giúp ENFJ tạo động lực và xây dựng tầm nhìn chung. Tuy nhiên, họ dễ quá tải khi nhận nhiều trách nhiệm và đòi hỏi cao ở bản thân. ENFJ cũng có thể bỏ quên nhu cầu cá nhân để phục vụ người khác. Khi cân bằng được công việc và nghỉ ngơi, họ trở thành ngọn hải đăng dẫn đường cho tập thể.",
+    "link": "/lepersonalities/Protagonist/protagonist.html",
+    "image": "/content/ENFJ.jpg"
     },
   "INTP": {
-    "title": "Bạn thuộc Nhóm Người quan tâm",
-    "description": "Bạn là người sáng tạo, độc lập và có khả năng phân tích tốt. Bạn thường tìm kiếm sự hiểu biết sâu sắc về thế giới xung quanh..."
+    "title": "Bạn thuộc Nhóm Nhà phân tích",
+    "description": "INTP rất tò mò, yêu kiến thức và say mê phân tích lý thuyết. Họ thường tìm cách hiểu bản chất sự vật, triệt để đặt câu hỏi “tại sao”. Tính cách độc lập khiến INTP thích làm việc một mình và ít khi quan tâm đến truyền thống. Song, họ có thể thiếu thực tế, dễ lơ đãng với chi tiết và chậm hoàn thành dự án. INTP cũng đôi khi bị đánh giá là vô cảm vì không biểu lộ nhiều cảm xúc. Khi tìm được đối tác phù hợp, họ sẽ kết hợp tư duy logic và sáng tạo để đạt hiệu quả cao.",
+    "link": "/lepersonalities/Logician/logician.html",
+    "image": "/content/INTP.jpg"
   },
   "INFP": {
-    "title": "Bạn thuộc Nhóm Người quan tâm",
-    "description": "Bạn là người nhạy cảm, sáng tạo và có khả năng cảm nhận sâu sắc về thế giới xung quanh. Bạn thường tìm kiếm sự hài hòa..."
+    "title": "Bạn thuộc Nhóm Nhà Ngoại giao",
+    "description": "INFP là những người giàu lý tưởng, đồng cảm sâu sắc và khao khát sự chân thật. Họ thường dành thời gian suy ngẫm về giá trị cá nhân và mục đích sống. Tinh thần sáng tạo giúp INFP biểu đạt bản thân qua văn chương, nghệ thuật hoặc từ thiện. Tuy nhiên, họ dễ bị áp lực nội tâm, có xu hướng tránh đối đầu và day dứt nếu không đạt được lý tưởng. INFP cũng hay chần chừ khi quyết định, sợ bỏ lỡ con đường phù hợp. Khi cân bằng được cảm xúc, họ trở thành nguồn động viên mạnh mẽ cho người khác.",
+    "link": "/lepersonalities/INFP/INFP.html",
+    "image": "/content/INFP.webp"
   },
-    "ENTP": {
-        "title": "Bạn thuộc Nhóm Người quan tâm",
-        "description": "Bạn là người sáng tạo, thích khám phá và tìm hiểu những điều mới mẻ. Bạn thường tìm kiếm sự kích thích và thách thức..."
-    },
-    "ENFP": {
-        "title": "Bạn thuộc Nhóm Người quan tâm",
-        "description": "Bạn là người vui vẻ, thân thiện và thích giao tiếp với mọi người. Bạn thường tìm kiếm sự vui vẻ và trải nghiệm..."
-    }
+  "ENTP": {
+    "title": "Bạn thuộc Nhóm Nhà phân tích",
+    "description": "ENTP thông minh, nhanh nhạy và thích tranh luận để khám phá ý tưởng mới. Họ không ngại thử thách quan điểm, tìm cách tối ưu hóa mọi giải pháp. Tính cách linh hoạt giúp ENTP dễ thích nghi với môi trường thay đổi nhanh. Tuy nhiên, họ có thể gây khó chịu vì hay phản biện và thiếu kiên nhẫn với chi tiết. ENTP đôi khi chần chừ trước cam kết dài hạn và dễ chán nản. Khi tập trung vào đam mê, họ là người khởi xướng sáng tạo và phá vỡ giới hạn.",
+    "link": "/lepersonalities/ENTP/debater.html",
+    "image": "/content/ENTP.webp"   
+  },
+  "ENFP": {
+    "title": "Bạn thuộc Nhóm Nhà Ngoại giao",
+    "description": "ENFP giàu năng lượng, sáng tạo và có trực giác nhạy bén với cảm xúc người khác. Họ dễ dàng nắm bắt ý tưởng mới, truyền động lực và khơi dậy đam mê cho mọi người. Tính cách cởi mở khiến ENFP thích kết nối và khám phá tiềm năng quanh mình. Song, họ thường phân tán chú ý, khó hoàn thành dự án nếu không đủ hứng khởi. ENFP cũng nhạy cảm với lời phê bình, đôi khi vì vậy mà thiếu tự tin. Khi gắn kết được mục tiêu rõ ràng, họ sẽ trở thành người khởi xướng đầy cảm hứng.",
+    "link": "/lepersonalities/Campaigner/campaigner.html",
+    "image": "/content/ENFP.jpg"
+   }
 }

@@ -106,6 +106,12 @@ function submitTest() {
   document.querySelector('.questionnaire').style.display = 'none';
   document.querySelector('.navigation').style.display = 'none';
 
+  // Hide the hero section
+  const heroSection = document.querySelector('.hero'); // Adjust the selector if needed
+  if (heroSection) {
+      heroSection.style.display = 'none';
+  }
+
   // Show the results section
   document.getElementById('results').classList.remove('hidden');
 }
@@ -198,11 +204,55 @@ async function loadMBTIDescription(type) {
 
     // Update the HTML content
     if (mbti) {
-      document.getElementById('personality-title').textContent = `${type} - ${mbti.title}`; // Include the MBTI type
-      document.getElementById('personality-description').textContent = mbti.description;
+      // Update the MBTI result with the type and title
+      const mbtiResultElement = document.querySelector('.mbti-result');
+      if (mbtiResultElement) {
+        mbtiResultElement.textContent = `${type} - ${mbti.title}`;
+      }
+
+      // Update the description
+      const descriptionElement = document.querySelector('.description');
+      if (descriptionElement) {
+        descriptionElement.textContent = mbti.description;
+      }
+
+      // Update the result image
+      const resultImage = document.querySelector('.result-image img');
+      if (resultImage) {
+        resultImage.src = mbti.image; // Set the image source from the JSON
+        resultImage.alt = `${type} Image`;
+      }
+
+      // Update the "Tìm hiểu thêm" button
+      const learnMoreButton = document.getElementById('learn-more');
+      if (learnMoreButton) {
+        learnMoreButton.href = mbti.link; // Set the link from the JSON
+        learnMoreButton.style.display = 'inline-block'; // Make the button visible
+      }
     } else {
-      document.getElementById('personality-title').textContent = "Không tìm thấy kết quả";
-      document.getElementById('personality-description').textContent = "";
+      // Handle case where MBTI type is not found
+      const mbtiResultElement = document.querySelector('.mbti-result');
+      if (mbtiResultElement) {
+        mbtiResultElement.textContent = "Không tìm thấy kết quả";
+      }
+
+      const descriptionElement = document.querySelector('.description');
+      if (descriptionElement) {
+        descriptionElement.textContent = "Không có thông tin mô tả cho loại tính cách này.";
+      }
+
+      // Hide the result image
+      const resultImage = document.querySelector('.result-image img');
+      if (resultImage) {
+        resultImage.src = '';
+        resultImage.alt = '';
+      }
+
+      // Hide the "Tìm hiểu thêm" button
+      const learnMoreButton = document.getElementById('learn-more');
+      if (learnMoreButton) {
+        learnMoreButton.style.display = 'none';
+      }
     }
   } catch (error) {
     console.error('Error loading MBTI descriptions:', error);
