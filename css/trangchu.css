@@ -362,7 +362,7 @@
 .about-section {
   display: flex; /* Use Flexbox to align items horizontally */
   align-items: center; /* Vertically align the image and text */
-  gap: 20px; /* Add spacing between the image and text */
+  gap: 50px; /* Add spacing between the image and text */
   padding: 90px; /* Add padding around the section */
 }
 
@@ -381,4 +381,143 @@
   font-size: 1rem;
   line-height: 1.6; /* Improve readability */
   color: #333; /* Adjust text color */
+}
+
+.introduction-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  gap: 4em;
+  column-gap: 9em;
+  padding-bottom: 3rem;
+}
+.team-container .team-member:nth-child(-n+3) {
+  width: calc(33.33% - 2.5rem);
+  margin-bottom: 3rem;
+}
+
+/* Second row - 2 members */
+.team-container .team-member:nth-child(n+4) {
+  width: calc(50% - 2.5rem);
+  max-width: 250px;
+}
+
+.team-member {
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.team-member:hover {
+  transform: translateY(-10px);
+}
+
+.avatar {
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(180deg, #a7e9ff 0%, #ffffff 100%);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.avatar::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(180deg, transparent 0%, #9fda5c 100%);
+  z-index: 1;
+  border-radius: 0 0 50% 50%;
+}
+
+.avatar img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 2;
+  transition: transform 0.5s;
+  clip-path: circle(50% at 50% 50%);
+}
+
+.team-member:hover .avatar img {
+  transform: scale(1.05);
+}
+
+.introduction-header {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  color: #333;
+  text-align: center;
+}
+
+.footer {
+  background-color: #ffffff;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.learn-more-section {
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* Learn More Button */
+.learn-more-button {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+  background-color: #e8cace;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.learn-more-button:hover {
+  background-color: #e8cace;
+  transform: scale(1.05);
+}
+
+.github-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #333;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.github-button:hover {
+  background-color: #555;
+  transform: scale(1.05);
+}
+
+.github-logo {
+  width: 20px;
+  height: 20px;
 }
