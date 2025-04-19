@@ -2,7 +2,10 @@ document.addEventListener('DOMContentLoaded',  function() {
     // Table of contents functionality
     const sections = document.querySelectorAll('.section');
     const tocLinks = document.querySelectorAll('#table-of-contents a');
-    
+    const header = document.querySelector('.header');
+const headerHeight = header ? header.offsetHeight : 0;
+const targetPosition = targetElement.offsetTop - headerHeight;
+
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {

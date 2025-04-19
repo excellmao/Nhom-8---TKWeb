@@ -196,7 +196,7 @@ validateCategory();
 async function loadMBTIDescription(type) {
   try {
     // Fetch the JSON file
-    const response = await fetch('/json/MBTI.json');
+    const response = await fetch('/Nhom-8---TKWeb/json/MBTI.json');
     const data = await response.json();
 
     // Get the description for the selected type

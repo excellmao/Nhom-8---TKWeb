@@ -40,12 +40,12 @@
           <li><a href="#introduction">MBTI là gì?</a></li>
           <li><a href="#mbti-explanation">4 yếu tố trong MBTI</a></li>
           <li class="has-dropdown">
-            <a href="#personality-types" class="dropdown-toggle">Các loại tính cách</a>
+            <a href="#personality-types" class="dropdown-toggle">Các nhóm tính cách</a>
             <ul class="dropdown-menu">
               <li><a href="#analyst-types">Nhà phân tích</a></li>
               <li><a href="#diplomat-types">Nhà ngoại giao</a></li>
               <li><a href="#sentinel-types">Người quan tâm</a></li>
-              <li><a href="#explorer-types">Người khám phá</a></li>
+              <li><a href="#explorer-types">Nhà thám hiểm</a></li>
             </ul>
           </li>
         </ul>
@@ -224,11 +224,17 @@
     </main>
   </div>
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2023 MBTI Personality Explorer. Built with jdoodle.ai</p>
-    </div>
-  </footer>
+  <div id="footer-placeholder"></div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      fetch('/Nhom-8---TKWeb/shared/footer.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading footer:', error));
+    });
+  </script>
 
   <script src="script.js"></script>
 </body>

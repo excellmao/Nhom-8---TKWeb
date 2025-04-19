@@ -1,0 +1,96 @@
+<head>
+    <style>
+a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* Sticky Header */
+  .header {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px; /* Add padding inside the header */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+  }
+
+  /* Logo and Website Name */
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo-container img {
+    height: 60px;
+    margin-right: 10px;
+    border-radius: 10px;
+    
+  }
+
+  .website-name {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  /* Navigation Tabs */
+  .nav-tabs {
+    display: flex;
+    gap: 50px;
+  }
+
+  .tab {
+    position: relative;
+    padding: 5px 10px;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+  }
+
+  .tab:hover {
+    color: #de9dee;
+  }
+
+  /* Underline Effect */
+  .tab::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #de9dee;
+    transition: width 0.3s ease-in-out;
+  }
+
+  .tab:hover::after {
+    width: 100%;
+  }
+
+  /* Active Tab */
+  .tab.active {
+    color: #de9dee;
+  }
+
+  .tab.active::after {
+    width: 100%;
+  }
+    </style>
+</head>
+<header class="header">
+  <div class="logo-container">
+    <a href="/Nhom-8---TKWeb/index.html" class="Logo">
+      <img src="/Nhom-8---TKWeb/content/ducanhtest.jpg" alt="Logo" class="logo">
+    </a>
+    <div class="website-name">BĐX Test</div>
+  </div>
+  <nav class="nav-tabs">
+    <a href="/Nhom-8---TKWeb/webpage/cauhoitinhcach.html" class="tab">Bài kiểm tra tính cách</a>
+    <a href="/Nhom-8---TKWeb/MBTI/index.html" class="tab">Các loại tính cách</a>
+  </nav>
+</header>

@@ -98,7 +98,7 @@
 /* Test Section */
 .test-section {
     position: relative;
-    background: url('/content/background-doyotest.webp') no-repeat center center; /* Replace with your background image */
+    background: url('/Nhom-8---TKWeb/content/background-doyotest.webp') no-repeat center center; /* Replace with your background image */
     background-size: cover; /* Ensures the background fills the section */
     height: 500px; /* Adjust height as needed */
     display: flex;
@@ -146,7 +146,7 @@
 
 /* Personalities Section */
 .personalities-section {
-  background: url('/content/background-personalities.png') no-repeat center center;
+  background: url('/Nhom-8---TKWeb/content/background-personalities.png') no-repeat center center;
   background-size: cover;
   padding: 40px 20px;
   background-color: #f9f9f9;

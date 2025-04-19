@@ -24,10 +24,35 @@ document.addEventListener('DOMContentLoaded',  function() {
 
   // Add event listeners to type cards
   document.querySelectorAll('.type-card').forEach(card => {
-    card.addEventListener('click', function() {
+    card.addEventListener('click', function () {
       const typeId = this.id;
-      const typeName = this.querySelector('h4').textContent.split(' - ')[0];
-      window.location.href = `type-detail.html?type=${typeId}&name=${encodeURIComponent(typeName)}`;
+      console.log(`Card clicked: ${typeId}`); // Debugging line
+
+      const typeLinks = {
+        'INTJ': '/Nhom-8---TKWeb/lepersonalities/Architect/index.html',
+        'INTP': '/Nhom-8---TKWeb/lepersonalities/Logician/logician.html',
+        'ENTJ': '/Nhom-8---TKWeb/lepersonalities/Commander/commander.html',
+        'ENTP': '/Nhom-8---TKWeb/lepersonalities/ENTP/debater.html',
+        'INFJ': '/Nhom-8---TKWeb/lepersonalities/INFJ/INFJ.html',
+        'INFP': '/Nhom-8---TKWeb/lepersonalities/INFP/INFP.html',
+        'ENFJ': '/Nhom-8---TKWeb/lepersonalities/Protagonist/protagonist.html',
+        'ENFP': '/Nhom-8---TKWeb/lepersonalities/Campaigner/Campaigner.html',
+        'ISTJ': '/Nhom-8---TKWeb/lepersonalities/ISTJ/ISTJ.html',
+        'ISFJ': '/Nhom-8---TKWeb/lepersonalities/ISFJ/ISFJ.html',
+        'ESTJ': '/Nhom-8---TKWeb/lepersonalities/ESTJ/ESTJ.html',
+        'ESFJ': '/Nhom-8---TKWeb/lepersonalities/ESFJ/ESFJ.html',
+        'ISTP': '/Nhom-8---TKWeb/lepersonalities/ISTP/ISTP.html',
+        'ISFP': '/Nhom-8---TKWeb/lepersonalities/ISFP/ISFP.html',
+        'ESTP': '/Nhom-8---TKWeb/lepersonalities/ESTP/ESTP.html',
+        'ESFP': '/Nhom-8---TKWeb/lepersonalities/ESFP/ESFP.html'
+      };
+
+      if (typeLinks[typeId]) {
+        console.log(`Navigating to: ${typeLinks[typeId]}`); // Debugging line
+        window.location.href = typeLinks[typeId];
+      } else {
+        console.error(`No URL found for type: ${typeId}`);
+      }
     });
   });
 
@@ -260,5 +285,23 @@ document.addEventListener('DOMContentLoaded',  function() {
     document.getElementById('tertiary-function').textContent = currentTypeData.cognitive.tertiary;
     document.getElementById('inferior-function').textContent = currentTypeData.cognitive.inferior;
   }
+  
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+  
+      if (targetElement) {
+        const headerHeight = document.querySelector('.header').offsetHeight; // Get header height
+        const targetPosition = targetElement.offsetTop - headerHeight; // Adjust scroll position
+  
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
 });
  

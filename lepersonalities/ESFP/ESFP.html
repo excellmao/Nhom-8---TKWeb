@@ -12,13 +12,25 @@
   <title>ESFP: The Performer Personality | MBTI Insights</title>
 </head>
 <body>
-  <header id="header">
-    <div class="overlay"></div>
-    <div class="header-content">
-      <h1>ESFP</h1>
-      <h2>The Performer Personality</h2>
-    </div>
-  </header>
+  <div id="header-placeholder"></div>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    fetch('/Nhom-8---TKWeb/shared/header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading header:', error));
+  });
+</script>
+
+<section id="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1>ESFP</h1>
+    <h2>The Performer Personality</h2>
+  </div>
+</section>
 
   <nav id="table-of-contents">
     <div class="toc-container">
@@ -125,11 +137,17 @@
     </section>
   </main>
 
-  <footer>
-    <div class="container">
-      <p>© 2023 MBTI Personality Insights</p>
-    </div>
-  </footer>
+  <div id="footer-placeholder"></div>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    fetch('/Nhom-8---TKWeb/shared/footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading footer:', error));
+  });
+</script>
 
   <script src="ESFP.js"></script>
 </body>
