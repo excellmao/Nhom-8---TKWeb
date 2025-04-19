@@ -588,3 +588,179 @@ h3:after {
   display: flex;
   justify-content: center;
 }
+
+
+/* 1. Ensure flexible layouts and padding */
+.container,
+.main-content,
+.questionnaire,
+.result-grid,
+.hero-overlay {
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 2. Navigation: stack tabs on smaller screens */
+@media (max-width: 768px) {
+  .nav-tabs {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .tab {
+    width: 100%;
+  }
+}
+
+/* 3. Hero section: adapt height and boxes stacking */
+@media (max-width: 992px) {
+  .hero {
+    height: auto;
+    padding: 60px 0;
+  }
+  .hero-overlay {
+    padding: 20px;
+    background-color: rgba(255,255,255,0.7);
+  }
+  .hero-quote {
+    font-size: 1.5rem;
+  }
+  .hero-boxes {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .hero-box {
+    width: 100%;
+  }
+}
+
+/* 4. Questionnaire and radio buttons: scale down on small devices */
+@media (max-width: 600px) {
+  /* Hide hero entirely on mobile */
+  .hero {
+    display: none !important;
+  }
+
+  .radio-group-wrapper {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .radio-group {
+    gap: 20px;
+  }
+  .radio-label.size--70 { width: 56px; height: 56px; }
+  .radio-label.size--56 { width: 46px; height: 46px; }
+  .radio-label.size--46 { width: 36px; height: 36px; }
+  .radio-label.size--36 { width: 26px; height: 26px; }
+  .caption { font-size: 14px; }
+}
+
+/* 5. Result Grid: single column layout */
+@media (max-width: 768px) {
+  .result-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+/* 6. Footer: padding adjustments */
+@media (max-width: 480px) {
+  .footer {
+    padding: 15px;
+    font-size: 12px;
+  }
+}
+
+/* 7. Header: collapse logo and name on very small screens */
+@media (max-width: 480px) {
+  .logo-container img {
+    height: 40px;
+  }
+  .website-name {
+    font-size: 16px;
+  }
+}
+
+/* 8. Navigation Buttons: full width on mobile */
+@media (max-width: 600px) {
+  .navigation button {
+    width: 100%;
+    margin: 5px 0;
+  }
+}
+
+/* 9. General typography adjustments */
+@media (max-width: 600px) {
+  h1 { font-size: 24px; }
+  h2 { font-size: 16px; }
+  h3 { font-size: 18px; }
+  .question-header { font-size: 16px; }
+}
+
+/* Default Header Styles */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #f8f9fa;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+  margin-right: 10px;
+}
+
+.website-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-tabs {
+  display: flex;
+  gap: 20px;
+}
+
+.tab {
+  font-size: 1rem;
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.tab:hover {
+  color: #007bff;
+}
+
+/* Responsive Header for Mobile (max-width: 600px) */
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;
+    text-align: center;
+  }
+
+  .logo-container {
+    margin-bottom: 10px; /* Add spacing between logo and navigation */
+  }
+
+  .website-name {
+    font-size: 1.2rem; /* Reduce font size for smaller screens */
+  }
+
+  .nav-tabs {
+    flex-direction: column; /* Stack navigation links vertically */
+    gap: 10px; /* Add spacing between links */
+  }
+
+  .tab {
+    font-size: 0.9rem; /* Reduce font size for navigation links */
+  }
+}

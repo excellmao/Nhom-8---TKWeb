@@ -1,6 +1,6 @@
 <head>
     <style>
-a {
+  a {
     text-decoration: none;
     color: inherit;
   }
@@ -11,7 +11,7 @@ a {
     top: 0;
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 10px 20px; /* Add padding inside the header */
+    padding: 10px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -28,7 +28,6 @@ a {
     height: 60px;
     margin-right: 10px;
     border-radius: 10px;
-    
   }
 
   .website-name {
@@ -80,6 +79,33 @@ a {
   .tab.active::after {
     width: 100%;
   }
+
+  /* Responsive Header for Mobile (max-width: 600px) */
+  @media (max-width: 600px) {
+    .header {
+      flex-direction: column; /* Stack elements vertically */
+      align-items: center;
+      text-align: center;
+    }
+
+    .logo-container {
+      margin-bottom: 10px; /* Add spacing between logo and navigation */
+    }
+
+    .website-name {
+      font-size: 18px; /* Reduce font size for smaller screens */
+    }
+
+    .nav-tabs {
+      flex-direction: column; /* Stack navigation links vertically */
+      gap: 10px; /* Add spacing between links */
+    }
+
+    .tab {
+      font-size: 14px; /* Reduce font size for navigation links */
+    }
+  }
+</style>
     </style>
 </head>
 <header class="header">

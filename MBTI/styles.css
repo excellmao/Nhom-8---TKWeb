@@ -512,3 +512,107 @@ a {
   text-decoration: none;
 }
 
+/* General styles for images */
+img {
+  max-width: 100%; /* Ensures the image never exceeds the width of its container */
+  height: auto; /* Maintains the aspect ratio */
+}
+
+/* Specific styles for large images */
+.flower-image,
+#introduction img,
+#mbti-explanation img {
+  display: block;
+  margin: 0 auto; /* Centers the image */
+  max-width: 100%; /* Makes the image responsive */
+  height: auto; /* Maintains aspect ratio */
+}
+
+/* Media Queries for smaller screens */
+@media (max-width: 900px) {
+  #introduction img,
+  #mbti-explanation img {
+    width: 80%; /* Reduce image size for tablets */
+  }
+}
+
+@media (max-width: 600px) {
+  #introduction img,
+  #mbti-explanation img {
+    width: 100%; /* Full width for mobile devices */
+  }
+
+  .flower-image {
+    width: 100%; /* Full width for mobile devices */
+  }
+}
+
+/* Default Header Styles */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #f8f9fa;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+  margin-right: 10px;
+}
+
+.website-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-tabs {
+  display: flex;
+  gap: 20px;
+}
+
+.tab {
+  font-size: 1rem;
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.tab:hover {
+  color: #007bff;
+}
+
+/* Responsive Header for Mobile (max-width: 600px) */
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;
+    text-align: center;
+  }
+
+  .logo-container {
+    margin-bottom: 10px; /* Add spacing between logo and navigation */
+  }
+
+  .website-name {
+    font-size: 1.2rem; /* Reduce font size for smaller screens */
+  }
+
+  .nav-tabs {
+    flex-direction: column; /* Stack navigation links vertically */
+    gap: 10px; /* Add spacing between links */
+  }
+
+  .tab {
+    font-size: 0.9rem; /* Reduce font size for navigation links */
+  }
+}

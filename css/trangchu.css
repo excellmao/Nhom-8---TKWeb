@@ -23,7 +23,7 @@
     top: 0;
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 10px 20px; /* Add padding inside the header */
+    padding: 1rem 2rem; /* Add padding inside the header */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -520,4 +520,146 @@
 .github-logo {
   width: 20px;
   height: 20px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+  .personality-card {
+    width: 200px; /* Adjust width for medium screens */
+  }
+}
+
+@media (max-width: 900px) {
+  .personality-card {
+    width: 150px; /* Adjust width for smaller screens */
+  }
+}
+
+@media (max-width: 600px) {
+  .carousel {
+    flex-direction: column; /* Stack cards vertically */
+  }
+  .personality-card {
+    width: 100%; /* Full width for mobile */
+    margin: 5px 0; /* Adjust margin for mobile */
+  }
+}
+
+/* Mobile Layout (max-width: 600px) */
+@media (max-width: 600px) {
+  .carousel {
+    grid-template-columns: 1fr; /* Show only 1 card per row */
+    gap: 15px; /* Adjust spacing between cards */
+  }
+
+  .personality-card {
+    width: 100%; /* Make cards take full width */
+    margin: 0 auto; /* Center the cards */
+  }
+}
+.tabs {
+  display: flex;
+  flex-wrap: wrap; /* Allow tabs to wrap */
+}
+
+.tab {
+  flex: 1; /* Allow tabs to grow equally */
+  margin: 5px; /* Space between tabs */
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 600px) {
+  .tabs {
+    flex-direction: column; /* Stack tabs vertically */
+  }
+
+  .tab {
+    width: 100%; /* Full width for each tab */
+    margin: 5px 0; /* Adjust margin for mobile */
+  }
+
+  .first-section img {
+    width: 100%; /* Make image responsive */
+    height: auto; /* Maintain aspect ratio */
+    order: -1; /* Move image to the top */
+  }
+}
+
+.about-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.about-image-container {
+  flex: 1;
+}
+
+.about-content {
+  flex: 2;
+}
+
+/* Mobile layout (max-width: 600px) */
+@media (max-width: 600px) {
+  .about-section {
+    flex-direction: column; /* Stack elements vertically */
+  }
+
+  .about-image-container {
+    order: -1; /* Move the image to the top */
+    text-align: center; /* Center the image */
+  }
+
+  .about-image {
+    max-width: 100%; /* Ensure the image is responsive */
+    height: auto;
+  }
+
+  .about-content {
+    text-align: center; /* Center-align the text for better readability */
+    padding: 10px;
+  }
+}
+
+
+/* Responsive Header for Mobile (max-width: 600px) */
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;
+    text-align: center;
+  }
+
+  .logo-container {
+    margin-bottom: 10px; /* Add spacing between logo and navigation */
+  }
+
+  .website-name {
+    font-size: 1.2rem; /* Reduce font size for smaller screens */
+  }
+
+  .nav-tabs {
+    flex-direction: column; /* Stack navigation links vertically */
+    gap: 10px; /* Add spacing between links */
+  }
+
+  .tab {
+    font-size: 0.9rem; /* Reduce font size for navigation links */
+  }
+}
+
+
+
+/* Responsive Tab Styles for Mobile (max-width: 600px) */
+@media (max-width: 600px) {
+  .tab {
+    padding: 5px 6px; /* Reduced padding for smaller screens */
+    font-size: 0.9rem; /* Slightly smaller font size */
+  }
+
+  .nav-tabs {
+    gap: 1px; /* Reduce the gap between tabs */
+    flex-direction: column; /* Stack tabs vertically */
+    align-items: center; /* Center-align tabs */
+  }
 }

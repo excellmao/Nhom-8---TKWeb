@@ -22,3 +22,23 @@ let scrollPosition = 0; // Track the current scroll position
 const cardWidth = 240; // Width of each card including margin
 const visibleCards = 4; // Number of cards visible at a time
 const totalCards = document.querySelectorAll('.personality-card').length;
+
+const updateCardWidth = () => {
+  const screenWidth = window.innerWidth;
+
+  if (screenWidth <= 600) {
+    cardWidth = screenWidth; // Full width for mobile
+  } else if (screenWidth <= 900) {
+    cardWidth = 150; // Width for smaller screens
+  } else if (screenWidth <= 1200) {
+    cardWidth = 200; // Width for medium screens
+  } else {
+    cardWidth = 240; // Default width
+  }
+};
+
+// Call the function on load and on resize
+window.addEventListener('resize', updateCardWidth);
+document.addEventListener("DOMContentLoaded", () => {
+  updateCardWidth(); // Set initial card width
+});
