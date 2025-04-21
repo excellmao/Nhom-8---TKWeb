@@ -2,6 +2,7 @@
   display: none;
 }
 
+
 * {
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
@@ -295,7 +296,8 @@ a {
   position: relative;
   background: url('/Nhom-8---TKWeb/content/test.png') no-repeat center center;
   background-size: cover;
-  height: 450px;
+  background-position: center top;
+  min-height: 450px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -638,9 +640,31 @@ h3:after {
 
 /* 4. Questionnaire and radio buttons: scale down on small devices */
 @media (max-width: 600px) {
-  /* Hide hero entirely on mobile */
-  .hero {
-    display: none !important;
+  .hero-box {
+    flex-direction: row; /* Align content horizontally */
+    align-items: center; /* Vertically align the image and text */
+    justify-content: flex-start; /* Align content to the left */
+    padding: 15px;
+    border-radius: 50px; /* Make the boxes pill-shaped */
+    width: 100%; /* Full width for mobile */
+    height: auto; /* Adjust height for content */
+  }
+
+  .hero-box-icon {
+    width: 60px; /* Adjust image size for mobile */
+    height: 60px;
+    margin-right: 15px; /* Add spacing between the image and text */
+    margin-bottom: 0; /* Remove bottom margin for horizontal layout */
+  }
+
+  .hero-box h3 {
+    font-size: 1rem; /* Adjust font size for mobile */
+    margin: 0; /* Remove extra margin */
+  }
+
+  .hero-box p {
+    font-size: 0.9rem; /* Adjust font size for mobile */
+    color: #555;
   }
 
   .radio-group-wrapper {
@@ -656,7 +680,6 @@ h3:after {
   .radio-label.size--36 { width: 26px; height: 26px; }
   .caption { font-size: 14px; }
 }
-
 /* 5. Result Grid: single column layout */
 @media (max-width: 768px) {
   .result-grid {
@@ -699,68 +722,167 @@ h3:after {
   .question-header { font-size: 16px; }
 }
 
-/* Default Header Styles */
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px;
-  background-color: #f8f9fa;
-}
-
-.logo-container {
-  display: flex;
-  align-items: center;
-}
-
-.logo {
-  height: 50px;
-  margin-right: 10px;
-}
-
-.website-name {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.nav-tabs {
-  display: flex;
-  gap: 20px;
-}
-
-.tab {
-  font-size: 1rem;
-  text-decoration: none;
-  color: #333;
-  transition: color 0.3s ease;
-}
-
-.tab:hover {
-  color: #007bff;
-}
 
 /* Responsive Header for Mobile (max-width: 600px) */
 @media (max-width: 600px) {
   .header {
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center;
-    text-align: center;
+    display: flex;
+    flex-direction: row; /* Keep the logo and tabs in a row */
+    align-items: flex-start; /* Align items to the top */
+    justify-content: space-between; /* Space between logo and tabs */
+    padding: 10px 15px; /* Adjust padding for mobile */
   }
 
   .logo-container {
-    margin-bottom: 10px; /* Add spacing between logo and navigation */
+    display: flex;
+    flex-direction: row; /* Keep the logo and text logo side by side */
+    align-items: center; /* Vertically align the logo and text */
+    gap: 10px; /* Add spacing between the logo and text */
   }
 
   .website-name {
-    font-size: 1.2rem; /* Reduce font size for smaller screens */
+    font-size: 1rem; /* Reduce font size for smaller screens */
   }
 
   .nav-tabs {
-    flex-direction: column; /* Stack navigation links vertically */
-    gap: 10px; /* Add spacing between links */
+    display: flex;
+    flex-direction: column; /* Stack tabs vertically */
+    align-items: flex-end; /* Align tabs to the right */
+    gap: 5px; /* Add spacing between tabs */
   }
 
   .tab {
     font-size: 0.9rem; /* Reduce font size for navigation links */
+    padding: 5px 10px; /* Adjust padding for tabs */
+    text-align: right;
+  }
+}
+
+/* Adjust hero boxes for mobile */
+@media (max-width: 600px) {
+  .hero {
+    height: auto;
+    padding: 40px 0;
+  }
+
+  .hero-quote {
+    font-size: 1.2rem;
+    padding: 0 10px; /* adds spacing from edges */
+  }
+
+  .hero-overlay {
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.329);
+  }
+  .hero-boxes {
+    display: flex;
+    flex-direction: column; /* Stack boxes vertically */
+    gap: 15px; /* Add spacing between boxes */
+  }
+
+  .hero-box {
+    display: flex; /* Use Flexbox for horizontal alignment */
+    flex-direction: row; /* Align content horizontally */
+    align-items: center; /* Vertically align the image and text */
+    justify-content: flex-start; /* Align content to the left */
+    padding: 15px;
+    border-radius: 50px; /* Make the boxes pill-shaped */
+    width: 100%; /* Full width for mobile */
+    height: auto; /* Adjust height for content */
+    background-color: #fff; /* Optional: Add a background color */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
+  }
+
+  .hero-box-icon {
+    width: 60px; /* Adjust image size for mobile */
+    height: 60px;
+    margin-right: 15px; /* Add spacing between the image and text */
+    border-radius: 50%; /* Make the image circular */
+  }
+
+  .hero-box h3 {
+    font-size: 1rem; /* Adjust font size for mobile */
+    margin: 0; /* Remove extra margin */
+  }
+
+  .hero-box p {
+    font-size: 0.9rem; /* Adjust font size for mobile */
+    color: #555; /* Optional: Adjust text color */
+  }
+}
+
+/* Adjust spacing for hero boxes and questionnaire on mobile */
+@media (max-width: 600px) {
+  .hero-quote {
+    margin-top: -100px; /* Add space below the hero quote */
+  }
+  .hero-boxes {
+    margin-top: 0px; /* Add space below the hero quote */
+  }
+
+  .questionnaire {
+    margin-top: 50px; /* Add space below the hero boxes */
+  }
+}
+
+/* Adjust radio buttons and captions for mobile */
+@media (max-width: 600px) {
+  .radio-group {
+    gap: 10px; /* Reduce the gap between radio buttons */
+  }
+
+  .radio-label {
+    width: 36px; /* Make the radio buttons smaller */
+    height: 36px;
+  }
+
+  .caption {
+    font-size: 14px; /* Adjust font size for captions */
+    text-align: center;
+  }
+
+  .caption.text--green {
+    position: absolute;
+    bottom: -25px; /* Position below the left-most radio button */
+    left: 0;
+    transform: translateX(0); /* Center-align relative to the left-most button */
+    text-align: center;
+    width: 36px; /* Match the width of the button */
+  }
+
+  .caption.text--red {
+    position: absolute;
+    bottom: -25px; /* Position below the right-most radio button */
+    right: 0;
+    transform: translateX(-50px); /* Center-align relative to the right-most button */
+    text-align: center;
+    width: 36px; /* Match the width of the button */
+  }
+
+  .radio-group-wrapper {
+    position: relative; /* Ensure captions are positioned relative to the group */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+@media (max-width: 600px) {
+  .questionnaire {
+    gap: 30px; /* Increase the gap between questions */
+  }
+}
+
+@media (max-width: 600px) {
+  .navigation button {
+    font-size: 14px; /* Make the text smaller */
+    padding: 8px 16px; /* Reduce padding for smaller buttons */
+    margin: 0 10px; /* Add a gap between the buttons */
+  }
+
+  .navigation {
+    display: flex;
+    justify-content: center; /* Center the buttons */
+    gap: 20px; /* Add spacing between the buttons */
   }
 }

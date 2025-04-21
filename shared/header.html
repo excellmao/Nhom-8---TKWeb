@@ -83,26 +83,32 @@
   /* Responsive Header for Mobile (max-width: 600px) */
   @media (max-width: 600px) {
     .header {
-      flex-direction: column; /* Stack elements vertically */
-      align-items: center;
-      text-align: center;
+      flex-direction: row; /* Keep logo and tabs in a row */
+      align-items: flex-start; /* Align items to the top */
+      justify-content: space-between; /* Space between logo and tabs */
+      padding: 10px 15px; /* Adjust padding for mobile */
     }
 
     .logo-container {
-      margin-bottom: 10px; /* Add spacing between logo and navigation */
+      flex-direction: row; /* Keep logo and text logo side by side */
+      align-items: center; /* Vertically align the logo and text */
+      gap: 10px; /* Add spacing between the logo and text */
     }
 
     .website-name {
-      font-size: 18px; /* Reduce font size for smaller screens */
+      font-size: 16px; /* Reduce font size for smaller screens */
     }
 
     .nav-tabs {
-      flex-direction: column; /* Stack navigation links vertically */
-      gap: 10px; /* Add spacing between links */
+      flex-direction: column; /* Stack tabs vertically */
+      align-items: flex-end; /* Align tabs to the right */
+      gap: 10px; /* Add spacing between tabs */
     }
 
     .tab {
       font-size: 14px; /* Reduce font size for navigation links */
+      padding: 5px 10px; /* Adjust padding for tabs */
+      text-align: right; /* Align text inside the tabs to the right */
     }
   }
 </style>

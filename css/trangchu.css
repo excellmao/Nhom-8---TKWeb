@@ -522,50 +522,6 @@
   height: 20px;
 }
 
-/* Media Queries for Responsiveness */
-@media (max-width: 1200px) {
-  .personality-card {
-    width: 200px; /* Adjust width for medium screens */
-  }
-}
-
-@media (max-width: 900px) {
-  .personality-card {
-    width: 150px; /* Adjust width for smaller screens */
-  }
-}
-
-@media (max-width: 600px) {
-  .carousel {
-    flex-direction: column; /* Stack cards vertically */
-  }
-  .personality-card {
-    width: 100%; /* Full width for mobile */
-    margin: 5px 0; /* Adjust margin for mobile */
-  }
-}
-
-/* Mobile Layout (max-width: 600px) */
-@media (max-width: 600px) {
-  .carousel {
-    grid-template-columns: 1fr; /* Show only 1 card per row */
-    gap: 15px; /* Adjust spacing between cards */
-  }
-
-  .personality-card {
-    width: 100%; /* Make cards take full width */
-    margin: 0 auto; /* Center the cards */
-  }
-}
-.tabs {
-  display: flex;
-  flex-wrap: wrap; /* Allow tabs to wrap */
-}
-
-.tab {
-  flex: 1; /* Allow tabs to grow equally */
-  margin: 5px; /* Space between tabs */
-}
 
 /* Media Queries for Mobile Responsiveness */
 @media (max-width: 600px) {
@@ -619,47 +575,101 @@
     text-align: center; /* Center-align the text for better readability */
     padding: 10px;
   }
+  .about-content p {
+    font-size: 0.9rem; /* Smaller font size for mobile */
+    line-height: 1.4; /* Adjust line height for smaller screens */
+    padding: 0px 0; /* Reduce padding for mobile */
+    margin: 0%;
+  }
+  .about-text {
+    font-size: 0.9rem; /* Slightly smaller font size for mobile */
+    line-height: 1.4; /* Adjust line height for smaller screens */
+    padding: 5px 10px; /* Reduce padding for mobile */
+  }
 }
 
 
 /* Responsive Header for Mobile (max-width: 600px) */
 @media (max-width: 600px) {
   .header {
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center;
-    text-align: center;
+    display: flex;
+    flex-direction: row; /* Keep the logo and tabs in a row */
+    align-items: flex-start; /* Align items to the top */
+    justify-content: space-between; /* Space between logo and tabs */
+    padding: 10px 15px; /* Adjust padding for mobile */
   }
 
   .logo-container {
-    margin-bottom: 10px; /* Add spacing between logo and navigation */
+    display: flex;
+    flex-direction: row; /* Keep the logo and text logo side by side */
+    align-items: center; /* Vertically align the logo and text */
+    gap: 10px; /* Add spacing between the logo and text */
   }
 
   .website-name {
-    font-size: 1.2rem; /* Reduce font size for smaller screens */
+    font-size: 1rem; /* Reduce font size for smaller screens */
   }
 
   .nav-tabs {
-    flex-direction: column; /* Stack navigation links vertically */
-    gap: 10px; /* Add spacing between links */
+    display: flex;
+    flex-direction: column; /* Stack tabs vertically */
+    align-items: flex-end; /* Align tabs to the right */
+    gap: 5px; /* Add spacing between tabs */
   }
 
   .tab {
     font-size: 0.9rem; /* Reduce font size for navigation links */
+    padding: 5px 10px; /* Adjust padding for tabs */
+    text-align: right;
   }
 }
 
-
-
-/* Responsive Tab Styles for Mobile (max-width: 600px) */
+/* Mobile Layout (max-width: 600px) */
 @media (max-width: 600px) {
-  .tab {
-    padding: 5px 6px; /* Reduced padding for smaller screens */
-    font-size: 0.9rem; /* Slightly smaller font size */
+  .carousel {
+    display: flex;
+    flex-direction: column; /* Stack cards vertically */
+    gap: 15px; /* Add spacing between cards */
   }
 
-  .nav-tabs {
-    gap: 1px; /* Reduce the gap between tabs */
-    flex-direction: column; /* Stack tabs vertically */
-    align-items: center; /* Center-align tabs */
+  .personality-card-a,
+  .personality-card-b,
+  .personality-card-c,
+  .personality-card-d {
+    display: flex; /* Use Flexbox for horizontal alignment */
+    flex-direction: row; /* Align content horizontally */
+    align-items: center; /* Vertically align the image and text */
+    justify-content: flex-start; /* Align content to the left */
+    padding: 15px;
+    border-radius: 50px; /* Keep the pill shape */
+    width: 100%; /* Full width for mobile */
+    height: auto; /* Adjust height for content */
+    background-color: #f9f9f9; /* Optional: Add a background color */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
+  }
+
+  .personality-image {
+    width: 80px; /* Larger image size for mobile */
+    height: 80px;
+    border-radius: 50%; /* Make the image circular */
+    margin-right: 15px; /* Add spacing between the image and text */
+  }
+
+  .personality-name {
+    font-size: 1rem; /* Keep font size readable */
+    text-align: left; /* Align text to the left */
+    color: #333; /* Optional: Adjust text color */
+  }
+  .personality-card-a {
+    background-color: #fbb0fd; /* Keep the original background color */
+  }
+  .personality-card-b {
+    background-color: #97ebf1; /* Keep the original background color */
+  }
+  .personality-card-c {
+    background-color: #9ff397; /* Keep the original background color */
+  }
+  .personality-card-d {
+    background-color: #f8b697; /* Keep the original background color */
   }
 }
