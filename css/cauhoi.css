@@ -648,6 +648,7 @@ h3:after {
   .tab {
     font-size: 14px; /* Smaller tab text */
     padding: 5px 8px;
+    text-align: right;
   }
   .website-name {
     font-size: 18px;
