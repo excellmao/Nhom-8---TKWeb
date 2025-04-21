@@ -829,11 +829,12 @@ h3:after {
 @media (max-width: 600px) {
   .radio-group {
     gap: 10px; /* Reduce the gap between radio buttons */
+    margin-left: -30px;
   }
 
   .radio-label {
-    width: 36px; /* Make the radio buttons smaller */
-    height: 36px;
+    width: 30px; /* Make the radio buttons smaller */
+    height: 30px;
   }
 
   .caption {
@@ -845,7 +846,7 @@ h3:after {
     position: absolute;
     bottom: -25px; /* Position below the left-most radio button */
     left: 0;
-    transform: translateX(0); /* Center-align relative to the left-most button */
+    transform: translateX(-30px); /* Center-align relative to the left-most button */
     text-align: center;
     width: 36px; /* Match the width of the button */
   }
@@ -854,7 +855,7 @@ h3:after {
     position: absolute;
     bottom: -25px; /* Position below the right-most radio button */
     right: 0;
-    transform: translateX(-50px); /* Center-align relative to the right-most button */
+    transform: translateX(-40px); /* Center-align relative to the right-most button */
     text-align: center;
     width: 36px; /* Match the width of the button */
   }
