@@ -1,3 +1,5 @@
+/* START OF FILE cauhoi.css */
+
 .hidden {
   display: none;
 }
@@ -25,27 +27,32 @@ main {
   padding: 20px;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: flex-start; /* Keep alignment to top for overall main content */
 }
 
 
 .main-content {
   width: 100%; /* Ensure the main content spans the full width */
   max-width: 800px; /* Optional: Limit the width for better readability */
+  display: flex; /* Use flexbox for centering questionnaire */
+  justify-content: center; /* Center questionnaire horizontally */
+  flex-direction: column; /* Stack content vertically */
+  align-items: center; /* Center items like questionnaire/results */
 }
 
 .questionnaire {
   display: flex;
   flex-direction: column; /* Stack children vertically */
-  align-items: flex-start; /* Align children to the top */
+  align-items: center; /* Center questions horizontally */
   justify-content: flex-start; /* Ensure content starts from the top */
-  gap: 20px; /* Add spacing between questions */
-  width: 100%; /* Ensure it spans the full width */
-  padding: 20px; /* Optional: Add padding for better spacing */
+  gap: 30px; /* Default spacing between questions */
+  width: 100%; /* Ensure it spans the full width of main-content */
+  padding: 20px 0; /* Optional: Add padding top/bottom, remove side padding */
 }
 
 .question-container {
   width: 100%;
+  max-width: 600px; /* Limit width of individual questions for readability */
   text-align: center;
 }
 
@@ -58,26 +65,28 @@ main {
 .radio-group-wrapper {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 20px;
+  justify-content: center; /* Center items in the wrapper */
+  gap: 20px; /* Space between captions and radio group */
+  position: relative; /* Needed for potential future absolute elements if required, but not for current captions */
+  width: 100%; /* Take full width to center content within it */
 }
 
 .radio-group {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 40px;
+  gap: 30px; /* Default gap between radio buttons */
 }
 
 .radio-label {
   position: relative;
   display: inline-block;
-  width: 46px;
-  height: 46px;
+  width: 46px; /* Default size */
+  height: 46px; /* Default size */
   border-radius: 50%;
   background-color: #e0e0e0;
   cursor: pointer;
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease;
 }
 
 .radio-label:hover {
@@ -89,61 +98,46 @@ main {
 }
 
 .radio-label span {
-  display: none;
+  display: none; /* Hide emoji by default */
   font-size: 24px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  pointer-events: none; /* Prevent emoji from interfering with click */
 }
 
-/* Show the emoji when selected or hovered */
-.radio-label:hover span,
+/* Show the emoji when selected */
 .radio-label input[type="radio"]:checked + span {
   display: inline-block;
 }
 
-.radio-label.size--70 {
-  width: 70px;
-  height: 70px;
-}
+/* Optional: Show emoji on hover too */
+.radio-label:hover span {
+   display: inline-block;
+  }
 
-.radio-label.size--56 {
-  width: 56px;
-  height: 56px;
-}
+/* --- Specific Size Classes --- */
+.radio-label.size--70 { width: 70px; height: 70px; }
+.radio-label.size--56 { width: 56px; height: 56px; }
+.radio-label.size--46 { width: 46px; height: 46px; }
+.radio-label.size--36 { width: 36px; height: 36px; }
+.radio-label.size--36 span { font-size: 20px; } /* Adjust emoji size */
 
-.radio-label.size--46 {
-  width: 46px;
-  height: 46px;
-}
+/* --- Specific Color Classes --- */
+.radio-label.color--green { background-color: #4caf50; }
+.radio-label.color--red { background-color: #ef0404; }
 
-.radio-label.size--36 {
-  width: 36px;
-  height: 36px;
-}
-
-.radio-label.color--green {
-  background-color: #4caf50;
-}
-
-.radio-label.color--red {
-  background-color: #ef0404;
-}
-
+/* Make selected button slightly bigger/brighter */
 .caption {
-  font-size: 16px;
+  font-size: 14px; /* Default caption size */
   font-weight: bold;
   white-space: nowrap;
+  flex-shrink: 0; /* Prevent captions from shrinking */
 }
 
-.caption.text--green {
-  color: #4caf50;
-}
-
-.caption.text--red {
-  color: #ef0404;
-}
+.caption.text--green { color: #4caf50; }
+.caption.text--red { color: #ef0404; }
 
 /* Header Styles */
 .header {
@@ -187,6 +181,7 @@ main {
   color: #333;
   cursor: pointer;
   transition: color 0.3s ease-in-out;
+  text-decoration: none; /* Ensure links look like tabs */
 }
 
 .tab:hover {
@@ -223,10 +218,12 @@ main {
   text-align: center;
   font-size: 14px;
   color: #333;
-  position: relative;
-  bottom: 0;
+  /* position: relative; Remove relative if not needed */
+  /* bottom: 0; Removed - flexbox handles footer position */
   width: 100%;
   font-weight: bold;
+  margin-top: auto; /* Push footer to bottom in flex container */
+  border-top: 1px solid #eee; /* Optional subtle separator */
 }
 
 .github-button {
@@ -254,13 +251,14 @@ main {
   height: 20px;
 }
 
+/* Navigation Buttons (Prev/Next) */
 .navigation {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Default: space out buttons */
   align-items: center;
   max-width: 800px;
   width: 100%;
-  margin: 40px auto 0;
+  margin: 40px auto 20px; /* Add bottom margin before footer */
   padding: 0 20px;
 }
 
@@ -276,7 +274,7 @@ main {
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.navigation button:hover {
+.navigation button:hover:not(:disabled) {
   background-color: #c28cc7;
   transform: scale(1.05);
 }
@@ -285,6 +283,7 @@ main {
   background-color: #ccc;
   cursor: not-allowed;
   transform: none;
+  opacity: 0.7;
 }
 
 a {
@@ -292,12 +291,13 @@ a {
   color: inherit;
 }
 
+/* --- Hero Section --- */
 .hero {
   position: relative;
   background: url('/Nhom-8---TKWeb/content/test.png') no-repeat center center;
   background-size: cover;
-  background-position: center top;
-  min-height: 450px;
+  background-position: center top; /* Keep top visible */
+  min-height: 450px; /* Maintain minimum height */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -310,7 +310,7 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.6); /* Slightly increased opacity */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -322,8 +322,9 @@ a {
 
 .hero-quote {
   font-size: 2rem;
-  margin-bottom: 20px;
+  margin-bottom: 30px; /* More space below quote */
   font-weight: bold;
+  max-width: 90%; /* Prevent quote from being too wide */
 }
 
 /* Hero Boxes */
@@ -332,6 +333,7 @@ a {
   justify-content: center;
   gap: 20px;
   margin-top: 20px;
+  flex-wrap: wrap; /* Allow boxes to wrap on smaller screens if needed */
 }
 
 .hero-box {
@@ -340,32 +342,41 @@ a {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
   text-align: center;
-  width: 300px;
+  width: 280px; /* Slightly adjusted width */
+  max-width: 90%; /* Max width for smaller screens */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex; /* Use flex for internal alignment */
+  flex-direction: column; /* Stack icon/text vertically */
+  align-items: center; /* Center items */
 }
 
 .hero-box:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px); /* Subtle hover effect */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
 .hero-box-icon {
-  width: 100px;
-  height: 100px;
-  margin-bottom: 0px;
+  width: 80px; /* Slightly smaller icon */
+  height: 80px;
+  margin-bottom: 15px; /* Space between icon and title */
+  object-fit: cover; /* Ensure image covers the area nicely */
+  border-radius: 50%; /* Make icons circular */
 }
 
 .hero-box h3 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
+  font-size: 1.1rem; /* Adjusted title size */
+  margin-bottom: 8px;
   color: #333;
 }
 
 .hero-box p {
   font-size: 0.9rem;
   color: #666;
+  line-height: 1.4; /* Improve readability */
 }
 
+
+/* --- Results Section --- */
 :root {
   --primary-color: #e093d3;
   --secondary-color: #8ac4d0;
@@ -377,13 +388,21 @@ a {
   --shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
-.container {
+#results {
+  margin-top: 40px; /* Space above results */
   width: 100%;
-  max-width: 900px;
+  max-width: 900px; /* Max width for results container */
+  padding: 0 15px; /* Padding for results container */
+  box-sizing: border-box; /* Include padding in width */
 }
 
-/* Header Section */
-header {
+.container { /* General container for results content */
+  width: 100%;
+}
+
+/* Header Section (within results - might be redundant if using main header) */
+/* Consider removing this header if not used */
+/* header {
   background-color: var(--primary-color);
   color: white;
   padding: 40px 30px;
@@ -391,29 +410,28 @@ header {
   position: relative;
   border-radius: var(--border-radius) var(--border-radius) 0 0;
   margin-bottom: 60px;
-}
+} */
 
-h1 {
+h1 { /* Style for general H1 if needed */
   font-family: 'Montserrat', sans-serif;
   font-size: 28px;
   font-weight: 700;
+  text-align: center; /* Center main headings */
+  margin-bottom: 30px; /* Add space below main headings */
 }
 
-/* Main Content */
-main {
-  padding: 0 20px 30px;
-  position: relative;
-  z-index: 1;
-}
-
+/* Personality Type Display */
 .personality-type {
   text-align: center;
-  margin: -80px auto 30px;
+  margin: 0 auto 30px; /* Center and add bottom margin */
   background-color: var(--card-bg);
   border-radius: var(--border-radius);
-  padding: 20px;
+  padding: 25px; /* More padding */
   max-width: 80%;
   box-shadow: var(--shadow);
+  margin-top: -60px; /* Overlap with potential top element slightly */
+  position: relative; /* Ensure it's above other elements */
+  z-index: 2;
 }
 
 h2 {
@@ -421,30 +439,35 @@ h2 {
   margin-bottom: 10px;
   color: var(--text-color);
   opacity: 0.8;
+  font-weight: 600; /* Slightly bolder */
 }
 
 .mbti-result {
-  font-size: 28px;
+  font-size: 32px; /* Larger result text */
   font-weight: 700;
   color: var(--primary-color);
   margin-bottom: 0;
-  padding: 10px;
+  padding: 10px 20px; /* Adjust padding */
   border-radius: 10px;
   display: inline-block;
+  background-color: #fdf0f9; /* Subtle background */
 }
 
-/* Grid Layout */
+/* Grid Layout for Result Details */
 .result-grid {
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 25px;
+  grid-template-columns: 1fr 1.5fr; /* Adjust column ratio if needed */
+  gap: 30px; /* Increased gap */
   margin-bottom: 40px;
+  align-items: center; /* Vertically align grid items */
 }
 
 .result-image {
   overflow: hidden;
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
+  height: 100%; /* Make image container fill height */
+  max-height: 350px; /* Limit image height */
 }
 
 .result-image img {
@@ -452,6 +475,7 @@ h2 {
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
+  display: block; /* Remove extra space below image */
 }
 
 .result-image img:hover {
@@ -472,6 +496,7 @@ h2 {
   margin-bottom: 15px;
   line-height: 1.7;
   font-size: 15px;
+  color: var(--text-color); /* Ensure consistent text color */
 }
 
 .description p:last-child {
@@ -481,15 +506,17 @@ h2 {
 /* Traits Section */
 .traits-section {
   margin-bottom: 40px;
+  padding-top: 20px; /* Add space above traits title */
 }
 
-h3 {
+h3 { /* Styling for section titles like Traits */
   font-size: 22px;
-  margin-bottom: 20px;
+  margin-bottom: 25px; /* More space below title */
   color: var(--primary-color);
   text-align: center;
   position: relative;
   padding-bottom: 10px;
+  font-weight: 600;
 }
 
 h3:after {
@@ -507,21 +534,26 @@ h3:after {
 .traits-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 15px; /* Gap between trait items */
   justify-content: center;
 }
 
 .trait-item {
   display: flex;
   align-items: center;
-  padding: 15px;
-  border-bottom: 1px solid #edf2f7;
-  width: calc(50% - 10px);
-  transition: transform 0.3s ease;
+  padding: 12px 15px; /* Adjust padding */
+  /* border-bottom: 1px solid #edf2f7; Remove bottom border for cleaner look */
+  background-color: #fff; /* Give items a background */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Subtle shadow */
+  width: calc(50% - 10px); /* Adjust width calculation based on gap */
+  min-width: 200px; /* Minimum width */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .trait-item:hover {
   transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
 }
 
 .trait-icon {
@@ -537,22 +569,26 @@ h3:after {
   align-items: center;
   justify-content: center;
   font-size: 20px;
+  color: white; /* Make icon visible */
+  flex-shrink: 0; /* Prevent icon from shrinking */
 }
 
 .trait-text {
   font-weight: 600;
   color: var(--text-color);
+  font-size: 15px; /* Slightly adjust text size */
 }
 
-/* Action Buttons */
+/* Action Buttons Section */
 .action-section {
   display: flex;
   justify-content: center;
   gap: 20px;
   margin-bottom: 20px;
+  flex-wrap: wrap; /* Allow buttons to wrap */
 }
 
-.detail-btn {
+.detail-btn { /* General style for action buttons */
   padding: 14px 28px;
   border: none;
   border-radius: 30px;
@@ -560,330 +596,361 @@ h3:after {
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-}
-
-.detail-btn {
   background-color: var(--primary-color);
   color: white;
-  box-shadow: 0 4px 10px rgba(106, 76, 147, 0.3);
+  box-shadow: 0 4px 10px rgba(106, 76, 147, 0.2); /* Softer shadow */
+  text-decoration: none; /* Ensure link looks like a button */
+  display: inline-block; /* Proper display for link */
 }
 
 
 .detail-btn:hover {
-  background-color: #df71cc;
+  background-color: #d66abc; /* Slightly different hover color */
   transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(106, 76, 147, 0.4);
-}
-
-#results {
-  margin-top: 100px; /* Adjust the value as needed */
-}
-
-#learn-more {
-  display: block;
-  margin: 20px auto;
-  text-align: center;
+  box-shadow: 0 6px 12px rgba(106, 76, 147, 0.3); /* Adjusted hover shadow */
 }
 
 .findoutmore {
   width: 100%;
   display: flex;
   justify-content: center;
+  margin-top: 30px; /* Space above the find out more button */
 }
 
-
-/* 1. Ensure flexible layouts and padding */
-.container,
-.main-content,
-.questionnaire,
-.result-grid,
-.hero-overlay {
-  padding-left: 15px;
-  padding-right: 15px;
-  width: 100%;
-  box-sizing: border-box;
+#learn-more {
+  /* Specific styles for learn more button if needed, inherits from .detail-btn */
+   display: block; /* Make it visible when needed */
 }
 
-/* 2. Navigation: stack tabs on smaller screens */
+/* ================== RESPONSIVE STYLES ================== */
+
+/* General Padding Adjustments */
+@media (max-width: 992px) {
+  .main-content, .container, #results {
+    max-width: 95%; /* Allow more width on tablets */
+  }
+  .result-grid {
+    gap: 20px; /* Reduce gap slightly */
+  }
+  .hero-quote {
+    font-size: 1.8rem;
+  }
+}
+
+/* Tablet and Smaller Desktop (Navigation, Hero) */
 @media (max-width: 768px) {
+  .header {
+    padding: 10px 15px; /* Reduce padding */
+  }
   .nav-tabs {
-    flex-direction: column;
-    gap: 10px;
-    align-items: flex-start;
+    gap: 20px; /* Reduce gap between tabs */
   }
   .tab {
-    width: 100%;
+    font-size: 14px; /* Smaller tab text */
+    padding: 5px 8px;
   }
-}
+  .website-name {
+    font-size: 18px;
+  }
+  .logo-container img {
+    height: 50px;
+  }
 
-/* 3. Hero section: adapt height and boxes stacking */
-@media (max-width: 992px) {
   .hero {
-    height: auto;
-    padding: 60px 0;
+    min-height: auto; /* Adjust height */
+    padding: 80px 0 60px; /* Adjust padding */
   }
   .hero-overlay {
-    padding: 20px;
-    background-color: rgba(255,255,255,0.7);
+    background-color: rgba(255,255,255,0.7); /* More opaque overlay */
   }
   .hero-quote {
     font-size: 1.5rem;
+    margin-bottom: 25px;
   }
   .hero-boxes {
-    flex-direction: column;
+    flex-direction: column; /* Stack boxes vertically */
     gap: 15px;
+    align-items: center; /* Center stacked boxes */
   }
   .hero-box {
-    width: 100%;
-  }
-}
-
-/* 4. Questionnaire and radio buttons: scale down on small devices */
-@media (max-width: 600px) {
-  .hero-box {
-    flex-direction: row; /* Align content horizontally */
-    align-items: center; /* Vertically align the image and text */
-    justify-content: flex-start; /* Align content to the left */
-    padding: 15px;
-    border-radius: 50px; /* Make the boxes pill-shaped */
-    width: 100%; /* Full width for mobile */
-    height: auto; /* Adjust height for content */
+    width: 80%; /* Wider boxes when stacked */
+    max-width: 400px;
   }
 
-  .hero-box-icon {
-    width: 60px; /* Adjust image size for mobile */
-    height: 60px;
-    margin-right: 15px; /* Add spacing between the image and text */
-    margin-bottom: 0; /* Remove bottom margin for horizontal layout */
-  }
-
-  .hero-box h3 {
-    font-size: 1rem; /* Adjust font size for mobile */
-    margin: 0; /* Remove extra margin */
-  }
-
-  .hero-box p {
-    font-size: 0.9rem; /* Adjust font size for mobile */
-    color: #555;
-  }
-
-  .radio-group-wrapper {
-    flex-direction: column;
-    gap: 10px;
-  }
-  .radio-group {
-    gap: 20px;
-  }
-  .radio-label.size--70 { width: 56px; height: 56px; }
-  .radio-label.size--56 { width: 46px; height: 46px; }
-  .radio-label.size--46 { width: 36px; height: 36px; }
-  .radio-label.size--36 { width: 26px; height: 26px; }
-  .caption { font-size: 14px; }
-}
-/* 5. Result Grid: single column layout */
-@media (max-width: 768px) {
   .result-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    grid-template-columns: 1fr; /* Stack result grid */
+    gap: 25px;
+  }
+  .result-image {
+    max-height: 300px; /* Adjust image height */
+    order: -1; /* Move image above text on mobile */
+  }
+
+  .personality-type {
+     max-width: 90%;
+     margin-top: -50px;
+     padding: 20px;
+  }
+  .mbti-result {
+    font-size: 28px;
+  }
+
+  .traits-container {
+      justify-content: center;
+  }
+  .trait-item {
+      width: calc(50% - 8px); /* Adjust width for 2 columns */
+      min-width: 180px;
   }
 }
 
-/* 6. Footer: padding adjustments */
-@media (max-width: 480px) {
-  .footer {
-    padding: 15px;
-    font-size: 12px;
-  }
-}
 
-/* 7. Header: collapse logo and name on very small screens */
-@media (max-width: 480px) {
-  .logo-container img {
-    height: 40px;
-  }
-  .website-name {
-    font-size: 16px;
-  }
-}
-
-/* 8. Navigation Buttons: full width on mobile */
+/* Mobile Devices (Header, Hero, Questionnaire, Footer) */
 @media (max-width: 600px) {
-  .navigation button {
-    width: 100%;
-    margin: 5px 0;
+  body {
+     font-size: 14px; /* Adjust base font size */
   }
-}
 
-/* 9. General typography adjustments */
-@media (max-width: 600px) {
-  h1 { font-size: 24px; }
-  h2 { font-size: 16px; }
-  h3 { font-size: 18px; }
-  .question-header { font-size: 16px; }
-}
-
-
-/* Responsive Header for Mobile (max-width: 600px) */
-@media (max-width: 600px) {
+  /* --- Header --- */
   .header {
-    display: flex;
-    flex-direction: row; /* Keep the logo and tabs in a row */
-    align-items: flex-start; /* Align items to the top */
-    justify-content: space-between; /* Space between logo and tabs */
-    padding: 10px 15px; /* Adjust padding for mobile */
+    flex-direction: row; /* Keep horizontal layout */
+    align-items: center; /* Center vertically */
+    justify-content: space-between;
+    padding: 8px 10px; /* Further reduce padding */
   }
-
   .logo-container {
-    display: flex;
-    flex-direction: row; /* Keep the logo and text logo side by side */
-    align-items: center; /* Vertically align the logo and text */
-    gap: 10px; /* Add spacing between the logo and text */
+    gap: 8px;
   }
-
+  .logo-container img {
+    height: 40px; /* Smaller logo */
+  }
   .website-name {
-    font-size: 1rem; /* Reduce font size for smaller screens */
+    font-size: 16px; /* Smaller name */
   }
-
   .nav-tabs {
-    display: flex;
+    position: static; /* Remove absolute positioning */
+    display: flex; /* Keep tabs visible */
     flex-direction: column; /* Stack tabs vertically */
-    align-items: flex-end; /* Align tabs to the right */
-    gap: 5px; /* Add spacing between tabs */
+    align-items: flex-start; /* Align tabs to the left */
+    gap: 10px; /* Add spacing between tabs */
+    background-color: transparent; /* Remove background color */
+    box-shadow: none; /* Remove shadow */
+    border-radius: 0; /* Remove border radius */
+    width: auto; /* Allow tabs to take natural width */
+    max-height: none; /* Remove height restrictions */
+    overflow: visible; /* Ensure content is visible */
+    padding: 0; /* Remove extra padding */
   }
 
   .tab {
-    font-size: 0.9rem; /* Reduce font size for navigation links */
+    font-size: 14px; /* Adjust font size for smaller screens */
     padding: 5px 10px; /* Adjust padding for tabs */
-    text-align: right;
+    border-bottom: none; /* Remove border between tabs */
+    width: auto; /* Allow tabs to take natural width */
+    text-align: left; /* Align text to the left */
   }
-}
 
-/* Adjust hero boxes for mobile */
-@media (max-width: 600px) {
+  .tab:last-child {
+    border-bottom: none; /* Ensure no border on the last tab */
+  }
+
+
+  /* --- Hero Section --- */
   .hero {
-    height: auto;
-    padding: 40px 0;
+    padding: 60px 0 40px;
   }
-
-  .hero-quote {
-    font-size: 1.2rem;
-    padding: 0 10px; /* adds spacing from edges */
-  }
-
   .hero-overlay {
     padding: 15px;
-    background-color: rgba(255, 255, 255, 0.329);
+    background-color: rgba(255, 255, 255, 0.75);
   }
-  .hero-boxes {
-    display: flex;
-    flex-direction: column; /* Stack boxes vertically */
-    gap: 15px; /* Add spacing between boxes */
-  }
-
-  .hero-box {
-    display: flex; /* Use Flexbox for horizontal alignment */
-    flex-direction: row; /* Align content horizontally */
-    align-items: center; /* Vertically align the image and text */
-    justify-content: flex-start; /* Align content to the left */
-    padding: 15px;
-    border-radius: 50px; /* Make the boxes pill-shaped */
-    width: 100%; /* Full width for mobile */
-    height: auto; /* Adjust height for content */
-    background-color: #fff; /* Optional: Add a background color */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
-  }
-
-  .hero-box-icon {
-    width: 60px; /* Adjust image size for mobile */
-    height: 60px;
-    margin-right: 15px; /* Add spacing between the image and text */
-    border-radius: 50%; /* Make the image circular */
-  }
-
-  .hero-box h3 {
-    font-size: 1rem; /* Adjust font size for mobile */
-    margin: 0; /* Remove extra margin */
-  }
-
-  .hero-box p {
-    font-size: 0.9rem; /* Adjust font size for mobile */
-    color: #555; /* Optional: Adjust text color */
-  }
-}
-
-/* Adjust spacing for hero boxes and questionnaire on mobile */
-@media (max-width: 600px) {
   .hero-quote {
-    margin-top: -100px; /* Add space below the hero quote */
+    font-size: 1.3rem;
+    margin-bottom: 20px;
   }
   .hero-boxes {
-    margin-top: 0px; /* Add space below the hero quote */
+    gap: 12px; /* Slightly reduce gap */
+    margin-top: 200px;
+  }
+  .hero-box {
+    flex-direction: row; /* Horizontal layout for box content */
+    align-items: center;
+    justify-content: flex-start; /* Align content left */
+    padding: 12px 15px; /* Adjust padding */
+    border-radius: 30px; /* Pill shape */
+    width: 100%; /* Full width */
+    max-width: 95%; /* Limit max width slightly */
+    height: auto;
+    text-align: left; /* Align text left */
+  }
+  .hero-box-icon {
+    width: 50px; /* Smaller icon */
+    height: 50px;
+    margin-right: 15px; /* Space between icon and text */
+    margin-bottom: 0; /* Remove bottom margin */
+    flex-shrink: 0;
+  }
+  .hero-box h3 {
+    font-size: 1rem;
+    margin: 0 0 3px 0; /* Adjust margins */
+  }
+  .hero-box p {
+    font-size: 0.85rem;
+    color: #555;
+    margin: 0;
   }
 
+  /* --- Questionnaire --- */
   .questionnaire {
-    margin-top: 50px; /* Add space below the hero boxes */
+    gap: 40px; /* Increase gap between questions */
+    margin-top: 30px; /* Space below hero */
+    padding: 0 10px; /* Add slight side padding */
+    margin-top: 300px;
   }
-}
-
-/* Adjust radio buttons and captions for mobile */
-@media (max-width: 600px) {
+  .question-header {
+    font-size: 16px;
+  }
+  .radio-group-wrapper {
+    flex-direction: row; /* Keep row layout */
+    justify-content: center; /* **** FIX: Center the items **** */
+    align-items: center;
+    gap: 10px; /* **** FIX: Reduce gap between elements **** */
+    width: 100%;
+    /* position: relative; */ /* Not needed for this layout */
+  }
   .radio-group {
-    gap: 10px; /* Reduce the gap between radio buttons */
-    margin-left: -30px;
+    gap: 10px; /* **** FIX: Reduce gap between radio buttons **** */
+    /* margin-left: -30px; */ /* **** FIX: REMOVED this negative margin **** */
   }
-
   .radio-label {
-    width: 30px; /* Make the radio buttons smaller */
-    height: 30px;
+     /* **** FIX: Make buttons smaller and consistent **** */
+     width: 30px;
+     height: 30px;
   }
+   .radio-label span {
+     font-size: 18px; /* Adjust emoji size */
+   }
+   /* Remove specific size overrides for mobile */
+   .radio-label.size--70,
+   .radio-label.size--56,
+   .radio-label.size--46,
+   .radio-label.size--36 {
+      width: 30px;
+      height: 30px;
+   }
 
   .caption {
-    font-size: 14px; /* Adjust font size for captions */
-    text-align: center;
+    font-size: 12px; /* **** FIX: Smaller caption text **** */
+    white-space: nowrap;
+    /* **** FIX: REMOVED all absolute positioning properties **** */
+    /* position: absolute; */
+    /* bottom: -25px; */
+    /* left: 0; */
+    /* right: 0; */
+    /* transform: none; */
+    /* width: auto; */
+    text-align: center; /* Keep text centered */
   }
-
+   /* Remove specific positioning overrides */
   .caption.text--green {
-    position: absolute;
-    bottom: -25px; /* Position below the left-most radio button */
-    left: 0;
-    transform: translateX(-30px); /* Center-align relative to the left-most button */
-    text-align: center;
-    width: 36px; /* Match the width of the button */
+     /* No absolute positioning needed */
+     order: -1; /* Ensure green caption is first */
   }
-
   .caption.text--red {
-    position: absolute;
-    bottom: -25px; /* Position below the right-most radio button */
-    right: 0;
-    transform: translateX(-40px); /* Center-align relative to the right-most button */
-    text-align: center;
-    width: 36px; /* Match the width of the button */
+     /* No absolute positioning needed */
+     order: 1; /* Ensure red caption is last */
   }
 
-  .radio-group-wrapper {
-    position: relative; /* Ensure captions are positioned relative to the group */
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-}
-@media (max-width: 600px) {
-  .questionnaire {
-    gap: 30px; /* Increase the gap between questions */
-  }
-}
-
-@media (max-width: 600px) {
-  .navigation button {
-    font-size: 14px; /* Make the text smaller */
-    padding: 8px 16px; /* Reduce padding for smaller buttons */
-    margin: 0 10px; /* Add a gap between the buttons */
-  }
-
+  /* --- Navigation Buttons --- */
   .navigation {
-    display: flex;
+    flex-direction: row; /* Keep buttons in a row */
     justify-content: center; /* Center the buttons */
-    gap: 20px; /* Add spacing between the buttons */
+    gap: 15px; /* Space between buttons */
+    padding: 0 10px; /* Padding */
+    margin-top: 30px;
   }
+  .navigation button {
+    font-size: 14px;
+    padding: 10px 18px; /* Smaller padding */
+    /* width: auto; */ /* Allow button width to adjust to content */
+    /* margin: 5px 0; */ /* Remove margin, use gap */
+  }
+
+  /* --- Results --- */
+  .personality-type {
+     max-width: 100%; /* Full width */
+     margin-top: 20px; /* Adjust overlap/margin */
+     padding: 15px;
+  }
+  .mbti-result {
+     font-size: 24px;
+  }
+  .result-grid {
+     gap: 20px;
+  }
+   h3 { font-size: 20px; }
+   .traits-container {
+      gap: 10px;
+   }
+   .trait-item {
+      width: 100%; /* Stack traits */
+      justify-content: flex-start; /* Align items left */
+   }
+   .detail-btn {
+      font-size: 15px;
+      padding: 12px 24px;
+   }
+
+
+  /* --- Footer --- */
+  .footer {
+    padding: 15px 10px;
+    font-size: 12px;
+  }
+  .github-button {
+    padding: 8px 15px;
+    font-size: 12px;
+  }
+  .github-logo {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* --- General Typography --- */
+  h1 { font-size: 22px; }
+  h2 { font-size: 16px; }
+
+}
+
+/* Very Small Screens Adjustments */
+@media (max-width: 380px) {
+    .radio-group {
+        gap: 5px; /* Even smaller gap */
+    }
+    .radio-label {
+        width: 26px;
+        height: 26px;
+    }
+    .radio-label span {
+       font-size: 16px;
+    }
+    .radio-label.size--70,
+    .radio-label.size--56,
+    .radio-label.size--46,
+    .radio-label.size--36 {
+        width: 26px;
+        height: 26px;
+    }
+    .caption {
+        font-size: 11px;
+    }
+    .radio-group-wrapper {
+        gap: 5px; /* Reduce gap further */
+    }
+    .hero-box-icon {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+    }
+    .hero-box h3 { font-size: 0.9rem; }
+    .hero-box p { font-size: 0.8rem; }
 }
