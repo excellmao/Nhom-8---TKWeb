@@ -5,7 +5,6 @@
     color: inherit;
   }
 
-  /* Sticky Header */
   .header {
     position: sticky;
     top: 0;
@@ -18,7 +17,6 @@
     z-index: 1000;
   }
 
-  /* Logo and Website Name */
   .logo-container {
     display: flex;
     align-items: center;
@@ -36,7 +34,6 @@
     color: #333;
   }
 
-  /* Navigation Tabs */
   .nav-tabs {
     display: flex;
     gap: 50px;
@@ -55,7 +52,6 @@
     color: #de9dee;
   }
 
-  /* Underline Effect */
   .tab::after {
     content: '';
     position: absolute;
@@ -71,7 +67,6 @@
     width: 100%;
   }
 
-  /* Active Tab */
   .tab.active {
     color: #de9dee;
   }
@@ -80,35 +75,34 @@
     width: 100%;
   }
 
-  /* Responsive Header for Mobile (max-width: 600px) */
   @media (max-width: 600px) {
     .header {
-      flex-direction: row; /* Keep logo and tabs in a row */
-      align-items: flex-start; /* Align items to the top */
-      justify-content: space-between; /* Space between logo and tabs */
-      padding: 10px 15px; /* Adjust padding for mobile */
+      flex-direction: row; 
+      align-items: flex-start; 
+      justify-content: space-between; 
+      padding: 10px 15px; 
     }
 
     .logo-container {
-      flex-direction: row; /* Keep logo and text logo side by side */
-      align-items: center; /* Vertically align the logo and text */
-      gap: 10px; /* Add spacing between the logo and text */
+      flex-direction: row; 
+      align-items: center; 
+      gap: 10px; 
     }
 
     .website-name {
-      font-size: 16px; /* Reduce font size for smaller screens */
+      font-size: 16px; 
     }
 
     .nav-tabs {
-      flex-direction: column; /* Stack tabs vertically */
-      align-items: flex-end; /* Align tabs to the right */
-      gap: 10px; /* Add spacing between tabs */
+      flex-direction: column; 
+      align-items: flex-end; 
+      gap: 10px;
     }
 
     .tab {
-      font-size: 14px; /* Reduce font size for navigation links */
-      padding: 5px 10px; /* Adjust padding for tabs */
-      text-align: right; /* Align text inside the tabs to the right */
+      font-size: 14px; 
+      padding: 5px 10px; 
+      text-align: right; 
     }
   }
 </style>

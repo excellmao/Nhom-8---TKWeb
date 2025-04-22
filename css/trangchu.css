@@ -17,20 +17,18 @@
     color: inherit;
   }
 
-  /* Sticky Header */
   .header {
     position: sticky;
     top: 0;
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 1rem 2rem; /* Add padding inside the header */
+    padding: 1rem 2rem; 
     display: flex;
     align-items: center;
     justify-content: space-between;
     z-index: 1000;
   }
 
-  /* Logo and Website Name */
   .logo-container {
     display: flex;
     align-items: center;
@@ -49,7 +47,6 @@
     color: #333;
   }
 
-  /* Navigation Tabs */
   .nav-tabs {
     display: flex;
     gap: 50px;
@@ -68,7 +65,6 @@
     color: #de9dee;
   }
 
-  /* Underline Effect */
   .tab::after {
     content: '';
     position: absolute;
@@ -84,7 +80,6 @@
     width: 100%;
   }
 
-  /* Active Tab */
   .tab.active {
     color: #de9dee;
   }
@@ -93,14 +88,11 @@
     width: 100%;
   }
 
-  /* Content Section */
-
-/* Test Section */
 .test-section {
     position: relative;
     background: url('/Nhom-8---TKWeb/content/background-doyotest.webp') no-repeat center center; /* Replace with your background image */
-    background-size: cover; /* Ensures the background fills the section */
-    height: 500px; /* Adjust height as needed */
+    background-size: cover; 
+    height: 500px; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -160,35 +152,32 @@
   color: #333;
 }
 
-/* Carousel Container */
 .carousel-container {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding: 20px 0; /* Add padding to create space around the grid */
+  padding: 20px 0; 
 }
 
 
-/* Carousel */
 .carousel {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
-  grid-template-rows: repeat(2, auto); /* 2 rows */
-  gap: 100px; /* Add spacing between cards */
-  justify-content: center; /* Center the grid horizontally */
-  align-items: center; /* Center the grid vertically */
-  width: auto; /* Adjust width to fit the content */
-  margin: 0 auto; /* Center the grid within the container */
+  grid-template-columns: repeat(4, 1fr); 
+  grid-template-rows: repeat(2, auto); 
+  gap: 100px; 
+  justify-content: center; 
+  align-items: center; 
+  width: auto; 
+  margin: 0 auto; 
 }
 
 
-/* Personality Card */
 .personality-card-a {
   position: relative;
-  width: 220px; /* Slightly larger card width */
-  height: 280px; /* Slightly larger card height */
+  width: 220px; 
+  height: 280px; 
   background-color: #fbb0fd;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -200,8 +189,8 @@
 
 .personality-card-b {
   position: relative;
-  width: 220px; /* Slightly larger card width */
-  height: 280px; /* Slightly larger card height */
+  width: 220px; 
+  height: 280px;
   background-color: #97ebf1;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -213,8 +202,8 @@
 
 .personality-card-c {
   position: relative;
-  width: 220px; /* Slightly larger card width */
-  height: 280px; /* Slightly larger card height */
+  width: 220px; 
+  height: 280px; 
   background-color: #9ff397;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -226,8 +215,8 @@
 
 .personality-card-d {
   position: relative;
-  width: 220px; /* Slightly larger card width */
-  height: 280px; /* Slightly larger card height */
+  width: 220px; 
+  height: 280px;
   background-color: #f8b697;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -250,32 +239,30 @@
   transform: scale(1.05);
 }
 
-/* Personality Image */
 .personality-image {
   width: 100%;
-  height: 160px; /* Adjust image height */
+  height: 160px; 
   object-fit: cover;
-  transition: opacity 0.3s ease, filter 0.3s ease; /* Smooth transition for blur and opacity */
+  transition: opacity 0.3s ease, filter 0.3s ease;
 }
 
 .personality-card-a:hover .personality-image {
-  opacity: 0.3; /* Make the image semi-transparent */
-  filter: blur(3px); /* Apply a blur effect */
+  opacity: 0.3; 
+  filter: blur(3px); 
 }
 .personality-card-b:hover .personality-image {
-  opacity: 0.3; /* Make the image semi-transparent */
-  filter: blur(3px); /* Apply a blur effect */
+  opacity: 0.3;
+  filter: blur(3px); 
 }
 .personality-card-c:hover .personality-image {
-  opacity: 0.3; /* Make the image semi-transparent */
-  filter: blur(3px); /* Apply a blur effect */
+  opacity: 0.3;
+  filter: blur(3px); 
 }
 .personality-card-d:hover .personality-image {
-  opacity: 0.3; /* Make the image semi-transparent */
-  filter: blur(3px); /* Apply a blur effect */
+  opacity: 0.3;
+  filter: blur(3px); 
 }
 
-/* Personality Name */
 .personality-name {
   font-size: 20px;
   color: #333;
@@ -283,7 +270,6 @@
   transition: opacity 0.3s ease;
 }
 
-/* Hover Effect for Description */
 .personality-card-a:hover .personality-name {
   opacity: 0;
 }
@@ -360,27 +346,27 @@
 }
 
 .about-section {
-  display: flex; /* Use Flexbox to align items horizontally */
-  align-items: center; /* Vertically align the image and text */
-  gap: 50px; /* Add spacing between the image and text */
-  padding: 90px; /* Add padding around the section */
+  display: flex; 
+  align-items: center; 
+  gap: 50px; 
+  padding: 90px; 
 }
 
 .about-image-container {
-  flex: 1; /* Allow the image container to take up equal space */
+  flex: 1; 
 }
 
 .about-image {
-  width: 100%; /* Make the image responsive */
-  max-width: 400px; /* Set a maximum width for the image */
-  border-radius: 10px; /* Optional: Add rounded corners */
+  width: 100%; 
+  max-width: 400px; 
+  border-radius: 10px; 
 }
 
 .about-content {
-  flex: 2; /* Allow the text container to take up more space */
+  flex: 2; 
   font-size: 1rem;
-  line-height: 1.6; /* Improve readability */
-  color: #333; /* Adjust text color */
+  line-height: 1.6; 
+  color: #333;
 }
 
 .introduction-section {
@@ -398,7 +384,6 @@
   margin-bottom: 3rem;
 }
 
-/* Second row - 2 members */
 .team-container .team-member:nth-child(n+4) {
   width: calc(50% - 2.5rem);
   max-width: 250px;
@@ -479,7 +464,6 @@
   margin-top: 40px;
 }
 
-/* Learn More Button */
 .learn-more-button {
   display: inline-block;
   padding: 12px 24px;
@@ -523,21 +507,20 @@
 }
 
 
-/* Media Queries for Mobile Responsiveness */
 @media (max-width: 600px) {
   .tabs {
-    flex-direction: column; /* Stack tabs vertically */
+    flex-direction: column;
   }
 
   .tab {
-    width: 100%; /* Full width for each tab */
-    margin: 5px 0; /* Adjust margin for mobile */
+    width: 100%; 
+    margin: 5px 0; 
   }
 
   .first-section img {
-    width: 100%; /* Make image responsive */
-    height: auto; /* Maintain aspect ratio */
-    order: -1; /* Move image to the top */
+    width: 100%; 
+    height: auto; 
+    order: -1; 
   }
 }
 
@@ -555,121 +538,118 @@
   flex: 2;
 }
 
-/* Mobile layout (max-width: 600px) */
 @media (max-width: 600px) {
   .about-section {
-    flex-direction: column; /* Stack elements vertically */
+    flex-direction: column;
   }
 
   .about-image-container {
-    order: -1; /* Move the image to the top */
-    text-align: center; /* Center the image */
+    order: -1; 
+    text-align: center; 
   }
 
   .about-image {
-    max-width: 100%; /* Ensure the image is responsive */
+    max-width: 100%; 
     height: auto;
   }
 
   .about-content {
-    text-align: center; /* Center-align the text for better readability */
+    text-align: center; 
     padding: 10px;
   }
   .about-content p {
-    font-size: 0.9rem; /* Smaller font size for mobile */
-    line-height: 1.4; /* Adjust line height for smaller screens */
-    padding: 0px 0; /* Reduce padding for mobile */
+    font-size: 0.9rem; 
+    line-height: 1.4;
+    padding: 0px 0;
     margin: 0%;
   }
   .about-text {
-    font-size: 0.9rem; /* Slightly smaller font size for mobile */
-    line-height: 1.4; /* Adjust line height for smaller screens */
-    padding: 5px 10px; /* Reduce padding for mobile */
+    font-size: 0.9rem; 
+    line-height: 1.4; 
+    padding: 5px 10px; 
   }
 }
 
 
-/* Responsive Header for Mobile (max-width: 600px) */
 @media (max-width: 600px) {
   .header {
     display: flex;
-    flex-direction: row; /* Keep the logo and tabs in a row */
-    align-items: flex-start; /* Align items to the top */
-    justify-content: space-between; /* Space between logo and tabs */
-    padding: 10px 15px; /* Adjust padding for mobile */
+    flex-direction: row; 
+    align-items: flex-start; 
+    justify-content: space-between; 
+    padding: 10px 15px;
   }
 
   .logo-container {
     display: flex;
-    flex-direction: row; /* Keep the logo and text logo side by side */
-    align-items: center; /* Vertically align the logo and text */
-    gap: 10px; /* Add spacing between the logo and text */
+    flex-direction: row; 
+    align-items: center; 
+    gap: 10px;
   }
 
   .website-name {
-    font-size: 1rem; /* Reduce font size for smaller screens */
+    font-size: 1rem; 
   }
 
   .nav-tabs {
     display: flex;
-    flex-direction: column; /* Stack tabs vertically */
-    align-items: flex-end; /* Align tabs to the right */
-    gap: 5px; /* Add spacing between tabs */
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px; 
   }
 
   .tab {
-    font-size: 0.9rem; /* Reduce font size for navigation links */
-    padding: 5px 10px; /* Adjust padding for tabs */
+    font-size: 0.9rem;
+    padding: 5px 10px; 
     text-align: right;
   }
 }
 
-/* Mobile Layout (max-width: 600px) */
 @media (max-width: 600px) {
   .carousel {
     display: flex;
-    flex-direction: column; /* Stack cards vertically */
-    gap: 15px; /* Add spacing between cards */
+    flex-direction: column; 
+    gap: 15px;
   }
 
   .personality-card-a,
   .personality-card-b,
   .personality-card-c,
   .personality-card-d {
-    display: flex; /* Use Flexbox for horizontal alignment */
-    flex-direction: row; /* Align content horizontally */
-    align-items: center; /* Vertically align the image and text */
-    justify-content: flex-start; /* Align content to the left */
+    display: flex; 
+    flex-direction: row; 
+    align-items: center; 
+    justify-content: flex-start; 
     padding: 15px;
-    border-radius: 50px; /* Keep the pill shape */
-    width: 100%; /* Full width for mobile */
-    height: auto; /* Adjust height for content */
-    background-color: #f9f9f9; /* Optional: Add a background color */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
+    border-radius: 50px; 
+    width: 100%; 
+    height: auto; 
+    background-color: #f9f9f9; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
   }
 
   .personality-image {
-    width: 80px; /* Larger image size for mobile */
+    width: 80px; 
     height: 80px;
-    border-radius: 50%; /* Make the image circular */
-    margin-right: 15px; /* Add spacing between the image and text */
+    border-radius: 50%; 
+    margin-right: 15px;
   }
 
   .personality-name {
-    font-size: 1rem; /* Keep font size readable */
-    text-align: left; /* Align text to the left */
-    color: #333; /* Optional: Adjust text color */
+    font-size: 1rem; 
+    text-align: left;
+    color: #333; 
   }
   .personality-card-a {
-    background-color: #fbb0fd; /* Keep the original background color */
+    background-color: #fbb0fd; 
   }
   .personality-card-b {
-    background-color: #97ebf1; /* Keep the original background color */
+    background-color: #97ebf1; 
   }
   .personality-card-c {
-    background-color: #9ff397; /* Keep the original background color */
+    background-color: #9ff397; 
   }
   .personality-card-d {
-    background-color: #f8b697; /* Keep the original background color */
+    background-color: #f8b697; 
   }
 }
