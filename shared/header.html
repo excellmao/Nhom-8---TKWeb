@@ -4,7 +4,8 @@
       text-decoration: none;
       color: inherit;
     }
-  
+
+    /* Sticky Header */
     .header {
       position: sticky;
       top: 0;
@@ -16,29 +17,31 @@
       justify-content: space-between;
       z-index: 1000;
     }
-  
+
+    /* Logo and Website Name */
     .logo-container {
       display: flex;
       align-items: center;
     }
-  
+
     .logo-container img {
       height: 60px;
       margin-right: 10px;
       border-radius: 10px;
     }
-  
+
     .website-name {
       font-size: 20px;
       font-weight: bold;
       color: #333;
     }
-  
+
+    /* Navigation Tabs */
     .nav-tabs {
       display: flex;
       gap: 50px;
     }
-  
+
     .tab {
       position: relative;
       padding: 5px 10px;
@@ -47,11 +50,12 @@
       cursor: pointer;
       transition: color 0.3s ease-in-out;
     }
-  
+
     .tab:hover {
       color: #de9dee;
     }
-  
+
+    /* Underline Effect */
     .tab::after {
       content: '';
       position: absolute;
@@ -62,52 +66,80 @@
       background-color: #de9dee;
       transition: width 0.3s ease-in-out;
     }
-  
+
     .tab:hover::after {
       width: 100%;
     }
-  
+
+    /* Active Tab */
     .tab.active {
       color: #de9dee;
     }
-  
+
     .tab.active::after {
       width: 100%;
     }
-  
+
+    /* Responsive Header for Mobile (max-width: 600px) */
     @media (max-width: 600px) {
       .header {
-        flex-direction: row; 
-        align-items: flex-start; 
-        justify-content: space-between; 
-        padding: 10px 15px; 
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 15px;
       }
-  
+
       .logo-container {
-        flex-direction: row; 
-        align-items: center; 
-        gap: 10px; 
-      }
-  
-      .website-name {
-        font-size: 16px; 
-      }
-  
-      .nav-tabs {
-        flex-direction: column; 
-        align-items: flex-end; 
+        flex-direction: row;
+        align-items: center;
         gap: 10px;
       }
-  
+
+      .website-name {
+        font-size: 16px;
+      }
+
+      .nav-tabs {
+        display: none;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 10px;
+        background-color: #fff;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        z-index: 1001;
+      }
+
+      .nav-tabs.show {
+        display: flex;
+      }
+
       .tab {
-        font-size: 14px; 
-        padding: 5px 10px; 
-        text-align: right; 
+        font-size: 14px;
+        padding: 5px 10px;
+        text-align: right;
+      }
+
+      .menu-button {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+      }
+    }
+
+    /* Hide menu button on desktop */
+    @media (min-width: 601px) {
+      .menu-button {
+        display: none;
       }
     }
   </style>
 </head>
-<body>
 <header class="header">
   <div class="logo-container">
     <a href="/Nhom-8---TKWeb/index.html" class="Logo">
@@ -115,9 +147,9 @@
     </a>
     <div class="website-name">BĐX Test</div>
   </div>
-  <nav class="nav-tabs" id="nav-menu">
+  <button class="menu-button" onclick="toggleMenu()">☰</button>
+  <nav class="nav-tabs" id="nav-tabs">
     <a href="/Nhom-8---TKWeb/webpage/cauhoitinhcach.html" class="tab">Bài kiểm tra tính cách</a>
     <a href="/Nhom-8---TKWeb/MBTI/index.html" class="tab">Các loại tính cách</a>
   </nav>
 </header>
-</body>

@@ -728,24 +728,26 @@ h3:after {
     font-size: 16px; /* Smaller name */
   }
   .nav-tabs {
-    position: absolute; /* Take tabs out of flow for better control */
-    top: 56px; /* Position below header (adjust based on actual header height) */
-    right: 0;
+    position: absolute;
+    top: 60px; /* hoặc điều chỉnh theo chiều cao header */
+    right: 10px;
+    display: none; /* ẩn ban đầu */
+    flex-direction: column; /* CHO 2 tab xếp dọc */
     background-color: white;
-    box-shadow: 0 3px 5px rgba(0,0,0,0.1);
-    border-radius: 0 0 0 5px;
-    flex-direction: column;
-    gap: 0; /* Remove gap, use padding */
-    align-items: flex-start; /* Align text left */
-    width: 180px; /* Set width for dropdown */
-    max-height: 0; /* Start hidden */
-    overflow: hidden; /* Hide content */
-    transition: max-height 0.3s ease-out; /* Animate */
-    z-index: 999;
+    width: 180px; /* hoặc 100% tùy ý */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    overflow: hidden; /* ngăn tràn */
+    z-index: 1000;
+  }
+
+  .nav-tabs.show {
+    display: flex; /* hiện ra dưới dạng cột */
   }
   /* Add a class (e.g., 'open') via JS to show menu */
   .nav-tabs.open {
-     max-height: 200px; /* Adjust as needed */
+     max-height: 200px;
+     overflow: visible; /* Adjust as needed */
   }
   .tab {
     font-size: 14px;
@@ -771,9 +773,11 @@ h3:after {
   .hero-quote {
     font-size: 1.3rem;
     margin-bottom: 20px;
+    padding-top: 50px;
   }
   .hero-boxes {
-    gap: 12px; /* Slightly reduce gap */
+    gap: 12px; /* slightly reduce gap */
+    padding-top: 100px;
   }
   .hero-box {
     flex-direction: row; /* Horizontal layout for box content */
@@ -808,6 +812,7 @@ h3:after {
     gap: 55px; /* **** INCREASE gap between questions to accommodate captions **** */
     margin-top: 30px; /* Space below hero */
     padding: 0 10px; /* Add slight side padding */
+    padding-top: 250px;
   }
   .question-header {
     font-size: 16px;
@@ -862,14 +867,14 @@ h3:after {
   .caption.text--green {
      /* Position relative to the left edge of radio-group */
      left: 15px; /* Half the width of the first button */
-     transform: translateX(-50%); /* Center the caption under the button's center */
+     transform: translateX(0%); /* Center the caption under the button's center */
      /* Remove order property */
   }
 
   .caption.text--red {
      /* Position relative to the right edge of radio-group */
      right: 15px; /* Half the width of the last button */
-     transform: translateX(50%); /* Center the caption under the button's center */
+     transform: translateX(0%); /* Center the caption under the button's center */
       /* Remove order property */
   }
 
@@ -1041,4 +1046,143 @@ h3:after {
 .progress-bar-labels-top .label-right {
   flex: 1;
   text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Sticky Header */
+.header {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+}
+
+/* Logo and Website Name */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-container img {
+  height: 60px;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+
+.website-name {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Navigation Tabs */
+.nav-tabs {
+  display: flex;
+  gap: 50px;
+}
+
+.tab {
+  position: relative;
+  padding: 5px 10px;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.tab:hover {
+  color: #de9dee;
+}
+
+/* Underline Effect */
+.tab::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #de9dee;
+  transition: width 0.3s ease-in-out;
+}
+
+.tab:hover::after {
+  width: 100%;
+}
+
+/* Active Tab */
+.tab.active {
+  color: #de9dee;
+}
+
+.tab.active::after {
+  width: 100%;
+}
+
+/* Responsive Header for Mobile (max-width: 600px) */
+@media (max-width: 600px) {
+  .header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+  }
+
+  .logo-container {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .website-name {
+    font-size: 16px;
+  }
+
+  .nav-tabs {
+    display: none;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    background-color: #fff;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 1001;
+  }
+
+  .nav-tabs.show {
+    display: flex;
+  }
+
+  .tab {
+    font-size: 14px;
+    padding: 5px 10px;
+    text-align: right;
+  }
+
+  .menu-button {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+}
+
+/* Hide menu button on desktop */
+@media (min-width: 601px) {
+  .menu-button {
+    display: none;
+  }
 }
