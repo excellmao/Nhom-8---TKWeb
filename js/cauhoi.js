@@ -114,6 +114,7 @@ function submitTest() {
 
   // Show the results section
   document.getElementById('results').classList.remove('hidden');
+  updateCategoryProgressBars();
 }
 
 function validateCategory() {
@@ -260,3 +261,56 @@ async function loadMBTIDescription(type) {
 }
 
 window.history.pushState({}, document.title, window.location.pathname);
+
+function calculateCategoryPoints() {
+  const categories = ['e-value', 's-value', 't-value', 'j-value'];
+  const categoryPoints = {};
+
+  categories.forEach((category) => {
+    categoryPoints[category] = 0;
+
+    // Get all selected radio buttons for the category
+    const selectedRadios = document.querySelectorAll(
+      `.question-container[data-category="${category}"] input[type="radio"]:checked`
+    );
+
+    // Sum up the values for the category
+    selectedRadios.forEach((radio) => {
+      categoryPoints[category] += parseInt(radio.value, 10);
+    });
+  });
+
+  return categoryPoints;
+}
+
+// Function to update progress bars
+function updateCategoryProgressBars() {
+  const categoryPoints = calculateCategoryPoints();
+
+  Object.keys(categoryPoints).forEach((category) => {
+    const progressBarFill = document.querySelector(
+      `.progress-bar-container[data-category="${category}"] .progress-bar-fill`
+    );
+
+    // Map points (-30 to 30) to percentage (0% to 100%)
+    const percentage = ((categoryPoints[category] + 30) / 60) * 100;
+
+    // Update the width of the progress bar fill
+    progressBarFill.style.width = `${percentage}%`;
+
+    // Change the color based on positive or negative points
+    if (categoryPoints[category] < 0) {
+      progressBarFill.style.backgroundColor = '#f44336'; // Red for negative points
+    } else {
+      progressBarFill.style.backgroundColor = '#4caf50'; // Green for positive points
+    }
+  });
+}
+
+// Call the update function when showing results
+document.addEventListener('DOMContentLoaded', () => {
+  const resultsSection = document.getElementById('results');
+  if (resultsSection) {
+    updateCategoryProgressBars();
+  }
+});

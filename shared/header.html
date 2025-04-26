@@ -1,5 +1,5 @@
 <head>
-    <style>
+  <style>
   a {
     text-decoration: none;
     color: inherit;
@@ -111,8 +111,78 @@
       text-align: right; /* Align text inside the tabs to the right */
     }
   }
+  .menu-button {
+  display: none; /* Hidden by default for larger screens */
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+  z-index: 1001;
+}
+
+/* Hidden Menu */
+.nav-tabs {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Start off-screen */
+  width: 250px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  gap: 15px;
+  transition: left 0.3s ease; /* Smooth slide-in effect */
+  z-index: 1000;
+}
+
+.nav-tabs.open {
+  left: 0; /* Slide in when open */
+}
+
+/* Adjust Tabs for Mobile */
+.nav-tabs a {
+  font-size: 16px;
+  padding: 10px 0;
+  text-align: left;
+  width: 100%;
+  color: #333;
+  text-decoration: none;
+  border-bottom: 1px solid #eee;
+}
+
+.nav-tabs a:hover {
+  color: #de9dee;
+}
+
+/* Show Menu Button on Mobile */
+@media (max-width: 600px) {
+  .menu-button {
+    display: block; /* Show menu button on smaller screens */
+  }
+
+  .nav-tabs {
+    display: flex;
+  }
+}
+
+@media (min-width: 601px) {
+  .menu-button {
+    display: none; /* Hide menu button on larger screens */
+  }
+
+  .nav-tabs {
+    position: static;
+    flex-direction: row;
+    gap: 50px;
+    box-shadow: none;
+    left: 0;
+  }
+}
 </style>
-    </style>
+<body>
 </head>
 <header class="header">
   <div class="logo-container">
@@ -121,8 +191,25 @@
     </a>
     <div class="website-name">BĐX Test</div>
   </div>
-  <nav class="nav-tabs">
+  <button class="menu-button" id="menu-button">☰</button> <!-- Menu Button -->
+  <nav class="nav-tabs" id="nav-menu">
     <a href="/Nhom-8---TKWeb/webpage/cauhoitinhcach.html" class="tab">Bài kiểm tra tính cách</a>
     <a href="/Nhom-8---TKWeb/MBTI/index.html" class="tab">Các loại tính cách</a>
   </nav>
 </header>
+</body>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const menuButton = document.getElementById('menu-button');
+    const navMenu = document.getElementById('nav-menu');
+
+    menuButton.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+      if (navMenu.classList.contains('open')) {
+          menuButton.innerHTML = '✖';
+      } else {
+          menuButton.innerHTML = '☰';
+      }
+    });
+  });
+</script>

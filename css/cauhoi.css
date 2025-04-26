@@ -648,7 +648,6 @@ h3:after {
   .tab {
     font-size: 14px; /* Smaller tab text */
     padding: 5px 8px;
-    text-align: right;
   }
   .website-name {
     font-size: 18px;
@@ -729,31 +728,36 @@ h3:after {
     font-size: 16px; /* Smaller name */
   }
   .nav-tabs {
-    position: static; /* Remove absolute positioning */
-    display: flex; /* Keep tabs visible */
-    flex-direction: column; /* Stack tabs vertically */
-    align-items: flex-start; /* Align tabs to the left */
-    gap: 10px; /* Add spacing between tabs */
-    background-color: transparent; /* Remove background color */
-    box-shadow: none; /* Remove shadow */
-    border-radius: 0; /* Remove border radius */
-    width: auto; /* Allow tabs to take natural width */
-    max-height: none; /* Remove height restrictions */
-    overflow: visible; /* Ensure content is visible */
-    padding: 0; /* Remove extra padding */
+    position: absolute; /* Take tabs out of flow for better control */
+    top: 56px; /* Position below header (adjust based on actual header height) */
+    right: 0;
+    background-color: white;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+    border-radius: 0 0 0 5px;
+    flex-direction: column;
+    gap: 0; /* Remove gap, use padding */
+    align-items: flex-start; /* Align text left */
+    width: 180px; /* Set width for dropdown */
+    max-height: 0; /* Start hidden */
+    overflow: hidden; /* Hide content */
+    transition: max-height 0.3s ease-out; /* Animate */
+    z-index: 999;
   }
-
+  /* Add a class (e.g., 'open') via JS to show menu */
+  .nav-tabs.open {
+     max-height: 200px; /* Adjust as needed */
+  }
   .tab {
-    font-size: 14px; /* Adjust font size for smaller screens */
-    padding: 5px 10px; /* Adjust padding for tabs */
-    border-bottom: none; /* Remove border between tabs */
-    width: auto; /* Allow tabs to take natural width */
-    text-align: left; /* Align text to the left */
+    font-size: 14px;
+    padding: 10px 15px; /* Full width padding */
+    width: 100%;
+    border-bottom: 1px solid #eee;
   }
-
   .tab:last-child {
-    border-bottom: none; /* Ensure no border on the last tab */
+     border-bottom: none;
   }
+  .tab::after { display: none; } /* Hide underline on mobile */
+  /* Add a menu toggle button (hamburger icon) - Requires HTML and JS */
 
 
   /* --- Hero Section --- */
@@ -770,7 +774,6 @@ h3:after {
   }
   .hero-boxes {
     gap: 12px; /* Slightly reduce gap */
-    margin-top: 200px;
   }
   .hero-box {
     flex-direction: row; /* Horizontal layout for box content */
@@ -802,28 +805,35 @@ h3:after {
 
   /* --- Questionnaire --- */
   .questionnaire {
-    gap: 40px; /* Increase gap between questions */
+    gap: 55px; /* **** INCREASE gap between questions to accommodate captions **** */
     margin-top: 30px; /* Space below hero */
     padding: 0 10px; /* Add slight side padding */
-    margin-top: 300px;
   }
   .question-header {
     font-size: 16px;
+    margin-bottom: 15px; /* Reduce gap slightly */
   }
+
   .radio-group-wrapper {
-    flex-direction: row; /* Keep row layout */
-    justify-content: center; /* **** FIX: Center the items **** */
+    display: flex; /* Keep flex for centering the group itself */
+    justify-content: center; /* Center the radio-group */
     align-items: center;
-    gap: 10px; /* **** FIX: Reduce gap between elements **** */
     width: 100%;
-    /* position: relative; */ /* Not needed for this layout */
+    /* padding-bottom: 30px; */ /* Moved padding to questionnaire gap */
+    /* No gap needed here as captions are absolute */
   }
+
   .radio-group {
-    gap: 10px; /* **** FIX: Reduce gap between radio buttons **** */
-    /* margin-left: -30px; */ /* **** FIX: REMOVED this negative margin **** */
+    display: flex; /* Use flex for buttons */
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Gap between radio buttons */
+    position: relative; /* **** KEY: Set as positioning context for captions **** */
+    /* Add padding bottom if needed for spacing, but questionnaire gap might be better */
+    /* padding-bottom: 30px; */
   }
+
   .radio-label {
-     /* **** FIX: Make buttons smaller and consistent **** */
      width: 30px;
      height: 30px;
   }
@@ -840,26 +850,29 @@ h3:after {
    }
 
   .caption {
-    font-size: 12px; /* **** FIX: Smaller caption text **** */
+    /* **** KEY: Absolute positioning for captions **** */
+    position: absolute;
+    bottom: -25px; /* Position below the radio buttons (adjust as needed) */
+    font-size: 12px;
     white-space: nowrap;
-    /* **** FIX: REMOVED all absolute positioning properties **** */
-    /* position: absolute; */
-    /* bottom: -25px; */
-    /* left: 0; */
-    /* right: 0; */
-    /* transform: none; */
-    /* width: auto; */
-    text-align: center; /* Keep text centered */
+    width: auto; /* Allow width to be natural */
+    text-align: center; /* Center text within the caption space */
   }
-   /* Remove specific positioning overrides */
+
   .caption.text--green {
-     /* No absolute positioning needed */
-     order: -1; /* Ensure green caption is first */
+     /* Position relative to the left edge of radio-group */
+     left: 15px; /* Half the width of the first button */
+     transform: translateX(-50%); /* Center the caption under the button's center */
+     /* Remove order property */
   }
+
   .caption.text--red {
-     /* No absolute positioning needed */
-     order: 1; /* Ensure red caption is last */
+     /* Position relative to the right edge of radio-group */
+     right: 15px; /* Half the width of the last button */
+     transform: translateX(50%); /* Center the caption under the button's center */
+      /* Remove order property */
   }
+
 
   /* --- Navigation Buttons --- */
   .navigation {
@@ -872,8 +885,6 @@ h3:after {
   .navigation button {
     font-size: 14px;
     padding: 10px 18px; /* Smaller padding */
-    /* width: auto; */ /* Allow button width to adjust to content */
-    /* margin: 5px 0; */ /* Remove margin, use gap */
   }
 
   /* --- Results --- */
@@ -922,7 +933,7 @@ h3:after {
 
 }
 
-/* Very Small Screens Adjustments */
+/* Very Small Screens Adjustments (Optional Refinement) */
 @media (max-width: 380px) {
     .radio-group {
         gap: 5px; /* Even smaller gap */
@@ -943,10 +954,15 @@ h3:after {
     }
     .caption {
         font-size: 11px;
+        bottom: -22px; /* Adjust vertical position slightly */
     }
-    .radio-group-wrapper {
-        gap: 5px; /* Reduce gap further */
-    }
+     .caption.text--green {
+        left: 13px; /* Half of 26px */
+     }
+     .caption.text--red {
+        right: 13px; /* Half of 26px */
+     }
+
     .hero-box-icon {
         width: 40px;
         height: 40px;
@@ -954,4 +970,75 @@ h3:after {
     }
     .hero-box h3 { font-size: 0.9rem; }
     .hero-box p { font-size: 0.8rem; }
+}
+
+/* Progress Bar Container */
+.category-progress-bars {
+  margin: 20px 0;
+}
+
+.category-progress-bars h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.progress-bar-container {
+  margin-bottom: 20px;
+}
+
+.progress-bar-container h4 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.progress-bar {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 20px;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  position: absolute;
+  height: 100%;
+  background-color: #4caf50; /* Green for positive points */
+  transition: width 0.5s ease;
+  border-radius: 10px;
+}
+
+.progress-bar-labels {
+  display: flex;
+  justify-content: space-between;
+  max-width: 600px;
+  margin: 10px auto 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.label-left,
+.label-center,
+.label-right {
+  flex: 1;
+  text-align: center;
+}
+
+.progress-bar-labels-top {
+  display: flex;
+  justify-content: space-between;
+  max-width: 600px;
+  margin: 0 auto 5px; /* Add spacing between labels and the progress bar */
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+.progress-bar-labels-top .label-left,
+.progress-bar-labels-top .label-right {
+  flex: 1;
+  text-align: center;
 }
